@@ -196,7 +196,7 @@ window.getType = (obj, type) =>
   Object.prototype.toString.call(obj).includes(`${type.slice(1)}`);
 
 export default {
-  name: "Tree",
+  name: "KTree",
 
   components: { TreeNode },
 
@@ -266,7 +266,6 @@ export default {
     value:'setNodesPoperty',
 
     dataSource: {
-      // deep: true,
       handler() {
         this.initDataSource();
       }

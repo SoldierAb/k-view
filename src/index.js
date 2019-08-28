@@ -1,9 +1,9 @@
 
-import Tree from './components/tree';
+import KTree from './components/tree';
 
     
 const components={
-    Tree,
+    KTree,
 };
 
 const install=(Vue)=>{
@@ -23,7 +23,7 @@ if (typeof window !== 'undefined'&&window.Vue){
 
 const KVIEW = {
     install,
-    Tree,
+    KTree,
 }
 
 export default KVIEW;

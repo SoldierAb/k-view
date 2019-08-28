@@ -49,8 +49,7 @@
     "webpack-dev-server": "^3.2.1",
     "webpack-merge": "^4.2.1"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "description": "```\r npm i k-view\r ```",
   "directories": {
     "example": "examples"

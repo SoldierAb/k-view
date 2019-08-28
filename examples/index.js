@@ -17,22 +17,6 @@ const myRouter = new Router({
             },
             component: (resolve) => require(['./routers/Tree.vue'], resolve)
         },
-        {
-            path: '/treeselect',
-            name: 'treeselect',
-            meta: {
-                title: '下拉树'
-            },
-            component: (resolve) => require(['./routers/TreeSelect.vue'], resolve)
-        },
-        {
-            path: '/button',
-            name: 'button',
-            meta: {
-                title: '按钮'
-            },
-            component: (resolve) => require(['./routers/Button.vue'], resolve)
-        }
     ]
 });
 
