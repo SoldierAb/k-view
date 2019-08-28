@@ -1,0 +1,66 @@
+{
+  "name": "@cgj/k-view",
+  "version": "1.0.3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --config=webpack.dev.js --open --theme=default",
+    "pub": "webpack  --config=webpack.pub.js",
+    "analyz": "NODE_ENV=production npm_config_report=true npm run pub"
+  },
+  "email": "ab140140@163.com",
+  "keywords": [
+    "eleme",
+    "vue",
+    "components"
+  ],
+  "author": "cgj",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.3.4",
+    "babel-loader": "^8.0.5",
+    "babel-preset-es2015": "^7.0.0-beta.3",
+    "clean-webpack-plugin": "^2.0.1",
+    "css-loader": "^2.0.0",
+    "element-ui": "^2.6.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "html-withimg-loader": "^0.1.16",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.10",
+    "postcss-loader": "^3.0.0",
+    "progress-bar-webpack-plugin": "^1.12.1",
+    "sass-loader": "^7.1.0",
+    "sass-resources-loader": "^2.0.0",
+    "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "url-loader": "^1.1.2",
+    "vue": "^2.6.8",
+    "vue-loader": "^15.5.1",
+    "vue-router": "^3.0.2",
+    "vue-template-compiler": "^2.6.8",
+    "webpack": "^4.27.1",
+    "webpack-bundle-analyzer": "^3.3.2",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1",
+    "webpack-merge": "^4.2.1"
+  },
+  "dependencies": {
+  },
+  "description": "```\r npm i k-view\r ```",
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SoldierAb/k-view.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SoldierAb/k-view/issues"
+  },
+  "homepage": "https://github.com/SoldierAb/k-view#readme"
+}

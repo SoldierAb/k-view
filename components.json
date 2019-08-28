@@ -1,0 +1,6 @@
+{
+    "tree":"./src/components/tree/index.js",
+    "tree-select":"./src/components/tree-select/index.js",
+    "toast":"./src/components/toast/index.js",
+    "loading":"./src/components/loading/index.js"
+}
