@@ -45,27 +45,6 @@
   .tree-node-container {
     position: relative;
 
-    div[class^="tree-line"] {
-      position: absolute;
-      border-color: $fontColor;
-    }
-
-    .tree-line-left {
-      left: #{$paddingLeft + 8px};
-      top: 24px;
-      height: calc(100% - 40px);
-      width: 1px;
-      border-left: 1px dashed;
-    }
-
-    .tree-line-bottom {
-      width: 10px;
-      height: 1px;
-      left: 10px;
-      bottom: 16px;
-      border-top: 1px dashed;
-    }
-
     .node-label {
       border-radius: 4px;
       letter-spacing: 1px;

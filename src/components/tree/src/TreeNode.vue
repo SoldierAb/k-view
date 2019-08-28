@@ -1,6 +1,7 @@
 <template>
   <div class="k-tree-node-container">
-    <ul :style="`padding-left:${showLine&&children&&children.length?20:8}px`">
+    <!-- <ul :style="`padding-left:${showLine&&children&&children.length?20:8}px`"> -->
+    <ul :style="`padding-left:${children&&children.length?20:40}px`">
       <li>
         <span
           class="tree-arrow point-cursor"
@@ -25,6 +26,7 @@
             @change.stop="handleCheck"
           />
         </span>
+
         <span
           :class="labelClasses"
           @click.stop="handleSelect"
@@ -39,10 +41,26 @@
             v-if="imgSource.node&&imgSource.leaf"
           />
           <icon :type="`${children&&children.length?'file-b-':'file'}`" v-else></icon>
-          <!-- <tip-box style="display:inline-block" v-if="showTip" :txt="nodeData[labelKey]"></tip-box>
-          <label v-else>-->
           <label>{{nodeData[labelKey]}}</label>
         </span>
+        <!-- <checkbox v-if="showCheckbox"  @change="handleCheck"  :checked="checked">
+          <span
+            :class="labelClasses"
+            @click.stop="handleSelect"
+            :style="`${showTip?'width:calc(100% - 40px)':''}`"
+          >
+            <img
+              width="18"
+              height="18"
+              class="label-icon"
+              :src="children&&children.length?imgSource.node:imgSource.leaf"
+              alt
+              v-if="imgSource.node&&imgSource.leaf"
+            />
+            <icon :type="`${children&&children.length?'file-b-':'file'}`" v-else></icon>
+            <label>{{nodeData[labelKey]}}</label>
+          </span>
+        </checkbox> -->
         <k-tree-node
           v-show="nodeData.expand"
           v-for="(item,index) in children"
@@ -54,8 +72,6 @@
           :label-key="labelKey"
         ></k-tree-node>
       </li>
-      <div class="tree-line-left" v-show="showLine"></div>
-      <div class="tree-line-bottom" v-show="showLine" v-if="nodeData.hasParent"></div>
     </ul>
   </div>
 </template>
@@ -64,11 +80,12 @@
 import Emitter from "../../../utils/emitter";
 import TipBox from "../../tip-box";
 import Icon from "../../icon";
+import { Checkbox } from "element-ui";
 
 export default {
   name: "KTreeNode",
   mixins: [Emitter],
-  components: { TipBox, Icon },
+  components: { TipBox, Icon, Checkbox },
   props: {
     showTip: {
       type: Boolean

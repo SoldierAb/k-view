@@ -22,10 +22,11 @@
     "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.3.4",
     "babel-loader": "^8.0.5",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "babel-preset-es2015": "^7.0.0-beta.3",
     "clean-webpack-plugin": "^2.0.1",
     "css-loader": "^2.0.0",
-    "element-ui": "^2.6.1",
+    "element-ui": "^2.11.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
@@ -49,7 +50,9 @@
     "webpack-dev-server": "^3.2.1",
     "webpack-merge": "^4.2.1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "babel-plugin-component": "^1.1.1"
+  },
   "description": "```\r npm i k-view\r ```",
   "directories": {
     "example": "examples"
