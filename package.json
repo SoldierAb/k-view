@@ -26,7 +26,6 @@
     "babel-preset-es2015": "^7.0.0-beta.3",
     "clean-webpack-plugin": "^2.0.1",
     "css-loader": "^2.0.0",
-    "element-ui": "^2.11.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
@@ -51,7 +50,8 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "babel-plugin-component": "^1.1.1"
+    "babel-plugin-component": "^1.1.1",
+    "element-ui": "^2.12.0"
   },
   "description": "```\r npm i k-view\r ```",
   "directories": {
