@@ -55,7 +55,8 @@ module.exports = {
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: 600
+                            limit: 10000,
+                            name: path.posix.join('fonts', 'k-view.[ext]')
                         }
                     }
                 ]

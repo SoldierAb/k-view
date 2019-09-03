@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --config=webpack.dev.js --open --theme=default",
-    "pub": "webpack  --config=webpack.pub.js",
+    "build:pub": "webpack  --config=webpack.pub.js",
     "analyz": "NODE_ENV=production npm_config_report=true npm run pub"
   },
   "email": "ab140140@163.com",
@@ -51,7 +51,8 @@
   },
   "dependencies": {
     "babel-plugin-component": "^1.1.1",
-    "element-ui": "^2.12.0"
+    "element-ui": "^2.12.0",
+    "xterm": "^3.14.5"
   },
   "description": "```\r npm i k-view\r ```",
   "directories": {
