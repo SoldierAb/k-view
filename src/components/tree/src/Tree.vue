@@ -1,16 +1,16 @@
 <template>
   <div class="tree-container">
-    <div class="tree-body" >
+    <div class="tree-body">
       <tree-node
         v-for="(item ,index) in stateTree"
+        :key="index"
         :img-source="imgSource"
         :node-data="item"
         :value-key="valueKey"
-        :key="index"
         :label-key="labelKey"
         :show-checkbox="showCheckbox"
         :show-tip="showTip"
-      ></tree-node>
+      />
     </div>
   </div>
 </template>

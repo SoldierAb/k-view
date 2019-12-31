@@ -1,7 +1,13 @@
 <template>
   <div class="link-button-container">
     <el-breadcrumb separator-class="el-icon-arrow-right">
-      <el-breadcrumb-item v-for="item in dataSource" :key="item.path" :to="{path:item.path}">{{item.title}}</el-breadcrumb-item>
+      <el-breadcrumb-item
+        v-for="item in dataSource"
+        :key="item.path"
+        :to="{path:item.path}"
+      >
+        {{ item.title }}
+      </el-breadcrumb-item>
     </el-breadcrumb>
   </div>
 </template>
@@ -14,7 +20,7 @@
 
 <script>
 export default {
-  name: "link-button",
+  name: "LinkButton",
   components: {},
   props: {
     dataSource: {

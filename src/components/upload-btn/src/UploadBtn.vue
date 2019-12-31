@@ -3,14 +3,14 @@
     <div class="upload-btn-box">
       <label>上传文件</label>
       <input
+        ref="inputUpload"
         class="upload-btn"
         type="file"
-        ref="inputUpload"
-        @change="handleChange"
         :multiple="multiple"
-      />
+        @change="handleChange"
+      >
     </div>
-    <slot></slot>
+    <slot />
   </div>
 </template>
 

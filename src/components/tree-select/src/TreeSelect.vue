@@ -1,18 +1,31 @@
 <template>
   <span class="tree-select-container">
-    <drop-box v-model="show" :show-count="false" position="left">
-      <el-input clearable readonly slot="text" v-model="selectKeys" :style="`width:${width}px`"></el-input>
-      <div class="select-body" slot="drop">
+    <drop-box
+      v-model="show"
+      :show-count="false"
+      position="left"
+    >
+      <el-input
+        slot="text"
+        v-model="selectKeys"
+        clearable
+        readonly
+        :style="`width:${width}px`"
+      />
+      <div
+        slot="drop"
+        class="select-body"
+      >
         <el-tree
+          ref="tree"
           :data="data"
           :node-key="defaultProps.nodeKey"
           :props="defaultProps"
-          @check="checkNodes"
-          ref="tree"
           default-expand-all
           show-checkbox
           highlight-current
-        ></el-tree>
+          @check="checkNodes"
+        />
       </div>
     </drop-box>
   </span>

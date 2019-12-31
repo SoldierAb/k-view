@@ -4,44 +4,53 @@
     <ul :style="`padding-left:${children&&children.length?20:40}px`">
       <li>
         <span
-          class="tree-arrow point-cursor"
           v-if="children&&children.length"
+          class="tree-arrow point-cursor"
           @click.stop="toggleExpand"
         >
           <img
+            v-if="imgSource.right&&imgSource.down"
             width="18"
             height="18"
             :src="imgSource[arrowType]"
             alt
-            v-if="imgSource.right&&imgSource.down"
+          >
+          <icon
+            v-else
+            :type="`caret-${arrowType}`"
           />
-          <icon :type="`caret-${arrowType}`" v-else></icon>
         </span>
-        <span class="tree-arrow" v-else></span>
+        <span
+          v-else
+          class="tree-arrow"
+        />
         <span v-if="showCheckbox">
           <input
             class="tree-checkbox"
             type="checkbox"
             :checked="nodeData.checked"
             @change.stop="handleCheck"
-          />
+          >
         </span>
 
         <span
           :class="labelClasses"
-          @click.stop="handleSelect"
           :style="`${showTip?'width:calc(100% - 40px)':''}`"
+          @click.stop="handleSelect"
         >
           <img
+            v-if="imgSource.node&&imgSource.leaf"
             width="18"
             height="18"
             class="label-icon"
             :src="children&&children.length?imgSource.node:imgSource.leaf"
             alt
-            v-if="imgSource.node&&imgSource.leaf"
+          >
+          <icon
+            v-else
+            :type="`${children&&children.length?'file-b-':'file'}`"
           />
-          <icon :type="`${children&&children.length?'file-b-':'file'}`" v-else></icon>
-          <label>{{nodeData[labelKey]}}</label>
+          <label>{{ nodeData[labelKey] }}</label>
         </span>
         <!-- <checkbox v-if="showCheckbox"  @change="handleCheck"  :checked="checked">
           <span
@@ -62,15 +71,15 @@
           </span>
         </checkbox> -->
         <k-tree-node
-          v-show="nodeData.expand"
           v-for="(item,index) in children"
+          v-show="nodeData.expand"
+          :key="index"
           :show-tip="showTip"
           :img-source="imgSource"
-          :key="index"
           :show-checkbox="showCheckbox"
           :node-data="item"
           :label-key="labelKey"
-        ></k-tree-node>
+        />
       </li>
     </ul>
   </div>
@@ -84,8 +93,8 @@ import { Checkbox } from "element-ui";
 
 export default {
   name: "KTreeNode",
-  mixins: [Emitter],
   components: { TipBox, Icon, Checkbox },
+  mixins: [Emitter],
   props: {
     showTip: {
       type: Boolean

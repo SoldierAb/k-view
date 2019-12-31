@@ -2,17 +2,26 @@
   <el-table
     :data="dataSource"
     :height="height"
-    @row-click="rowClick"
-    @cell-click="cellClick"
-    @sort-change="sortChange"
     stripe
     style="width: 100%"
     min-height="400"
+    @row-click="rowClick"
+    @cell-click="cellClick"
+    @sort-change="sortChange"
   >
-    <div v-for="(item,index) in headerData" :key="item+index">
-      <el-table-column v-if="item.comps" v-bind="item">
+    <div
+      v-for="(item,index) in headerData"
+      :key="item+index"
+    >
+      <el-table-column
+        v-if="item.comps"
+        v-bind="item"
+      >
         <template slot-scope="scope">
-          <span v-for="(cp,index) in item.comps" :key="cp+index">
+          <span
+            v-for="(cp,_index) in item.comps"
+            :key="cp+_index"
+          >
             <slot
               v-if="cp.event"
               :name="`${cp.event}`"
@@ -20,26 +29,29 @@
             >
               <component
                 :is="`El${cp.comp}`"
-                @click.native.prevent="$emit('act',cp.event,scope.$index, dataSource)"
                 v-bind="{...dataSource[scope.$index],...cp.props}"
+                @click.native.prevent="$emit('act',cp.event,scope.$index, dataSource)"
               >
-                <el-text v-if="cp.label">{{cp.label}}</el-text>
+                <el-text v-if="cp.label">{{ cp.label }}</el-text>
               </component>
             </slot>
             <component
-              v-else
               :is="`El${cp.comp}`"
-              @click.native.prevent="$emit('act',cp.event,scope.$index, dataSource)"
+              v-else
               v-bind="{...dataSource[scope.$index],...cp.props}"
+              @click.native.prevent="$emit('act',cp.event,scope.$index, dataSource)"
             >
-              <el-text v-if="cp.label">{{cp.label}}</el-text>
+              <el-text v-if="cp.label">{{ cp.label }}</el-text>
             </component>
           </span>
         </template>
       </el-table-column>
-      <el-table-column v-bind="item" v-else>
+      <el-table-column
+        v-else
+        v-bind="item"
+      >
         <template slot-scope="scope">
-          <el-text>{{dataSource[scope.$index][item.prop]|filterAct(item.formatType)}}</el-text>
+          <el-text>{{ dataSource[scope.$index][item.prop]|filterAct(item.formatType) }}</el-text>
         </template>
       </el-table-column>
     </div>

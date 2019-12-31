@@ -2,10 +2,10 @@
   <el-radio-group v-model="currentCondition">
     <el-radio-button
       v-for="item in conditions"
-      :label="item.label"
       :key="item.label"
+      :label="item.label"
       @click="updateCondition(item)"
-    ></el-radio-button>
+    />
   </el-radio-group>
 </template>
 
@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: "radio-search",
+  name: "RadioSearch",
   components: {},
   model: {
     prop: "modelObj",
@@ -72,13 +72,13 @@ export default {
     };
   },
   computed: {},
+  watch: {
+    currentCondition: "updateCondition"
+  },
   created() {
   },
   mounted() {
 
-  },
-  watch: {
-    currentCondition: "updateCondition"
   },
   methods: {
     updateCondition(label) {

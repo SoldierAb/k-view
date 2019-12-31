@@ -1,17 +1,32 @@
 <template>
-  <div class="search-comp-container" v-if="comps&&comps.length">
-    <span v-for="(item,index) in comps" :key="item+index" class="span-box">
+  <div
+    v-if="comps&&comps.length"
+    class="search-comp-container"
+  >
+    <span
+      v-for="(item,index) in comps"
+      :key="item+index"
+      class="span-box"
+    >
       <component
-        v-if="item.bind"
         :is="`El${item.comp}`"
+        v-if="item.bind"
         v-model="searchObj[item.bind]"
         v-bind="item.props"
         @click="clickAct(item)"
       >
-        <async-options v-if="item.comp==='Select'" :url="item.url"></async-options>
+        <async-options
+          v-if="item.comp==='Select'"
+          :url="item.url"
+        />
       </component>
-      <component v-else :is="`El${item.comp}`" v-bind="item.props" @click="clickAct(item)">
-        <el-text v-if="item.label">{{item.label}}</el-text>
+      <component
+        :is="`El${item.comp}`"
+        v-else
+        v-bind="item.props"
+        @click="clickAct(item)"
+      >
+        <el-text v-if="item.label">{{ item.label }}</el-text>
       </component>
     </span>
   </div>

@@ -7,9 +7,6 @@ const Tip = (Vue) => {
   Vue.prototype.$tip = (showTip, x, y, txt, callback) => {
       if (!tipContainer) {
         const tipTpl = Vue.extend({
-          template: '<div class="vue-tip-container" v-show="show" :style="`left:${left}px;top:${top}px`">\
-                        <p>{{text}}</p>\
-                </div>',
           data() {
             return {
               text: txt,
@@ -17,7 +14,10 @@ const Tip = (Vue) => {
               left: 0,
               top: 0,
             }
-          }
+          },
+          template: '<div class="vue-tip-container" v-show="show" :style="`left:${left}px;top:${top}px`">\
+                        <p>{{text}}</p>\
+                </div>'
         })
         tipContainer = new tipTpl();
         const tpl = tipContainer.$mount().$el;

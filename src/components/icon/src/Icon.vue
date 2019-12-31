@@ -1,7 +1,10 @@
 <template lang="html">
   <span class="k-icon">
-    <svg class="icon" aria-hidden="true">
-      <use :xlink:href="`#icon-${type}`"></use>
+    <svg
+      class="icon"
+      aria-hidden="true"
+    >
+      <use :xlink:href="`#icon-${type}`" />
     </svg>
   </span>
 </template>

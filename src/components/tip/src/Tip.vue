@@ -1,7 +1,11 @@
 <template>
-    <div class="vue-tip-container" v-show="show" :style="`left:${left}px;top:${top}px`">
-      <p>{{text}}</p>
-    </div>
+  <div
+    v-show="show"
+    class="vue-tip-container"
+    :style="`left:${left}px;top:${top}px`"
+  >
+    <p>{{ text }}</p>
+  </div>
 </template>
 
 <script>

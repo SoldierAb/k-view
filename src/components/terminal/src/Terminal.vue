@@ -1,6 +1,6 @@
 <template>
   <div class="terminal-container">
-    <div id="terminal"></div>
+    <div id="terminal" />
   </div>
 </template>
 
@@ -18,7 +18,7 @@ import { Terminal } from "xterm";
 let terminalInstance, wsInstance;
 
 export default {
-  name: "terminal",
+  name: "Terminal",
   props: {
     width: {
       type: Number,
@@ -46,6 +46,10 @@ export default {
       let terminalContainer = document.getElementById("terminal");
       this.init(terminalContainer);
     });
+  },
+
+  beforeDestroy() {
+    terminalInstance && terminalInstance.dispose();
   },
   methods: {
     async init(box) {
@@ -94,10 +98,6 @@ export default {
 
       // this.$emit('init',{wsInstance,terminalInstance});
     }
-  },
-
-  beforeDestroy() {
-    terminalInstance && terminalInstance.dispose();
   }
 };
 </script>

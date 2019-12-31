@@ -1,14 +1,20 @@
 <template>
   <el-form
+    ref="modelForm"
     :model="modelForm"
     :rules="rules"
     :label-width="`${labelWidth}px`"
-    ref="modelForm"
     class="demo-modelForm"
   >
-    <el-form-item v-for="cp in formComps" :label="cp.label" :prop="`${cp.bind}`" :key="cp.label">
+    <el-form-item
+      v-for="cp in formComps"
+      :key="cp.label"
+      :label="cp.label"
+      :prop="`${cp.bind}`"
+    >
       <upload-btn
         v-if="cp.comp==='UploadBtn'"
+        ref="uploadBtn"
         v-bind="cp.props"
         :data="modelForm"
         :on-success="onSuccess"
@@ -16,17 +22,35 @@
         :on-progress="onProgress"
         :before-upload="beforeUpload"
         @get-file="getFile"
-        ref="uploadBtn"
       >
-        <span :class="`font-${uploadStatus}`" style="padding-left:10px">{{statusText}}</span>
+        <span
+          :class="`font-${uploadStatus}`"
+          style="padding-left:10px"
+        >{{ statusText }}</span>
       </upload-btn>
-      <component v-else :is="`El${cp.comp}`" v-model="modelForm[cp.bind]" v-bind="cp.props">
-        <async-options :url="cp.url"></async-options>
+      <component
+        :is="`El${cp.comp}`"
+        v-else
+        v-model="modelForm[cp.bind]"
+        v-bind="cp.props"
+      >
+        <async-options :url="cp.url" />
       </component>
     </el-form-item>
     <el-form-item style="margin-bottom:10px">
-      <el-button size="small" type="primary" @click="submitForm">确定</el-button>
-      <el-button size="small" @click="resetForm">取消</el-button>
+      <el-button
+        size="small"
+        type="primary"
+        @click="submitForm"
+      >
+        确定
+      </el-button>
+      <el-button
+        size="small"
+        @click="resetForm"
+      >
+        取消
+      </el-button>
     </el-form-item>
   </el-form>
 </template>
@@ -55,16 +79,28 @@ export default {
       }
     },
     formComps: {
-      type: Array
+      type: Array,
+      default(){
+        return []
+      }
     },
     rules: {
-      type: Object
+      type: Object,
+      default(){
+        return {}
+      }
     },
     modelForm: {
-      type: Object
+      type: Object,
+      default(){
+        return {}
+      }
     },
     dataIndex: {
-      type: Number
+      type: Number,
+      default(){
+        return 1
+      }
     },
     labelWidth: {
       type: Number,

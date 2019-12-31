@@ -1,9 +1,12 @@
 <template>
   <ul class="key-value-container">
-    <li v-for="(key,index) in keys" :key="key+index">
-      <span class="span-box">{{key}}:</span>
+    <li
+      v-for="(key,index) in keys"
+      :key="key+index"
+    >
+      <span class="span-box">{{ key }}:</span>
       <span>
-        <em>{{data[key]}}</em>
+        <em>{{ data[key] }}</em>
       </span>
     </li>
   </ul>
@@ -20,7 +23,7 @@
 
 <script>
 export default {
-  name: "key-value",
+  name: "KeyValue",
   components: {},
   props: {
     data: {

@@ -1,7 +1,7 @@
 <template>
-    <div class="el-cell-box">
-        <slot></slot>
-    </div>
+  <div class="el-cell-box">
+    <slot />
+  </div>
 </template>
 
 <style lang="less">

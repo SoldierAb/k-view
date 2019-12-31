@@ -1,17 +1,34 @@
 <template>
   <div class="drop-actions-container">
-    <drop-box v-model="showDrop" :position="position">
+    <drop-box
+      v-model="showDrop"
+      :position="position"
+    >
       <span slot="text">
         <slot name="text">
-          <el-button :size="size" :type="type" plain>{{title}}</el-button>
+          <el-button
+            :size="size"
+            :type="type"
+            plain
+          >{{ title }}</el-button>
         </slot>
       </span>
       <template slot="drop">
         <slot name="drop">
           <ul class="actions-box">
-            <li class="action-item" v-for="item in actions" :key="item.label" @click="handleSelect(item.value)">
-              <slot :name="item.value" v-bind="item">
-                <el-button type="text" >{{item.label}}</el-button>
+            <li
+              v-for="item in actions"
+              :key="item.label"
+              class="action-item"
+              @click="handleSelect(item.value)"
+            >
+              <slot
+                :name="item.value"
+                v-bind="item"
+              >
+                <el-button type="text">
+                  {{ item.label }}
+                </el-button>
               </slot>
             </li>
           </ul>
@@ -91,7 +108,10 @@ export default {
       }
     },
     url: {
-      type: String
+      type: String,
+      default(){
+        return ``
+      }
     }
   },
   data() {
@@ -100,13 +120,13 @@ export default {
       showDrop: false
     };
   },
-  created() {
-    this.init();
-  },
   watch: {
     url(val) {
       this.init();
     }
+  },
+  created() {
+    this.init();
   },
   methods: {
     async init() {

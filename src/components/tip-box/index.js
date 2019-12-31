@@ -18,9 +18,6 @@ import Tip from '../tip'
 Vue.use(Tip)
 
 export default Vue.component('tipBox', {
-  template: '<div class="tip-box" @mouseover="showTip($event)" @mousemove="showTip($event)" @mouseout="hideTip">\
-        <p>{{txt}}</p>\
-    </div>',
   props: {
     txt: {
       type: String,
@@ -48,5 +45,8 @@ export default Vue.component('tipBox', {
     hideTip() {
       this.$tip.hide();
     },
-  }
+  },
+  template: '<div class="tip-box" @mouseover="showTip($event)" @mousemove="showTip($event)" @mouseout="hideTip">\
+        <p>{{txt}}</p>\
+    </div>'
 })

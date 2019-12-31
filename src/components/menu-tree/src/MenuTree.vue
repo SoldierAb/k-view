@@ -1,27 +1,33 @@
 <template>
   <nav :class="`menu-tree-container`">
     <el-submenu
-      :index="dataSource[valueKey]"
       v-if="dataSource.children&&dataSource.children.length"
+      :index="dataSource[valueKey]"
     >
       <template slot="title">
-        <span>{{dataSource[labelKey]}}</span>
+        <span>{{ dataSource[labelKey] }}</span>
       </template>
       <el-menu-item-group>
-        <menu-tree v-for="child in dataSource.children" :data-source="child" :key="child.name"></menu-tree>
+        <menu-tree
+          v-for="child in dataSource.children"
+          :key="child.name"
+          :data-source="child"
+        />
       </el-menu-item-group>
     </el-submenu>
     <el-menu-item
-      :class="`${navActive?'nav-active':''}`"
-      :index="dataSource[valueKey]"
       v-show="showLink"
       v-else
+      :class="`${navActive?'nav-active':''}`"
+      :index="dataSource[valueKey]"
     >
       <router-link
         slot="title"
         :class="`${navActive?'nav-link-active':''}`"
         :to="`/${dataSource[valueKey]}`"
-      >{{dataSource[labelKey]}}</router-link>
+      >
+        {{ dataSource[labelKey] }}
+      </router-link>
     </el-menu-item>
   </nav>
 </template>

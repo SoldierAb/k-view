@@ -1,11 +1,18 @@
 <template>
   <div class="col-table-container">
     <table>
-      <tr v-for="(thItem,thIndex) in headerData" :class="`${thIndex===0?'col-tr-one':''}`" :key="thItem+thIndex">
+      <tr
+        v-for="(thItem,thIndex) in headerData"
+        :key="thItem+thIndex"
+        :class="`${thIndex===0?'col-tr-one':''}`"
+      >
         <td :style="`width:${tdWidth}px`">
           <el-cell>
-            <slot :name="`h-${thItem.key}`" v-bind="thItem">
-              <el-text>{{thItem.label}}</el-text>
+            <slot
+              :name="`h-${thItem.key}`"
+              v-bind="thItem"
+            >
+              <el-text>{{ thItem.label }}</el-text>
             </slot>
           </el-cell>
         </td>
@@ -15,18 +22,28 @@
           @mouseover="tdOver(thItem.event,tdIndex)"
         >
           <el-cell>
-            <slot :name="thItem.key" v-bind="{$th:thItem,$index:tdIndex,$data:bodyData}">
+            <slot
+              :name="thItem.key"
+              v-bind="{$th:thItem,$index:tdIndex,$data:bodyData}"
+            >
               <component
-                v-if="thItem.comp"
                 :is="`El${thItem.comp}`"
-                v-bind="{...thItem.props,...tdItem}"
+                v-if="thItem.comp"
                 v-model="tdItem[thItem.bind]"
+                v-bind="{...thItem.props,...tdItem}"
                 @click.native.prevent="cellClick(thItem.event,tdIndex,bodyData)"
               >
-                <async-options v-if="thItem.comp==='Select'" :url="thItem.url"></async-options>
-                <el-text v-if="thItem.comp==='Button'">{{tdItem[thItem.key]}}</el-text>
+                <async-options
+                  v-if="thItem.comp==='Select'"
+                  :url="thItem.url"
+                />
+                <el-text v-if="thItem.comp==='Button'">
+                  {{ tdItem[thItem.key] }}
+                </el-text>
               </component>
-              <el-text v-else>{{tdItem[thItem.key]}}</el-text>
+              <el-text v-else>
+                {{ tdItem[thItem.key] }}
+              </el-text>
             </slot>
           </el-cell>
         </td>
@@ -74,10 +91,16 @@ export default {
   name: "ColTable",
   props: {
     headerData: {
-      type: Array
+      type: Array,
+      default(){
+        return []
+      }
     },
     bodyData: {
-      type: Array
+      type: Array,
+      default(){
+        return []
+      }
     },
     tdWidth: {
       type: Number,

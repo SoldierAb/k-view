@@ -4,16 +4,24 @@
     @mouseover="$emit('toggleDrop',true)"
     @mouseleave="$emit('toggleDrop',false)"
   >
-    <slot name="text">文本</slot>
+    <slot name="text">
+      文本
+    </slot>
     <transition name="fade-drop">
-      <div :class="`drop-content drop-${position}`"  v-show="show">
+      <div
+        v-show="show"
+        :class="`drop-content drop-${position}`"
+      >
         <div class="drop-box">
-          <slot name="drop"></slot>
+          <slot name="drop" />
         </div>
       </div>
     </transition>
-    <slot name="count" v-show="showCount">
-      <span class="drop-count"></span>
+    <slot
+      v-show="showCount"
+      name="count"
+    >
+      <span class="drop-count" />
     </slot>
   </div>
 </template>

@@ -1,7 +1,12 @@
 <template>
   <div class="ueditor-comp-container">
-    <script id="ueditor-comp" name="content" style="width:1024px;height:500px;" type="text/plain" >
-  {{initContent}}
+    <script
+      id="ueditor-comp"
+      name="content"
+      style="width:1024px;height:500px;"
+      type="text/plain"
+    >
+      {{ initContent }}
     </script>
   </div>
 </template>
@@ -14,7 +19,7 @@
 
 <script>
 export default {
-  name: "ueditor-comp",
+  name: "UeditorComp",
   components: {},
   props: {
     config: {},

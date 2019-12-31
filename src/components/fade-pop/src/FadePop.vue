@@ -1,18 +1,37 @@
 <template>
-  <div class="fade-pop-container" v-show="show">
+  <div
+    v-show="show"
+    class="fade-pop-container"
+  >
     <transition name="fade-modal">
-      <div class="fade-modal" v-show="modalShow" @click="modalClick"></div>
+      <div
+        v-show="modalShow"
+        class="fade-modal"
+        @click="modalClick"
+      />
     </transition>
-    <transition name="fade-animate" @after-leave="afterLeave" @before-enter="modalShow=true">
-      <div :style="[fadeBoxStyle]" class="fade-box" v-if="show">
+    <transition
+      name="fade-animate"
+      @after-leave="afterLeave"
+      @before-enter="modalShow=true"
+    >
+      <div
+        v-if="show"
+        :style="[fadeBoxStyle]"
+        class="fade-box"
+      >
         <div class="fade-head clearfix">
-          <span class="fade-head-content">{{title}}</span>
+          <span class="fade-head-content">{{ title }}</span>
           <span class="fade-head-close">
-            <img @click="closePop" src="../assets/common/x.png" width="32" />
+            <img
+              src="../assets/common/x.png"
+              width="32"
+              @click="closePop"
+            >
           </span>
         </div>
         <div class="fade-body">
-          <slot></slot>
+          <slot />
         </div>
       </div>
     </transition>

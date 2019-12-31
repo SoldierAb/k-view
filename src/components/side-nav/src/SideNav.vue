@@ -1,7 +1,16 @@
 <template>
   <nav class="side-nav-container">
-    <el-menu class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" ref="sideNav">
-      <menu-tree v-for="item in activeSideMenu" :key="item.name" :data-source="item"></menu-tree>
+    <el-menu
+      ref="sideNav"
+      class="el-menu-vertical-demo"
+      @open="handleOpen"
+      @close="handleClose"
+    >
+      <menu-tree
+        v-for="item in activeSideMenu"
+        :key="item.name"
+        :data-source="item"
+      />
     </el-menu>
   </nav>
 </template>
@@ -56,10 +65,10 @@ import MenuTree from "./MenuTree.vue";
 import { mapGetters } from "vuex";
 
 export default {
+  name: "SideNav",
   components: {
     MenuTree
   },
-  name: "SideNav",
   props: {
     navData: {
       type: Object,
