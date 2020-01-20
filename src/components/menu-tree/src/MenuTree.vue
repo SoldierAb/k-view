@@ -5,10 +5,16 @@
       :index="dataSource[valueKey]"
     >
       <template slot="title">
-        <div v-if="dataSource.icon" :class="`menu-icon`">
+        <div
+          v-if="dataSource.icon"
+          :class="`menu-icon`"
+        >
           <span v-bind="dataSource.props">{{ dataSource[labelKey] }}</span>
         </div>
-        <span v-else v-bind="dataSource.props">{{ dataSource[labelKey] }}</span>
+        <span
+          v-else
+          v-bind="dataSource.props"
+        >{{ dataSource[labelKey] }}</span>
       </template>
       <el-menu-item-group>
         <menu-tree
@@ -31,12 +37,18 @@
         :class="`${navActive ? 'nav-link-active' : ''}`"
         :to="`/${dataSource[valueKey]}`"
       >
-        <div v-if="dataSource.icon" :class="`
+        <div
+          v-if="dataSource.icon"
+          :class="`
           menu-icon 
-          `">
+          `"
+        >
           <span v-bind="dataSource.props">{{ dataSource[labelKey] }}</span>
         </div>
-        <span v-else v-bind="dataSource.props">{{ dataSource[labelKey] }}</span>
+        <span
+          v-else
+          v-bind="dataSource.props"
+        >{{ dataSource[labelKey] }}</span>
       </router-link>
     </el-menu-item>
   </nav>

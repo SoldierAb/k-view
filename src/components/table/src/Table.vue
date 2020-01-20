@@ -127,14 +127,18 @@ export default {
       }
     },
     spanMethod: {
-      type: Function
+      type: Function,
+      default(){
+        return new Function()
+      }
     },
     loading: {
-      type: Boolean
+      type: Boolean,
+      default(){
+        return false
+      }
     },
-    height: {
-      type: Number
-    },
+    height,
     defaultExpandAll: {
       type: Boolean,
       default() {

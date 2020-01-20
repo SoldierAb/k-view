@@ -27,15 +27,9 @@ import './iconfont';
 
 export default {
   props:{
-    type:{
-      type:String,
-    },
-    color:{
-      type:String,
-    },
-    size:{
-      type:String,
-    },
+    type,
+    color,
+    size,
   },
 }
 </script>

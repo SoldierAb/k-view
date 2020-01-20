@@ -1,7 +1,11 @@
 <template>
   <div class="fade-pop-container">
     <transition name="fade-modal">
-      <div v-show="modalShow" class="fade-modal" @click="modalClick" />
+      <div
+        v-show="modalShow"
+        class="fade-modal"
+        @click="modalClick"
+      />
     </transition>
     <transition
       v-draggable="true"
@@ -9,11 +13,18 @@
       @after-leave="afterLeave"
       @before-enter="modalShow = true"
     >
-      <div v-if="show" :style="[fadeBoxStyle]" class="fade-box">
+      <div
+        v-if="show"
+        :style="[fadeBoxStyle]"
+        class="fade-box"
+      >
         <fade-body v-draggable="draggable">
           <div class="fade-head clearfix">
             <span class="fade-head-content">{{ title }}</span>
-            <span class="fade-head-close" @click="closePop">
+            <span
+              class="fade-head-close"
+              @click="closePop"
+            >
               <i class="el-icon-close" />
             </span>
           </div>
