@@ -20,11 +20,11 @@
   $paddingLeft: 20px;
   $lineLeft: 30px;
   position: relative;
-  color: $fontColor;
-  font-family: $fontFamily;
+  color: $font-color;
+  font-family: $font-family;
   position: relative;
   display: inline-block;
-  background: $bgColor;
+  background: $bg-base;
   height: 100%;
   width: 100%;
   text-align: left;
@@ -54,13 +54,13 @@
     }
 
     .node-label-active {
-      color: $borderColor;
-      background: $hoverBg;
+      color: $border-color;
+      background: $hover-bg;
     }
 
     .node-hover {
       &:hover {
-        background: $hoverBg;
+        background: $hover-bg;
       }
     }
 
@@ -113,7 +113,6 @@
     display: inline-block;
     font-family: Ionicons;
     font-size: 14px;
-    speak: none;
     font-style: normal;
     font-weight: 400;
     font-variant: normal;
@@ -126,8 +125,6 @@
     transition: all 0.2s ease-in-out;
     content: "\F11F";
   }
-
-  .arrow-right {}
 
   .arrow-down {
     transform: rotate(90deg);
@@ -149,19 +146,19 @@
   }
 
   ::-webkit-scrollbar-corner {
-    background-color: $bgGrey;
+    background-color: $bg-grey;
   }
 
   ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px $scrollTrack;
-    background: $scrollTrack;
+    box-shadow: inset 0 0 6px $scroll-track;
+    background: $scroll-track;
     border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb {
     border-radius: 4px;
-    box-shadow: inset 0 0 6px $bgGrey;
-    background: $bgGrey !important;
+    box-shadow: inset 0 0 6px $bg-grey;
+    background: $bg-grey !important;
   }
 }
 </style>
@@ -184,6 +181,9 @@ export default {
   props: {
     value: {
       type:String,
+      default(){
+        return ``
+      }
     },
     dataSource: {
       type: Array,

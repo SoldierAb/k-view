@@ -17,9 +17,9 @@
 <style lang="scss">
 .upload-btn-container {
   $uploadBtnHeight: 32px;
-  $borderColor: #c0ccda;
+  $border-color: #c0ccda;
   $btnBg: #66b1ff;
-  $fontColor: grey;
+  $font-color: grey;
   $normalBg: #409eff;
  
   display: inline-block;
@@ -54,12 +54,11 @@
 
 
 <script>
-import Vue from "vue";
-import uploadAct from "@u/upload";
-import Emitter from "@u/emitter";
+import uploadAct from "../../../utils/upload";
+import Emitter from "../../../utils/emitter";
 
 export default {
-  name: "UploadBtn",
+  name: "KUploadBtn",
   mixins: [Emitter],
   props: {
     multiple: {
@@ -89,7 +88,10 @@ export default {
     },
     url: {
       type: String,
-      require: true
+      require: true,
+      default(){
+        return ``
+      }
     },
     withCredentials: {
       //是否支持cookie验证

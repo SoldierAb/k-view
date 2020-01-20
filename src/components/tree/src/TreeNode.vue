@@ -52,24 +52,7 @@
           />
           <label>{{ nodeData[labelKey] }}</label>
         </span>
-        <!-- <checkbox v-if="showCheckbox"  @change="handleCheck"  :checked="checked">
-          <span
-            :class="labelClasses"
-            @click.stop="handleSelect"
-            :style="`${showTip?'width:calc(100% - 40px)':''}`"
-          >
-            <img
-              width="18"
-              height="18"
-              class="label-icon"
-              :src="children&&children.length?imgSource.node:imgSource.leaf"
-              alt
-              v-if="imgSource.node&&imgSource.leaf"
-            />
-            <icon :type="`${children&&children.length?'file-b-':'file'}`" v-else></icon>
-            <label>{{nodeData[labelKey]}}</label>
-          </span>
-        </checkbox> -->
+     
         <k-tree-node
           v-for="(item,index) in children"
           v-show="nodeData.expand"
@@ -87,13 +70,11 @@
 
 <script>
 import Emitter from "../../../utils/emitter";
-import TipBox from "../../tip-box";
 import Icon from "../../icon";
-import { Checkbox } from "element-ui";
 
 export default {
   name: "KTreeNode",
-  components: { TipBox, Icon, Checkbox },
+  components: { Icon },
   mixins: [Emitter],
   props: {
     showTip: {

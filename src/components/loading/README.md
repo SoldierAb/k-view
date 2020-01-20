@@ -1,4 +1,6 @@
 # `|` Loading 加载动画
+### version： 1.0.0
+### author： SoldierAb
 ### 可定制化加载动画插件
 
 

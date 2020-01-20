@@ -1,1 +1,48 @@
-$fontFamily: microsoft YaHei;
+$font-family: microsoft YaHei, Simsun;
+//字体
+$font-size-max:24px;
+$font-size-large:18px;
+$font-size-base:14px; //基础字号
+$font-size-mini:12px;
+
+//主盒
+$z-index:999; //默认
+
+//提示状态颜色
+$success: #00cc00;
+$error: red;
+$info: #409eff;
+$before: #409eff;
+
+
+
+//bug
+$bug-type-1:red;
+$bug-type-2:orange;
+$bug-type-3:#3399ff;
+$bug-type-4:#00cc00;
+
+//文本溢出
+@mixin overflow-text($line) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+}
+
+@mixin light-font {
+    font-size: $font-size-mini;
+    color: $font-color-light;
+}
+
+.fade-list-enter-active,
+.fade-list-leave-active {
+    transform: translate3d(30px, 0, 0);
+}
+
+.fade-list-enter,
+.fade-list-leave-to {
+    transition: all .3s ease;
+    opacity: 0;
+}

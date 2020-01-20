@@ -7,21 +7,21 @@
         :class="`${thIndex===0?'col-tr-one':''}`"
       >
         <td :style="`width:${tdWidth}px`">
-          <el-cell>
+          <span>
             <slot
               :name="`h-${thItem.key}`"
               v-bind="thItem"
             >
-              <el-text>{{ thItem.label }}</el-text>
+              <span>{{ thItem.label }}</span>
             </slot>
-          </el-cell>
+          </span>
         </td>
         <td
           v-for="(tdItem,tdIndex) in bodyData"
           :key="tdItem+tdIndex"
           @mouseover="tdOver(thItem.event,tdIndex)"
         >
-          <el-cell>
+          <span>
             <slot
               :name="thItem.key"
               v-bind="{$th:thItem,$index:tdIndex,$data:bodyData}"
@@ -37,15 +37,15 @@
                   v-if="thItem.comp==='Select'"
                   :url="thItem.url"
                 />
-                <el-text v-if="thItem.comp==='Button'">
+                <span v-if="thItem.comp==='Button'">
                   {{ tdItem[thItem.key] }}
-                </el-text>
+                </span>
               </component>
-              <el-text v-else>
+              <span v-else>
                 {{ tdItem[thItem.key] }}
-              </el-text>
+              </span>
             </slot>
-          </el-cell>
+          </span>
         </td>
       </tr>
     </table>
@@ -57,11 +57,16 @@
   table {
     border-collapse:collapse;
     border: 1px solid $border-color-light;
+      table-layout: fixed;
+    width: 100%;
     td {
       color: $font-color-light;
       border-left: 1px solid $border-color-light;
       border-bottom: 1px solid $border-color-light;
-      
+       box-sizing: border-box;
+      text-overflow: ellipsis;
+      vertical-align: middle;
+      position: relative;
     }
   }
   .col-tr-one{
@@ -70,25 +75,10 @@
 }
 </style>
 
-<style lang="less">
-.col-table-container {
-  table {
-    table-layout: fixed;
-    width: 100%;
-    td {
-      box-sizing: border-box;
-      text-overflow: ellipsis;
-      vertical-align: middle;
-      position: relative;
-    }
-  }
-}
-</style>
-
 
 <script>
 export default {
-  name: "ColTable",
+  name: "KColTable",
   props: {
     headerData: {
       type: Array,

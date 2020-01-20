@@ -1,14 +1,20 @@
 const plugins = [
   [
-    "component",
+    "kimport",
     {
       "libraryName": "element-ui",
-      "styleLibraryName": "theme-chalk"
+      "camel2DashComponentName":true,
+      "customName":(name)=>{
+        return `element-ui/lib/${name}.js`
+      },
+      "customStyleName":(name)=>{
+        return `element-ui/lib/theme-chalk/${name}.css`
+      }
     }
   ]
 ];
 
-if(process.env.NODE_ENV==='production') plugins.push("babel-plugin-transform-remove-console");
+if (process.env.NODE_ENV === 'production') plugins.push("babel-plugin-transform-remove-console");
 
 module.exports = {
   presets: [

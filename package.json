@@ -1,11 +1,11 @@
 {
   "name": "@cgj/k-view",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --config=webpack.dev.js --open --theme=default",
-    "build:pub": "webpack  --config=webpack.pub.js",
+    "dev": "webpack-dev-server --config=./build/webpack.dev.js --open --theme=default",
+    "build": "webpack  --config=./build/webpack.pub.js",
     "analyz": "NODE_ENV=production npm_config_report=true npm run pub",
     "release": "standard-version",
     "lint": "eslint --ext .js,.vue src --fix",
@@ -32,6 +32,7 @@
     "@babel/core": "^7.3.4",
     "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.3.4",
+    "assert": "^2.0.0",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.5",
     "babel-plugin-transform-remove-console": "^6.9.4",
@@ -48,6 +49,7 @@
     "html-webpack-plugin": "^3.2.0",
     "html-withimg-loader": "^0.1.16",
     "lint-staged": "^9.5.0",
+    "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.11.0",
     "nodemon": "^1.18.10",
     "postcss-loader": "^3.0.0",
@@ -63,17 +65,17 @@
     "vue-loader": "^15.5.1",
     "vue-router": "^3.0.2",
     "vue-template-compiler": "^2.6.8",
-    "webpack": "^4.27.1",
+    "webpack": "^4.41.5",
     "webpack-bundle-analyzer": "^3.3.2",
-    "webpack-cli": "^3.2.3",
+    "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.2.1",
     "webpack-merge": "^4.2.1",
     "yorkie": "^2.0.0"
   },
   "dependencies": {
     "babel-plugin-component": "^1.1.1",
-    "element-ui": "^2.12.0",
-    "xterm": "^3.14.5"
+    "babel-plugin-kimport": "^1.0.1",
+    "element-ui": "^2.12.0"
   },
   "description": "```\r npm i k-view\r ```",
   "directories": {

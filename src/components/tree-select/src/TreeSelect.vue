@@ -38,11 +38,6 @@
     border: 1px solid #dcdfe6;
     background: $bg-base;
   }
-}
-</style>
-
-<style lang="less">
-.tree-select-container {
   .select-body {
     max-height: 300px;
     overflow-x: hidden;
@@ -60,7 +55,7 @@
 
 
 <script>
-import DropBox from "./DropBox.vue";
+import DropBox from "../../drop-box";
 
 export default {
   components: { DropBox },

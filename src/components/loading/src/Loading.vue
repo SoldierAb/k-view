@@ -37,7 +37,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: $z-index;
+  z-index: 9999;
   .loading-box {
     padding: 20px;
     position: absolute;
@@ -54,7 +54,7 @@
     width: $dot-size;
     height: $dot-size;
     border-radius: $dot-size;
-    margin:2px;
+    margin: 2px;
   }
   .k-line-1 {
     animation: k-loadingP 1s infinite;
@@ -98,23 +98,22 @@
 }
 </style>
 
-
 <script>
 export default {
-  name: "Loading",
+  name: "KLoading",
   components: {},
   props: {},
   data() {
     return {
       show: false,
       background: "rgba(0,0,0,0.6)",
-      color: "#4b9cdb"
+      color: "#4b9cdb",
     };
   },
   computed: {},
   watch: {},
   created() {},
   mounted() {},
-  methods: {}
+  methods: {},
 };
 </script>

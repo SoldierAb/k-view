@@ -1,38 +1,26 @@
 <template>
-  <div
-    v-show="show"
-    class="fade-pop-container"
-  >
+  <div class="fade-pop-container">
     <transition name="fade-modal">
-      <div
-        v-show="modalShow"
-        class="fade-modal"
-        @click="modalClick"
-      />
+      <div v-show="modalShow" class="fade-modal" @click="modalClick" />
     </transition>
     <transition
+      v-draggable="true"
       name="fade-animate"
       @after-leave="afterLeave"
-      @before-enter="modalShow=true"
+      @before-enter="modalShow = true"
     >
-      <div
-        v-if="show"
-        :style="[fadeBoxStyle]"
-        class="fade-box"
-      >
-        <div class="fade-head clearfix">
-          <span class="fade-head-content">{{ title }}</span>
-          <span class="fade-head-close">
-            <img
-              src="../assets/common/x.png"
-              width="32"
-              @click="closePop"
-            >
-          </span>
-        </div>
-        <div class="fade-body">
-          <slot />
-        </div>
+      <div v-if="show" :style="[fadeBoxStyle]" class="fade-box">
+        <fade-body v-draggable="draggable">
+          <div class="fade-head clearfix">
+            <span class="fade-head-content">{{ title }}</span>
+            <span class="fade-head-close" @click="closePop">
+              <i class="el-icon-close" />
+            </span>
+          </div>
+          <div class="fade-body">
+            <slot />
+          </div>
+        </fade-body>
       </div>
     </transition>
   </div>
@@ -63,6 +51,9 @@
     max-width: 1140px;
     z-index: $z-index;
     background: $bg-base;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
     .fade-head-content {
       padding-left: 10px;
     }
@@ -120,14 +111,28 @@
 </style>
 
 <script>
+import FadeBody from "./FadeBody";
+
 export default {
-  name: "FadePop",
+  name: "KFadePop",
+  components: { FadeBody },
   model: {
     prop: "show",
     event: "change"
   },
   props: {
-    show: Boolean,
+    draggable: {
+      type: Boolean,
+      default() {
+        return false;
+      }
+    },
+    show: {
+      type: Boolean,
+      default() {
+        return false;
+      }
+    },
     modalHidden: {
       type: Boolean,
       default() {
@@ -139,32 +144,44 @@ export default {
       default: ""
     },
     beforeClose: {
-      type: Function
+      type: Function,
+      default() {
+        return new Function();
+      }
     },
-    width: {
-      default: "60%"
-    },
-    height: {
-      default: "80%"
-    }
+    width,
+    height,
   },
   data() {
     return {
       modalShow: this.show,
       fadeBoxStyle: {
         width: this.formate(this.width),
-        height: this.formate(this.height)
+        maxWidth: this.formate(this.width),
+        height: this.formate(this.height),
+        maxHeight: this.formate(this.height)
       }
     };
   },
   methods: {
     closePop() {
-      if (this.beforeClose) this.beforeClose();
-      this.$emit("change", false);
+      if (
+        !Object.prototype.toString.call(this.beforeClose).includes("unction")
+      ) {
+        this.$emit("change", false);
+        return;
+      }
+      const before = this.beforeClose();
+      if (before && before.then) {
+        before.then(isShow => {
+          this.$emit("change", isShow);
+        });
+      } else {
+        this.$emit("change", false);
+      }
     },
     afterLeave() {
       this.modalShow = false;
-      // if (this.beforeClose) this.beforeClose();
     },
     formate(value) {
       if (isNaN(Number(value))) {
@@ -179,4 +196,3 @@ export default {
   }
 };
 </script>
-

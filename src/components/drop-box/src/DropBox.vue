@@ -27,7 +27,7 @@
 </template>
 
 
-<style lang="less">
+<style lang="scss">
 .fade-drop-enter,
 .fade-drop-leave-to {
   opacity: 0;

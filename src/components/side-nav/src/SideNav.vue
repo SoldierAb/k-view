@@ -7,9 +7,11 @@
       @close="handleClose"
     >
       <menu-tree
-        v-for="item in activeSideMenu"
+        v-for="item in dataSource"
         :key="item.name"
         :data-source="item"
+        :label-key="labelKey"
+        :value-key="valueKey"
       />
     </el-menu>
   </nav>
@@ -29,6 +31,9 @@
   .el-menu-item-group__title {
     padding: 0;
   }
+  .el-menu {
+    border: none;
+  }
   a {
     text-decoration: none;
     display: block;
@@ -41,66 +46,60 @@
 <style lang="scss">
 .side-nav-container {
   .el-menu {
-    background: $bg-nav-light-blue;
+    background: $bg-menu-dark;
   }
-  .el-menu-item:hover{
-    background: $bg-base;
+  .el-menu-item:hover {
+    background: $bg-menu-light;
   }
   .el-menu-item,
   .el-submenu__title:hover {
-    background: $bg-nav-light-blue;
+    background: $bg-menu-dark;
   }
   a {
-    color: $font-color-base;
+    color: $font-color-white;
     &:hover {
-      color: $color-nav-active-left;
+      color: $font-color-white;
     }
   }
 }
 </style>
 
-
 <script>
 import MenuTree from "./MenuTree.vue";
-import { mapGetters } from "vuex";
 
 export default {
-  name: "SideNav",
+  name: "KSideNav",
   components: {
-    MenuTree
+    MenuTree,
   },
   props: {
-    navData: {
-      type: Object,
+    valueKey: {
+      type: String,
       default() {
-        return {};
-      }
-    }
+        return "value";
+      },
+    },
+    labelKey: {
+      type: String,
+      default() {
+        return "label";
+      },
+    },
+    dataSource: {
+      type: Array,
+      default() {
+        return [];
+      },
+    },
   },
   data() {
     return {
-      menuData: []
+      menuData: [],
     };
   },
-  computed: {
-    // ...mapGetters(["activeSideMenu"])
-    activeMenu() {
-      return this.$store.state.activeMenu;
-    },
-    activeSideMenu() {
-      return this.$store.getters.activeSideMenu;
-    }
-  },
-  watch: {
-    activeSideMenu(val) {
-      if (val && val.length) this.initMenu();
-    },
-    activeMenu(val, oldVal) {
-      if (oldVal && oldVal.length) {
-        this.menuData = [];
-        localStorage.removeItem("sideNav");
-      }
-    }
+  mounted() {
+    let { dataSource } = this;
+    if (Array.isArray(dataSource)) this.initMenu();
   },
   methods: {
     initMenu() {
@@ -119,12 +118,12 @@ export default {
       });
     },
     handleOpen(key, keyPath) {
-      // console.log(key, keyPath);
       this.pushMenu(key);
+      this.$emit("open", key, keyPath);
     },
     handleClose(key, keyPath) {
-      // console.log(key, keyPath);
       this.popMenu(key);
+      this.$emit("close", key, keyPath);
     },
 
     pushMenu(name) {
@@ -146,8 +145,7 @@ export default {
         this.menuData.splice(index, 1);
       }
       localStorage.setItem("sideNav", JSON.stringify(this.menuData));
-    }
-  }
+    },
+  },
 };
 </script>
-

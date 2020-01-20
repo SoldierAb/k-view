@@ -1,16 +1,21 @@
 <template>
   <nav :class="`menu-tree-container`">
     <el-submenu
-      v-if="dataSource.children&&dataSource.children.length"
+      v-if="dataSource[childrenKey] && dataSource[childrenKey].length"
       :index="dataSource[valueKey]"
     >
       <template slot="title">
-        <span>{{ dataSource[labelKey] }}</span>
+        <div v-if="dataSource.icon" :class="`menu-icon`">
+          <span v-bind="dataSource.props">{{ dataSource[labelKey] }}</span>
+        </div>
+        <span v-else v-bind="dataSource.props">{{ dataSource[labelKey] }}</span>
       </template>
       <el-menu-item-group>
         <menu-tree
-          v-for="child in dataSource.children"
-          :key="child.name"
+          v-for="child in dataSource[childrenKey]"
+          :key="child[valueKey]"
+          :label-key="labelKey"
+          :value-key="valueKey"
           :data-source="child"
         />
       </el-menu-item-group>
@@ -18,15 +23,20 @@
     <el-menu-item
       v-show="showLink"
       v-else
-      :class="`${navActive?'nav-active':''}`"
+      :class="`${navActive ? 'nav-active' : ''}`"
       :index="dataSource[valueKey]"
     >
       <router-link
         slot="title"
-        :class="`${navActive?'nav-link-active':''}`"
+        :class="`${navActive ? 'nav-link-active' : ''}`"
         :to="`/${dataSource[valueKey]}`"
       >
-        {{ dataSource[labelKey] }}
+        <div v-if="dataSource.icon" :class="`
+          menu-icon 
+          `">
+          <span v-bind="dataSource.props">{{ dataSource[labelKey] }}</span>
+        </div>
+        <span v-else v-bind="dataSource.props">{{ dataSource[labelKey] }}</span>
       </router-link>
     </el-menu-item>
   </nav>
@@ -34,20 +44,27 @@
 
 <style lang="scss">
 .menu-tree-container {
-  // padding-left: 10px;
+  .el-submenu__title {
+    color: $font-color-white;
+  }
   .nav-active {
-    background: $bg-base !important;
+    background: $bg-menu-light !important;
   }
   .nav-link-active {
-    color: $color-act;
+    color: $font-color-white;
+  }
+  .menu-icon {
+    background-repeat: no-repeat;
+    background-position-y: center;
+    padding-left: 30px;
+    height: 100%;
   }
 }
 </style>
 
-
 <script>
 export default {
-  name: "MenuTree",
+  name: "KMenuTree",
   props: {
     dataSource: {
       type: Object,
@@ -66,6 +83,12 @@ export default {
       default() {
         return "title";
       }
+    },
+    childrenKey: {
+      type: String,
+      default() {
+        return "children";
+      }
     }
   },
   data() {
@@ -74,13 +97,12 @@ export default {
   computed: {
     navActive() {
       const menuItemValue = this.dataSource[this.valueKey],
-            currentRoute = this.$route.name;
-      return  currentRoute&&currentRoute.includes(menuItemValue);
+        currentRoute = this.$route.path;
+      return currentRoute && currentRoute.includes(menuItemValue);
     },
     showLink() {
-      return this.dataSource.show===false ? false : true;
+      return this.dataSource.show === false ? false : true;
     }
   }
 };
 </script>
-
