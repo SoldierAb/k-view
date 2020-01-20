@@ -1,5 +1,5 @@
 <template>
-  <nav :class="`menu-tree-container`">
+  <nav :class="`k-menu-tree-container`">
     <el-submenu
       v-if="dataSource[childrenKey] && dataSource[childrenKey].length"
       :index="dataSource[valueKey]"
@@ -17,7 +17,7 @@
         >{{ dataSource[labelKey] }}</span>
       </template>
       <el-menu-item-group>
-        <menu-tree
+        <k-menu-tree
           v-for="child in dataSource[childrenKey]"
           :key="child[valueKey]"
           :label-key="labelKey"
@@ -55,7 +55,7 @@
 </template>
 
 <style lang="scss">
-.menu-tree-container {
+.k-menu-tree-container {
   .el-submenu__title {
     color: $font-color-white;
   }

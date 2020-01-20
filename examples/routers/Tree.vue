@@ -1,17 +1,17 @@
 <template>
   <div class="tree-test-container">
-    <div>{{list}}</div>
+    <div>{{ list }}</div>
     <k-tree
+      v-model="selectValue"
       multiple
       :value-key="valueKey"
-      v-model="selectValue"
       :label-key="labelKey"
       :data-source="list"
       show-checkbox
       @on-toggle-expand="toggleExpand"
       @on-select-change="selectChange"
       @on-check-change="checkChange"
-    ></k-tree>
+    />
   </div>
 </template>
 

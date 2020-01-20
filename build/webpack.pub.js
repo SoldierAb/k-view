@@ -10,17 +10,20 @@ module.exports = merge(baseConfig, {
     mode: 'production',
     entry: Components,
     output: {
-        path: path.resolve(__dirname, '../lib'),
-        publicPath: '../lib/',
+        path: path.resolve(process.cwd(), './lib'),
+        publicPath: '/dist/',
         filename: '[name]/index.js',
+        chunkFilename: '[id].js',
         libraryTarget: 'umd',
-        umdNamedDefine: true
+        libraryExport: 'default',
+        library: 'KVIEW',
+        umdNamedDefine: true,
     },
     optimization: {
         minimize: false
       },
     plugins: [
-        new uglify(),
+        // new uglify(),
         new BundleAnalyzerPlugin()
     ]
 })
