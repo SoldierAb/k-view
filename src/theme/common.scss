@@ -26,9 +26,9 @@ $bug-type-4:#00cc00;
 @mixin overflow-text($line) {
     overflow: hidden;
     text-overflow: ellipsis;
-    display: -webkit-box;
     -webkit-line-clamp: $line;
     -webkit-box-orient: vertical;
+    white-space: nowrap;
 }
 
 @mixin light-font {

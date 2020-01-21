@@ -24,13 +24,18 @@
 .k-tip-box {
   height: 100%;
   width: 100%;
+  &:hover{
+    cursor: pointer;
+  }
   .text-box {
     @include overflow-text(1);
   }
 }
 </style>
 <script>
-import { Tooltip } from "element-ui";
+// import { Tooltip } from "element-ui";
+import Tooltip from 'element-ui/lib/tooltip'
+require('element-ui/lib/theme-chalk/tooltip.css')
 
 export default {
   name: "KTip",
@@ -79,6 +84,7 @@ export default {
       let { scrollHeight, scrollWidth, clientHeight, clientWidth } = _e.target;
       //如果文本溢出
       if (scrollHeight > clientHeight || scrollWidth > clientWidth) {
+
         this.textOverFlow = true;
       } else {
         this.textOverFlow = false;

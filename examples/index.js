@@ -17,6 +17,14 @@ const myRouter = new Router({
             },
             component: (resolve) => require(['./routers/Tree.vue'], resolve)
         },
+        {
+            path: '/tip',
+            name: 'tip',
+            meta: {
+                title: 'tip'
+            },
+            component: (resolve) => require(['./routers/Tip.vue'], resolve)
+        },
     ]
 });
 

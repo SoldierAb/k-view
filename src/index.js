@@ -1,17 +1,18 @@
 
-import KTree from './components/tree';
-
+import Tree from './components/tree';
+import Tip from './components/tip'
     
-const components={
-    KTree,
-};
+const components=[
+    Tree,
+    Tip
+];
 
 const install=(Vue)=>{
 
     if (install.installed) return;
 
-    Object.keys(components).forEach(key=>{
-        Vue.component(key,components[key]);
+    components.forEach(item=>{
+        Vue.component(item.name,item);
     })
 
 }
@@ -23,7 +24,7 @@ if (typeof window !== 'undefined'&&window.Vue){
 
 const KVIEW = {
     install,
-    KTree,
+    ...components,
 }
 
 export default KVIEW;

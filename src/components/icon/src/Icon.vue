@@ -10,8 +10,8 @@
 </template>
 
 <style lang="scss">
-.k-icon{
-  padding:2px 4px;
+.k-icon {
+  padding: 2px 4px;
   .icon {
     width: 15px;
     height: 15px;
@@ -26,10 +26,7 @@
 import './iconfont';
 
 export default {
-  props:{
-    type,
-    color,
-    size,
-  },
+  // eslint-disable-next-line vue/require-prop-types
+  props:["type","color","size"],
 }
 </script>

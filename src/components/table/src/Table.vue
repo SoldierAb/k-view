@@ -108,6 +108,7 @@
 
 <style lang="scss">
 .k-table-container {
+  display: flex;
   $table-header-height: 36px;
   $table-body-tr-height: 48px;
   $table-bg-odd: white;
@@ -190,7 +191,10 @@ export default {
         return false;
       }
     },
-    height,
+    // eslint-disable-next-line vue/require-default-prop
+    height:{
+      type:Number,
+    },
     defaultExpandAll: {
       type: Boolean,
       default() {

@@ -10,13 +10,12 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const resolveResource = name => path.resolve(__dirname, '../src/theme/' + name);
 
 module.exports = {
-    devtool: 'source-map',
     entry: {
         kview: './src/index.js'
     },
     output: {
         path: path.resolve(__dirname, './dist/'),
-        filename: '[name]/[name].js',
+        filename: '[name]/index.js',
         publicPath: '/dist/'
     },
 
@@ -27,12 +26,6 @@ module.exports = {
                 use: [
                     {
                         loader: 'style-loader',
-                    },
-                    {
-                        loader:MiniCssExtractPlugin.loader,
-                        options:{
-                            hmr:process.env.NODE_ENV === 'development'
-                        },
                     },
                     {
                         loader: 'css-loader',
@@ -108,7 +101,9 @@ module.exports = {
             }
         ]
     },
-
+    externals:{
+        vue: 'vue'
+    },
     resolve: {
         extensions: ['.js', '.vue', '.json'],
         alias: {
@@ -130,13 +125,9 @@ module.exports = {
             verbose: true
         }),
         new ProgressBarPlugin(),
-        // new ExtractTextPlugin({
-        //     filename: `[name]/style.css`,
-        //     allChunks: true
-        // }),
+  
         new MiniCssExtractPlugin({
             filename:'[name]/style.css',
-            // chunkFilename:'[id].style.css'
         })
     ],
 
