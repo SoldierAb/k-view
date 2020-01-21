@@ -1,6 +1,6 @@
 <template>
   <nav :class="`k-menu-tree-container`">
-    <el-submenu
+    <submenu
       v-if="dataSource[childrenKey] && dataSource[childrenKey].length"
       :index="dataSource[valueKey]"
     >
@@ -16,7 +16,7 @@
           v-bind="dataSource.props"
         >{{ dataSource[labelKey] }}</span>
       </template>
-      <el-menu-item-group>
+      <menu-item-group>
         <k-menu-tree
           v-for="child in dataSource[childrenKey]"
           :key="child[valueKey]"
@@ -24,9 +24,9 @@
           :value-key="valueKey"
           :data-source="child"
         />
-      </el-menu-item-group>
-    </el-submenu>
-    <el-menu-item
+      </menu-item-group>
+    </submenu>
+    <menu-item
       v-show="showLink"
       v-else
       :class="`${navActive ? 'nav-active' : ''}`"
@@ -39,9 +39,7 @@
       >
         <div
           v-if="dataSource.icon"
-          :class="`
-          menu-icon 
-          `"
+          :class="`menu-icon`"
         >
           <span v-bind="dataSource.props">{{ dataSource[labelKey] }}</span>
         </div>
@@ -50,7 +48,7 @@
           v-bind="dataSource.props"
         >{{ dataSource[labelKey] }}</span>
       </router-link>
-    </el-menu-item>
+    </menu-item>
   </nav>
 </template>
 
@@ -74,9 +72,12 @@
 }
 </style>
 
+
 <script>
+import {Submenu,MenuItemGroup,MenuItem} from 'element-ui';
 export default {
   name: "KMenuTree",
+  components:{Submenu,MenuItemGroup,MenuItem},
   props: {
     dataSource: {
       type: Object,
