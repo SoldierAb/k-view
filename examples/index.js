@@ -1,3 +1,4 @@
+import '@babel/polyfill';
 import Vue from 'vue';
 import Router from 'vue-router';
 import App from './App.vue';
@@ -6,8 +7,12 @@ import KVIEW from '../src';
 Vue.use(KVIEW);
 Vue.use(Router);
 
+// 开启debug模式
+Vue.config.debug = true;
+
 const myRouter = new Router({
     mode: 'hash',
+    esModule: false,
     routes: [
         {
             path: '/tree',

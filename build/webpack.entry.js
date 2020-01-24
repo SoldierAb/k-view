@@ -1,3 +1,3 @@
 module.exports={
-    index:["@babel/polyfill","./examples/index"],
+    index:["./examples/index"],
 }

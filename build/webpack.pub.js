@@ -17,6 +17,14 @@ module.exports = merge(baseConfig, {
     optimization: {
         minimize: false
     },
+    externals:{
+        vue: {
+            root: 'vue',
+            commonjs: 'vue',
+            commonjs2: 'vue',
+            amd: 'vue'
+        }
+    },
     plugins: [
         new BundleAnalyzerPlugin()
     ]

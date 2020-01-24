@@ -101,9 +101,7 @@ module.exports = {
             }
         ]
     },
-    externals:{
-        vue: 'vue'
-    },
+   
     resolve: {
         extensions: ['.js', '.vue', '.json'],
         alias: {
