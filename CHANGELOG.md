@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.4 (2020-01-24)
+
+
+### Features
+
+* ✨ umd ([b1bcd14](https://github.com/SoldierAb/k-view/commit/b1bcd1480e2992387c638321f305d480bfa07f5d))
+* ✨ update table ([980b2f9](https://github.com/SoldierAb/k-view/commit/980b2f9721551cb9bf2ac057770f57f395724752))
+* add comps ([87871be](https://github.com/SoldierAb/k-view/commit/87871be5b2c371acc68da82fab6a36656bb3b564))
+* add markdown ([65c2ad9](https://github.com/SoldierAb/k-view/commit/65c2ad9ac0a40324111ddd5b69c51989b1ce4c13))
+* modify npm ignore ([b776869](https://github.com/SoldierAb/k-view/commit/b776869c49f79df83d67e1f726e35d094a45e706))
+* modify tree ([5e3e691](https://github.com/SoldierAb/k-view/commit/5e3e691d7e27f371ec79b15ed97931849e492ffe))
+* tree checkbox fit ([58880b0](https://github.com/SoldierAb/k-view/commit/58880b038620c08b624e614b485b18904fcc183f))
+
 ### [0.1.3](https://github.com/SoldierAb/k-view/compare/v0.1.2...v0.1.3) (2020-01-21)
 
 ### [0.1.2](https://github.com/SoldierAb/k-view/compare/v0.1.1...v0.1.2) (2020-01-21)
