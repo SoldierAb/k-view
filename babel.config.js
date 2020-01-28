@@ -12,9 +12,16 @@ if (process.env.NODE_ENV === 'production') plugins.push("babel-plugin-transform-
 
 module.exports = {
   presets: [
-    ["es2015", {
+    ["@babel/preset-env", {
       "modules": false
     }]
   ],
+  env: {
+    test: {
+      presets: [
+        ["@babel/preset-env", { "targets": { "node": "current" }}]
+      ]
+    }
+  },
   plugins
 }
