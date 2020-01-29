@@ -1,5 +1,4 @@
-import Vue from 'vue'
-import {shallowMount,createWrapper} from '@vue/test-utils'
+import {shallowMount} from '@vue/test-utils'
 import Tip from '../../src/components/tip/src/Tip'
 import Tooltip from 'element-ui/lib/tooltip'
 
@@ -11,6 +10,7 @@ describe('tip',()=>{
         })
         TooltipComp = wrapper.find(Tooltip)
     })
+    
     it('render tip show',async done =>{
         wrapper.setData({textOverFlow:true});
         await wrapper.vm.$nextTick();

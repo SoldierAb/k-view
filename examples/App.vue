@@ -4,12 +4,12 @@
       <ul class="clearfix">
         <li class="router-tag fl">
           <router-link to="/tree">
-            Tree
+            KTree
           </router-link>
         </li>
         <li class="router-tag fl">
           <router-link to="/tip">
-            Tip
+            KTip
           </router-link>
         </li>
       </ul>
@@ -17,9 +17,6 @@
     <section class="section-box">
       <router-view>未挂载任何组件</router-view>
     </section>
-    <k-button type="primary">
-      按钮
-    </k-button>
   </div>
 </template>
 
@@ -63,11 +60,7 @@
 
 
 <script>
-import {Button} from 'element-ui'
 export default {
-  components:{
-    KButton:Button
-  },
   data() {
     return {};
   },

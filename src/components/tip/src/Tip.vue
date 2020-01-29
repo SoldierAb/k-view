@@ -13,7 +13,7 @@
     >
       <p
         :style="`max-width:${textWidth}px`"
-        class="text-box"
+        class="k-tip-text-box"
       >
         <slot>{{ text }}</slot>
       </p>
@@ -27,7 +27,7 @@
   &:hover{
     cursor: pointer;
   }
-  .text-box {
+  .k-tip-text-box {
     @include overflow-text(1);
   }
 }

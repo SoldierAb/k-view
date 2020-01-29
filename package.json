@@ -3,7 +3,7 @@
   "version": "0.1.4",
   "main": "./lib/kview/index.js",
   "scripts": {
-    "test": "jest --coverage --watchAll",
+    "test": "jest --coverage",
     "dev": "webpack-dev-server --config=./build/webpack.dev.js --open --theme=default",
     "build": "webpack  --config=./build/webpack.pub.js",
     "analyz": "NODE_ENV=production npm_config_report=true npm run pub",
