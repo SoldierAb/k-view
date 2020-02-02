@@ -1,6 +1,6 @@
 {
   "name": "@cgj/k-view",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "./lib/kview/index.js",
   "scripts": {
     "test": "jest --coverage",
