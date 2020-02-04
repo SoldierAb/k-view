@@ -33,9 +33,8 @@
 }
 </style>
 <script>
-// import { Tooltip } from "element-ui";
 import Tooltip from 'element-ui/lib/tooltip'
-// require('element-ui/lib/theme-chalk/tooltip.css')
+require('element-ui/lib/theme-chalk/tooltip.css')
 
 export default {
   name: "KTip",

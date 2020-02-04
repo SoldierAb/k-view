@@ -3,12 +3,14 @@
   "version": "0.1.5",
   "main": "./lib/kview/index.js",
   "scripts": {
-    "test": "jest --coverage",
     "dev": "webpack-dev-server --config=./build/webpack.dev.js --open --theme=default",
-    "build": "webpack  --config=./build/webpack.pub.js",
-    "analyz": "NODE_ENV=production npm_config_report=true npm run pub",
-    "release": "standard-version",
+    "build": "webpack  --config=./build/webpack.build.js",
+    "lib": "webpack  --config=./build/webpack.pub.js",
+    "analyz": "NODE_ENV=production npm_config_report=true npm run build",
     "lint": "eslint --ext .js,.vue src examples --fix",
+    "test": "npm run lib && jest --coverage",
+    "test:watch": "npm run lib && jest --coverage --watchAll",
+    "release": "standard-version",
     "commit": "git add . && git-cz"
   },
   "jest": {
@@ -43,7 +45,7 @@
     "components"
   ],
   "author": "cgj",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",

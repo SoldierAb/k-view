@@ -1,5 +1,5 @@
 {
-  "_from": "vue-jest@^3.0.5",
+  "_from": "vue-jest",
   "_id": "vue-jest@3.0.5",
   "_inBundle": false,
   "_integrity": "sha512-xWDxde91pDqYBGDlODENZ3ezPgw+IQFoVDtf+5Awlg466w3KvMSqWzs8PxcTeTr+wmAHi0j+a+Lm3R7aUJa1jA==",
@@ -16,21 +16,22 @@
     "lodash": "4.17.15"
   },
   "_requested": {
-    "type": "range",
+    "type": "tag",
     "registry": true,
-    "raw": "vue-jest@^3.0.5",
+    "raw": "vue-jest",
     "name": "vue-jest",
     "escapedName": "vue-jest",
-    "rawSpec": "^3.0.5",
+    "rawSpec": "",
     "saveSpec": null,
-    "fetchSpec": "^3.0.5"
+    "fetchSpec": "latest"
   },
   "_requiredBy": [
-    "#DEV:/"
+    "#DEV:/",
+    "#USER"
   ],
   "_resolved": "https://registry.npmjs.org/vue-jest/-/vue-jest-3.0.5.tgz",
   "_shasum": "d6f124b542dcbff207bf9296c19413f4c40b70c9",
-  "_spec": "vue-jest@^3.0.5",
+  "_spec": "vue-jest",
   "_where": "F:\\Workspace\\k-view",
   "author": {
     "name": "Edd Yerburgh"

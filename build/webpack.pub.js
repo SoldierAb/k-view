@@ -1,7 +1,6 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.base');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const Components = require('../components.json');
 
 module.exports = merge(baseConfig, {
@@ -25,7 +24,4 @@ module.exports = merge(baseConfig, {
             amd: 'vue'
         }
     },
-    plugins: [
-        new BundleAnalyzerPlugin()
-    ]
 })

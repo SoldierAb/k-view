@@ -1,5 +1,5 @@
 import {shallowMount} from '@vue/test-utils'
-import Tip from '../../src/components/tip/src/Tip'
+import Tip from '../../lib/tip'
 import Tooltip from 'element-ui/lib/tooltip'
 
 describe('tip',()=>{
