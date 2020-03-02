@@ -24,16 +24,11 @@
  *    
  * </script>
  *   
- * 
  */
 
 
 const func=(el, binding, vnode)=>{
-    // console.log('el--',el);
-    // console.log('binding--',binding);
-    // console.log('vnode--',vnode);
     const documentHandler =  (e) => {
-        // console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!! e ',el,e);
         if (el.contains(e.target)) return false;     
         if (binding.expression) binding.value(e);     
     }
