@@ -1,5 +1,5 @@
 <template>
-  <div class="k-tree-node-container">
+  <div class="tree-node-container">
     <!-- <ul :style="`padding-left:${showLine&&children&&children.length?20:8}px`"> -->
     <ul :style="`padding-left:${children&&children.length?20:40}px`">
       <li>
@@ -38,19 +38,24 @@
           :style="`${showTip?'width:calc(100% - 40px)':''}`"
           @click.stop="handleSelect"
         >
-          <img
-            v-if="imgSource.node&&imgSource.leaf"
-            width="18"
-            height="18"
-            class="label-icon"
-            :src="children&&children.length?imgSource.node:imgSource.leaf"
-            alt
-          >
-          <icon
-            v-else
-            :type="`${children&&children.length?'file-b-':'file'}`"
-          />
-          <label>{{ nodeData[labelKey] }}</label>
+          <slot
+            name="custom-node"
+            v-bind="{nodeData,children}"
+          > 
+            <img
+              v-if="imgSource.node&&imgSource.leaf"
+              width="18"
+              height="18"
+              class="label-icon"
+              :src="children&&children.length?imgSource.node:imgSource.leaf"
+              alt
+            >
+            <icon
+              v-else
+              :type="`${children&&children.length?'file-b-':'file'}`"
+            />
+            <label>{{ nodeData[labelKey] }}</label>
+          </slot>
         </span>
      
         <k-tree-node

@@ -87,9 +87,7 @@ module.exports = function (source) {
     //md文件解析   
 
     while (compStartIndex !== -1 && compEndIndex !== -1) { //存在kview组件模板
-        console.log(``);
         output.push(content.slice(startIndex, compStartIndex)); //组件前的字符串
-
         const compTpl = content.slice(compStartIndex + startTagLen, compEndIndex);
         const templateTpl = separateTemplate(compTpl);
         const scriptTpl = separateScript(compTpl);

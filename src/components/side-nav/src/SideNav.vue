@@ -17,7 +17,8 @@
   </nav>
 </template>
 
-<style lang="less">
+
+<style lang="scss">
 .side-nav-container {
   height: 100%;
   overflow-x: hidden;
@@ -39,62 +40,59 @@
     display: block;
     height: 100%;
     width: 100%;
-  }
-}
-</style>
-
-<style lang="scss">
-.side-nav-container {
-  .el-menu {
-    background: $bg-menu-dark;
-  }
-  .el-menu-item:hover {
-    background: $bg-menu-light;
-  }
-  .el-menu-item,
-  .el-submenu__title:hover {
-    background: $bg-menu-dark;
-  }
-  a {
-    color: $font-color-white;
-    &:hover {
+    .el-menu {
+      background: $bg-menu-dark;
+    }
+    .el-menu-item:hover {
+      background: $bg-menu-light;
+    }
+    .el-menu-item,
+    .el-submenu__title:hover {
+      background: $bg-menu-dark;
+    }
+    a {
       color: $font-color-white;
+      &:hover {
+        color: $font-color-white;
+      }
     }
   }
 }
 </style>
 
 <script>
-import MenuTree from "./MenuTree.vue";
+import { Menu } from "element-ui";
+import MenuTree from "../../menu-tree";
 
 export default {
   name: "KSideNav",
   components: {
-    MenuTree,
+    ElMenu:Menu,
+    MenuTree
   },
   props: {
     valueKey: {
       type: String,
       default() {
         return "value";
-      },
+      }
     },
     labelKey: {
       type: String,
       default() {
         return "label";
-      },
+      }
     },
     dataSource: {
       type: Array,
       default() {
         return [];
-      },
-    },
+      }
+    }
   },
   data() {
     return {
-      menuData: [],
+      menuData: []
     };
   },
   mounted() {
@@ -145,7 +143,7 @@ export default {
         this.menuData.splice(index, 1);
       }
       localStorage.setItem("sideNav", JSON.stringify(this.menuData));
-    },
-  },
+    }
+  }
 };
 </script>

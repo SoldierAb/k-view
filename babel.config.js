@@ -6,6 +6,7 @@ const plugins = [
         "styleLibraryName": "theme-chalk"
       }
   ],
+  "@babel/plugin-syntax-dynamic-import"
 ];
 
 if (process.env.NODE_ENV === 'production') plugins.push("babel-plugin-transform-remove-console");

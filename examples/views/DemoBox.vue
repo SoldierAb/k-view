@@ -11,13 +11,13 @@
 
 <style lang='scss'>
 .demo-box-container {
-    height: auto;
-    .demo-instance{
-        
-    }
-    .demo-content{
-
-    }
+  height: auto;
+  .demo-instance {
+    @include demo-box;
+  }
+  .demo-content {
+    @include demo-box;
+  }
 }
 </style>
 

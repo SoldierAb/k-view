@@ -1,11 +1,11 @@
-// import '@babel/polyfill';
+import hljs from 'highlight.js';
+require('highlight.js/styles/default.css')
 import Vue from 'vue';
 import DemoBox from "./views/DemoBox"
 import Router from 'vue-router';
 import App from './App.vue';
 import KVIEW from '../src';
-import hljs from 'highlight.js';
-require('highlight.js/styles/default.css')
+import routes from './routes'
 
 Vue.component(DemoBox.name, DemoBox)
 Vue.use(KVIEW);
@@ -16,24 +16,7 @@ Vue.config.debug = true;
 
 const myRouter = new Router({
     mode: 'hash',
-    routes: [
-        {
-            path: '/tree',
-            name: 'tree',
-            meta: {
-                title: '树'
-            },
-            component: (resolve) => require(['../docs/zh-CN/tree.md'], resolve)
-        },
-        // {
-        //     path: '/tip',
-        //     name: 'tip',
-        //     meta: {
-        //         title: 'tip'
-        //     },
-        //     component: (resolve) => require(['./views/Tip.vue'], resolve)
-        // },
-    ]
+    routes,
 });
 
 myRouter.beforeEach((to, from, next) => {

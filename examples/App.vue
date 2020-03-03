@@ -1,26 +1,52 @@
 <template>
   <div class="container">
-    <nav>
-      <ul class="clearfix">
-        <li class="router-tag fl">
-          <router-link to="/tree">
-            KTree
-          </router-link>
-        </li>
-        <li class="router-tag fl">
-          <router-link to="/tip">
-            KTip
-          </router-link>
-        </li>
-      </ul>
-    </nav>
+    <section class="section-nav">
+      <k-side-nav
+        :data-source="menuData"
+        label-key="name"
+        value-key="name"
+      />
+      <!-- <k-tree
+      v-model="currentValue"
+      :data-source="menuData"
+      label-key="name"
+      value-key="name"
+    /> -->
+    </section>
     <section class="section-box">
       <router-view>未挂载任何组件</router-view>
     </section>
   </div>
 </template>
 
+<script>
+import routes from "./routes";
+
+export default {
+  data() {
+    return {
+      menuData: routes,
+      currentValue:''
+    };
+  },
+  watch:{
+    currentValue(val){
+      this.$router.push(`/${val}`);
+    }
+  },
+  mounted() {},
+  beforeDestroy() {},
+  methods: {}
+};
+</script>
+
 <style lang="scss">
+
+
+body{
+  margin:0;
+  padding:0;
+}
 .container {
   width: 100%;
   height: 100%;
@@ -30,40 +56,52 @@
     padding: 0;
     box-sizing: border-box;
   }
-  .fl{
+  .fl {
     float: left;
   }
-  .clearfix{
+  .clearfix {
     content: "";
     display: block;
     overflow: hidden;
     clear: both;
   }
-  .clearfix:after{
-    zoom:1;
+  .clearfix:after {
+    zoom: 1;
   }
   ul,
   li {
     list-style: none;
   }
-  .router-tag{
-    margin:10px;
-    border-radius:10px;
-    background: $bg-gray;
+  .router-tag {
+    margin: 10px;
+    border-radius: 10px;
   }
-  .section-box{
-    padding:20px;
-    border:1px solid $border-color-light;
-    .content{
-      h1,h2,h3,h4{
+  .section-nav{
+    @include demo-box;
+    width:300px;
+    position: fixed;
+    left:0;
+    top:0;
+    height: 100%;
+    background: white;
+  }
+  .section-box {
+    padding: 20px 20px 20px 330px;
+    border: 1px solid $border-color-light;
+    .content {
+      h1,
+      h2,
+      h3,
+      h4 {
         font-weight: 300;
         font-family: $font-family;
       }
     }
   }
 
-  .pre-code{
-    font-family: 'Lucida Console', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  .pre-code {
+    font-family: "Lucida Console", Consolas, Monaco, "Andale Mono",
+      "Ubuntu Mono", monospace;
     text-align: left;
     white-space: pre;
     word-spacing: normal;
@@ -77,17 +115,66 @@
     -ms-hyphens: none;
     hyphens: none;
   }
+
+  .section-box {
+    color: #0d1a26;
+    @mixin md-h {
+      font-family: Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue",
+        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol";
+      font-variant: tabular-nums;
+      margin: 1.6em 0 0.6em;
+      font-weight: 500;
+      clear: both;
+    }
+    h1 {
+      @include md-h;
+      font-size: $font-size-h1;
+    }
+    h2 {
+      @include md-h;
+      font-size: $font-size-h2;
+    }
+    h3 {
+      @include md-h;
+      font-size: $font-size-h3;
+    }
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      empty-cells: show;
+      border: 1px solid #ebedf0;
+      width: 100%;
+      margin: 8px 0 16px;
+      th {
+        border: 1px solid #ebedf0;
+        padding: 14px 16px;
+        text-align: left;
+        white-space: nowrap;
+        color: #5c6b77;
+        font-weight: 500;
+        background: rgba(0, 0, 0, 0.02);
+      }
+      tr {
+        border-bottom: 1px solid #e8e8e8;
+      }
+      td {
+        padding: 14px 16px;
+        border-width: 1px 0;
+        border-color: #e8e8e8;
+      }
+      td:first-child {
+        font-weight: 500;
+        width: 20%;
+        color: #003a8c;
+      }
+    }
+    .hljs {
+      background: white;
+    }
+  }
 }
 </style>
 
 
-<script>
-export default {
-  data() {
-    return {};
-  },
-  mounted() {},
-  beforeDestroy() {},
-  methods: {}
-};
-</script>
