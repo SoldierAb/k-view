@@ -1,46 +1,43 @@
 #  Loading 加载动画
 
-
 ### 使用
 
-:::kview 加载动画
+:::kview 
 
 ```html
 <template>
-    <el-button  @click="toggleLoading" >点击加载</el-button>
+    <button @click="toggleLoading">{{loading}}</button>
 </template>
 
 <script>
-
     export default {
-        data(){
+        data() {
             return {
-                loading:false,
+                loading: false,
             }
         },
-        methods:{
-            toggleLoading(){
+        methods: {
+            toggleLoading() {
                 this.loading = !this.loading;
-                console.log('loading',this.loading);
-                this.$loading[this.loading?'show':'hide'](()=>{
+                console.log('loading', this.loading);
+                this.$loading[this.loading ? 'show' : 'hide'](() => {
                     console.log('call-back');
                 })
             },
         },
-    }
+    };
 
-<script>
-    
+</script>
 ```
+
 :::
 
-
-
 ###  Attributes
+
 |  属性  |  说明   |  类型|可选值|默认值|是否必须
 |-------|---------|---|---|---|---|
 |callback|回调函数|Function|-|-|-
-|background|背景色|String|-|rgba(0,0,0,.6)|-
+|background|背景色|String|-|rgba(0, 0, 0, .6)|-
 |color|加载图标颜色|String|-|#4b9cdb|-
 
 ###  Events
@@ -49,3 +46,4 @@
 | ------ |----- | 
 | show | 显示提示 | 详见Attributes表 |
 | hide | 隐藏提示 | 详见Attributes表 |
+

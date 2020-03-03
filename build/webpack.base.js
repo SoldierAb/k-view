@@ -9,9 +9,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const resolveResource = name => path.resolve(__dirname, '../src/theme/' + name);
 
 module.exports = {
-    entry: {
-        kview: './src/index.js'
-    },
+    // entry: {
+    //     kview: './src/index.js'
+    // },
     output: {
         path: path.resolve(__dirname, './dist/'),
         filename: '[name]/index.js',
@@ -68,6 +68,9 @@ module.exports = {
                     {
                         loader: 'vue-loader',
                         options: {
+                            compilerOptions: {
+                                preserveWhitespace: false
+                              },
                             sourceMap: true,
                         }
                     }
@@ -79,6 +82,9 @@ module.exports = {
                     {
                         loader: 'vue-loader',
                         options: {
+                            compilerOptions: {
+                                preserveWhitespace: false
+                              },
                             sourceMap: true,
                         }
                     },
@@ -91,7 +97,7 @@ module.exports = {
                 test: /\.js$/,
                 use: [
                     {
-                        loader: 'babel-loader?cacheDirectory',
+                        loader: 'babel-loader',
                         options: {
                             sourceMap: true,
                         },
@@ -106,7 +112,7 @@ module.exports = {
         extensions: ['.js', '.vue', '.json'],
         alias: {
             '@': path.resolve(__dirname, 'src'),
-            'vue': 'vue/dist/vue.esm.js'
+            'vue': 'vue/dist/vue.js'
         }
     },
 

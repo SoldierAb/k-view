@@ -1,9 +1,10 @@
 # Tip
 
 :::kview
+
 ```html
 <template>
-    <k-tip :content="contentString" :text="contentString" />
+    <k-tip :content="contentString" :text="contentString"></k-tip>
 </template>
 
 <script>
@@ -11,9 +12,10 @@
         data() {
             return {
                 contentString: "今天天气真不错，适合去打球，但是没人一起，就算了吧",
-            };
+            }
         },
-    }
+        mounted() {},
+    };
 </script>
 ```
 :::
