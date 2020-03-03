@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/SoldierAb/k-view/compare/v0.1.6...v0.1.7) (2020-03-03)
+
+
+### Features
+
+* ✨ add md-loader ([c4dc869](https://github.com/SoldierAb/k-view/commit/c4dc8696edbb082eed0c4b5b906180bddabc6586))
+* test md-loader ([939c8a9](https://github.com/SoldierAb/k-view/commit/939c8a9b842daf728ad5381f37565093e10fef1b))
+
 ### [0.1.6](https://github.com/SoldierAb/k-view/compare/v0.1.3...v0.1.6) (2020-02-25)
 
 
