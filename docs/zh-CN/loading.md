@@ -6,8 +6,17 @@
 
 ```html
 <template>
-    <button @click="toggleLoading">{{loading}}</button>
+    <button class="button" @click="toggleLoading">{{loading}}</button>
 </template>
+
+<style lang="css">
+    .button{
+        position:fixed;
+        z-index:999999;
+        top:100px;
+        right:100px;
+    }
+</style>
 
 <script>
     export default {
