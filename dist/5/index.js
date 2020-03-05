@@ -27,7 +27,7 @@ var render = function() {
                 _vm._v(
                   '<template>\n    <button class="button" @click="toggleLoading">' +
                     _vm._s(_vm.loading) +
-                    "</button>\n</template>\n\n<style lang=\"css\">\n    .button{\n        position:fixed;\n        z-index:999999;\n        top:100px;\n        right:100px;\n    }\n</style>\n\n<script>\n    export default {\n        data() {\n            return {\n                loading: false,\n            }\n        },\n        methods: {\n            toggleLoading() {\n                this.loading = !this.loading;\n                console.log('loading', this.loading);\n                this.$loading[this.loading ? 'show' : 'hide'](() => {\n                    console.log('call-back');\n                    setTimeout(()=>{\n                        this.$loading.hide();\n                    },3000)\n                })\n            },\n        },\n    };\n\n</script>\n"
+                    "</button>\n</template>\n\n<style lang=\"css\">\n    .button{\n        position:fixed;\n        z-index:999999;\n        top:100px;\n        right:100px;\n    }\n</style>\n\n<script>\n    export default {\n        data() {\n            return {\n                loading: false,\n            }\n        },\n        methods: {\n            toggleLoading() {\n                this.loading = !this.loading;\n                console.log('loading', this.loading);\n                this.$loading[this.loading ? 'show' : 'hide'](() => {\n                    console.log('call-back');\n                    setTimeout(()=>{\n                        this.loading=false;\n                        this.$loading.hide();\n                    },3000)\n                })\n            },\n        },\n    };\n\n</script>\n"
                 )
               ])
             ])
@@ -218,6 +218,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 /* harmony default export */ var loadingvue_type_script_lang_js_ = ({
   name: 'component-kview',
   components: {
@@ -254,6 +255,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             this.$loading[this.loading ? 'show' : 'hide'](function () {
               console.log('call-back');
               setTimeout(function () {
+                _this.loading = false;
+
                 _this.$loading.hide();
               }, 3000);
             });

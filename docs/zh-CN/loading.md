@@ -32,6 +32,7 @@
                 this.$loading[this.loading ? 'show' : 'hide'](() => {
                     console.log('call-back');
                     setTimeout(()=>{
+                        this.loading=false;
                         this.$loading.hide();
                     },3000)
                 })
