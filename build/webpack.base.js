@@ -3,7 +3,6 @@ const HtmlPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BuildTheme = process.env.npm_config_theme || 'default';
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
@@ -50,19 +49,6 @@ module.exports = {
                         }
                     }
                 ]
-                // use: ExtractTextPlugin.extract({
-                //     fallback: 'style-loader',
-                //     use: [
-                //         'css-loader',
-                //         'sass-loader',
-                //         {
-                //             loader: 'sass-resources-loader',
-                //             options: {
-                //                 resources: [resolveResource('common.scss'), resolveResource(`${BuildTheme}.scss`)]
-                //             }
-                //         }
-                //     ]
-                // })
             },
             {
                 test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
@@ -84,6 +70,20 @@ module.exports = {
                         options: {
                             sourceMap: true,
                         }
+                    }
+                ],
+            },
+            {
+                test: /\.md$/,
+                use: [
+                    {
+                        loader: 'vue-loader',
+                        options: {
+                            sourceMap: true,
+                        }
+                    },
+                    {
+                        loader: path.resolve(__dirname, './md-loader/index.js')
                     }
                 ],
             },

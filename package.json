@@ -1,6 +1,6 @@
 {
   "name": "@cgj/k-view",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "./lib/kview/index.js",
   "scripts": {
     "dev": "webpack-dev-server --config=./build/webpack.dev.js --open --theme=default",
@@ -11,7 +11,8 @@
     "test": "npm run lib && jest --coverage",
     "test:watch": "npm run lib && jest --coverage --watchAll",
     "release": "standard-version",
-    "commit": "git add . && git-cz"
+    "commit": "git add . && git-cz",
+    "i18n": "node ./build/bin/i18n.js"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -69,11 +70,16 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^2.0.0",
     "git-cz": "^3.3.0",
+    "highlight.js": "^9.18.1",
     "html-webpack-plugin": "^3.2.0",
     "html-withimg-loader": "^0.1.16",
     "jest": "^25.1.0",
     "jest-serializer-vue": "^2.0.2",
     "lint-staged": "^9.5.0",
+    "markdown-it": "^10.0.0",
+    "markdown-it-anchor": "^5.2.5",
+    "markdown-it-chain": "^1.3.0",
+    "markdown-it-container": "^2.0.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
     "nodemon": "^1.18.10",

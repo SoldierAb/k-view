@@ -1,9 +1,13 @@
-import '@babel/polyfill';
+// import '@babel/polyfill';
 import Vue from 'vue';
+import DemoBox from "./views/DemoBox"
 import Router from 'vue-router';
 import App from './App.vue';
 import KVIEW from '../src';
+import hljs from 'highlight.js';
+require('highlight.js/styles/default.css')
 
+Vue.component(DemoBox.name, DemoBox)
 Vue.use(KVIEW);
 Vue.use(Router);
 
@@ -12,7 +16,6 @@ Vue.config.debug = true;
 
 const myRouter = new Router({
     mode: 'hash',
-    esModule: false,
     routes: [
         {
             path: '/tree',
@@ -20,26 +23,31 @@ const myRouter = new Router({
             meta: {
                 title: '树'
             },
-            component: (resolve) => require(['./routers/Tree.vue'], resolve)
+            component: (resolve) => require(['../docs/zh-CN/tree.md'], resolve)
         },
-        {
-            path: '/tip',
-            name: 'tip',
-            meta: {
-                title: 'tip'
-            },
-            component: (resolve) => require(['./routers/Tip.vue'], resolve)
-        },
+        // {
+        //     path: '/tip',
+        //     name: 'tip',
+        //     meta: {
+        //         title: 'tip'
+        //     },
+        //     component: (resolve) => require(['./views/Tip.vue'], resolve)
+        // },
     ]
 });
 
-myRouter.beforeEach((to,from,next)=>{
-    document.title=to.meta.title||'';
+myRouter.beforeEach((to, from, next) => {
+    document.title = to.meta.title || '';
     next();
 })
 
 myRouter.afterEach((to, from, next) => {
     window.scrollTo(0, 0);
+    Vue.nextTick(() => {
+        document.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightBlock(block);
+        });
+    });
 });
 
 new Vue({

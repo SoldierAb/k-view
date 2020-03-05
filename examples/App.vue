@@ -54,6 +54,28 @@
   .section-box{
     padding:20px;
     border:1px solid $border-color-light;
+    .content{
+      h1,h2,h3,h4{
+        font-weight: 300;
+        font-family: $font-family;
+      }
+    }
+  }
+
+  .pre-code{
+    font-family: 'Lucida Console', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
   }
 }
 </style>

@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/SoldierAb/k-view/compare/v0.1.3...v0.1.6) (2020-02-25)
+
+
+### Features
+
+* ✨ add jest ([bde66ea](https://github.com/SoldierAb/k-view/commit/bde66ea1d8bf3786b2ebfa5b171b464f3ba06b6c))
+* ✨ add Tip.spec ([6b4ba80](https://github.com/SoldierAb/k-view/commit/6b4ba80ac02cd8b1a574c806a19b152e30f56ba4))
+* ✨ update gitignore ([3af8637](https://github.com/SoldierAb/k-view/commit/3af86374011cfd3c6148fbe487d17387280a79af))
+* ✨ update travis.yml ([3f00956](https://github.com/SoldierAb/k-view/commit/3f00956d1e298ce55920946f5bb6ce699a045341))
+
 ### 0.1.5 (2020-02-02)
 
 
