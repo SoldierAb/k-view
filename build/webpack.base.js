@@ -7,8 +7,9 @@ const BuildTheme = process.env.npm_config_theme || 'default';
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const resolveResource = name => path.resolve(__dirname, '../src/theme/' + name);
+const isProduction = process.env.NODE_ENV === 'production';
 
-module.exports = {
+const webpackConfig = {
     // entry: {
     //     kview: './src/index.js'
     // },
@@ -33,19 +34,19 @@ module.exports = {
             },
             {
                 test: /\.(sa|sc)ss$/,
-                use:[
-                    {
-                        loader:MiniCssExtractPlugin.loader,
-                        options:{
-                            hmr:process.env.NODE_ENV === 'development'
+                use: [
+                    isProduction ? {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            hmr: process.env.NODE_ENV === 'development'
                         },
-                    },
+                    } : 'style-loader',
                     'css-loader',
                     'sass-loader',
                     {
-                        loader:'sass-resources-loader',
-                        options:{
-                            resources:[resolveResource('common.scss'), resolveResource(`${BuildTheme}.scss`)]
+                        loader: 'sass-resources-loader',
+                        options: {
+                            resources: [resolveResource('common.scss'), resolveResource(`${BuildTheme}.scss`)]
                         }
                     }
                 ]
@@ -70,7 +71,7 @@ module.exports = {
                         options: {
                             compilerOptions: {
                                 preserveWhitespace: false
-                              },
+                            },
                             sourceMap: true,
                         }
                     }
@@ -84,7 +85,7 @@ module.exports = {
                         options: {
                             compilerOptions: {
                                 preserveWhitespace: false
-                              },
+                            },
                             sourceMap: true,
                         }
                     },
@@ -107,7 +108,7 @@ module.exports = {
             }
         ]
     },
-   
+
     resolve: {
         extensions: ['.js', '.vue', '.json'],
         alias: {
@@ -129,10 +130,17 @@ module.exports = {
             verbose: true
         }),
         new ProgressBarPlugin(),
-  
-        new MiniCssExtractPlugin({
-            filename:'[name]/style.css',
-        })
+
+
     ],
 
 };
+
+if (isProduction) {
+    webpackConfig.plugins.push(
+        new MiniCssExtractPlugin({
+            filename: '[name]/style.css',
+        })
+    );
+}
+module.exports = webpackConfig;
