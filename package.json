@@ -6,6 +6,7 @@
     "dev": "webpack-dev-server --config=./build/webpack.dev.js --open --theme=default",
     "build": "webpack  --config=./build/webpack.build.js",
     "demo": "webpack --config=./build/webpack.demo.js --theme=default",
+    "demo:pub":"npm run demo && npm run commit && git subtree push --prefix dist origin gh-pages",
     "lib": "webpack  --config=./build/webpack.pub.js",
     "analyz": "NODE_ENV=production npm_config_report=true npm run build",
     "lint": "eslint --ext .js,.vue src examples --fix",
