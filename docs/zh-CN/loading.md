@@ -31,6 +31,7 @@
                 console.log('loading', this.loading);
                 this.$loading[this.loading ? 'show' : 'hide'](() => {
                     console.log('call-back');
+                    this.$loading.hide();
                 })
             },
         },
