@@ -13,4 +13,4 @@ yarn-error.log
 *.sln
 *.zip
 
-dist/*
+!dist/*
