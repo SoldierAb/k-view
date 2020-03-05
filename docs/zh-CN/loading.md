@@ -6,10 +6,10 @@
 
 ```html
 <template>
-    <button class="button" @click="toggleLoading">{{loading}}</button>
+    <button class="button" style="color:red" @click="toggleLoading">{{loading}}</button>
 </template>
 
-<style lang="css">
+<style>
     .button{
         position:fixed;
         z-index:999999;

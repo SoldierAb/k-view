@@ -19,6 +19,7 @@
       @on-select-change="selectChange"
       @on-check-change="checkChange"
     ></k-tree>
+    list: {{list}}
 </template>
 
 <script>

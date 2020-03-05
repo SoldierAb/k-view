@@ -9,10 +9,28 @@ module.exports=merge(baseConfig,{
         kview:'./examples/index'
     },
     devServer:{
-        contentBase:path.resolve(__dirname,'./dist/'),
+        contentBase:path.resolve(process.cwd(), './'),
         compress:true,
         hot:true,
         overlay:true,
         openPage:'dist/index.html'
+    },
+    //  output: {
+    //     path: path.resolve(process.cwd(), './dist'),
+    //     publicPath: './',
+    //     filename: '[name]/index.js',
+    //     chunkFilename: '[id]/index.js',
+    //     libraryTarget: 'commonjs2'
+    // },
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        },
+        minimize: false,
+    },
+    externals: {
+        'vue': 'Vue',
+        'vue-router': 'VueRouter',
+        'element-ui': 'ELEMENT',
     },
 })
