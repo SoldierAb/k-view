@@ -10,7 +10,26 @@
         :label-key="labelKey"
         :show-checkbox="showCheckbox"
         :show-tip="showTip"
-      />
+      >
+        <slot
+          v-slot:custom-node="{nodeData,children}"
+          name="custom-node"
+        > 
+          <img
+            v-if="imgSource.node&&imgSource.leaf"
+            width="18"
+            height="18"
+            class="label-icon"
+            :src="children&&children.length?imgSource.node:imgSource.leaf"
+            alt
+          >
+          <icon
+            v-else
+            :type="`${children&&children.length?'file-b-':'file'}`"
+          />
+          <label>{{ nodeData[labelKey] }}</label>
+        </slot>
+      </tree-node>
     </div>
   </div>
 </template>

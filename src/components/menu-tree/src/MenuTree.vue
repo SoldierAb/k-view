@@ -111,7 +111,7 @@ export default {
     navActive() {
       const menuItemValue = this.dataSource[this.valueKey],
         currentRoute = this.$route.path;
-      return currentRoute && currentRoute.includes(menuItemValue);
+      return currentRoute && currentRoute===menuItemValue;
     },
     showLink() {
       return this.dataSource.show === false ? false : true;

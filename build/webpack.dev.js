@@ -5,7 +5,9 @@ const path = require('path');
 
 module.exports=merge(baseConfig,{
     mode:'development',
-    entry:'./examples/index',
+    entry:{
+        kview:'./examples/index'
+    },
     devServer:{
         contentBase:path.resolve(__dirname,'./dist/'),
         compress:true,

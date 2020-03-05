@@ -4,7 +4,9 @@ $font-size-max:24px;
 $font-size-large:18px;
 $font-size-base:14px; //基础字号
 $font-size-mini:12px;
-
+$font-size-h1:30px;
+$font-size-h2:24px;
+$font-size-h3:18px;
 //主盒
 $z-index:999; //默认
 
@@ -35,3 +37,21 @@ $bug-type-4:#00cc00;
     font-size: $font-size-mini;
     color: $font-color-light;
 }
+
+
+@mixin demo-box-hover{
+    &:hover{
+        box-shadow:  0 0 10px #ccc;
+    }
+}
+
+@mixin demo-box {
+    @include demo-box-hover;
+    padding: 14px 20px;
+    border: 1px solid #ebedf0;
+    border-radius: 2px;
+    width: 100%;
+    position: relative;
+    margin: 0 0 16px;
+    transition: all 0.2s;
+  }

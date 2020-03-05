@@ -1,50 +1,58 @@
-# `|` Loading 加载动画
-### version： 1.0.0
-### author： SoldierAb
-### 可定制化加载动画插件
-
+#  Loading 加载动画
 
 ### 使用
 
-:::kview 加载动画
+:::kview 
 
 ```html
-<script>
-  
-    import Loading from "loading";
-    
-    Vue.use(Loading);
+<template>
+    <button class="button" @click="toggleLoading">{{loading}}</button>
+</template>
 
-    //个性化定制
-    // Vue.use(Loading,{
-    //     background:'rgba(0,0,0,.5)',
-    //     color:'blue'
-    // });
-  
-     this.$loading.show(()=>{
-     });
-  
-     this.$loading.hide(() => {
-     
-     });
+<style lang="css">
+    .button{
+        position:fixed;
+        z-index:999999;
+        top:100px;
+        right:100px;
+    }
+</style>
 
 <script>
-    
+    export default {
+        data() {
+            return {
+                loading: false,
+            }
+        },
+        methods: {
+            toggleLoading() {
+                this.loading = !this.loading;
+                console.log('loading', this.loading);
+                this.$loading[this.loading ? 'show' : 'hide'](() => {
+                    console.log('call-back');
+                })
+            },
+        },
+    };
+
+</script>
 ```
+
 :::
 
+###  Attributes
 
-
-### `|` Attributes
 |  属性  |  说明   |  类型|可选值|默认值|是否必须
 |-------|---------|---|---|---|---|
 |callback|回调函数|Function|-|-|-
-|background|背景色|String|-|rgba(0,0,0,.6)|-
+|background|背景色|String|-|rgba(0, 0, 0, .6)|-
 |color|加载图标颜色|String|-|#4b9cdb|-
 
-### `|` Events
+###  Events
 
 | 方法名 | 说明 |
 | ------ |----- | 
 | show | 显示提示 | 详见Attributes表 |
 | hide | 隐藏提示 | 详见Attributes表 |
+

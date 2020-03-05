@@ -1,12 +1,12 @@
 {
+    "tip": "./src/components/tip/index.js",
+    "tree": "./src/components/tree/index.js",
     "col-table": "./src/components/col-table/index.js",
     "table": "./src/components/table/index.js",
     "drop-box": "./src/components/drop-box/index.js",
     "fade-pop": "./src/components/fade-pop/index.js",
-    "loading": "./src/components/loading/index.js",
-    "menu-tree": "./src/components/menu-tree/index.js",
-    "tip": "./src/components/tip/index.js",
-    "tree": "./src/components/tree/index.js",
+    "side-nav": "./src/components/menu-tree/index.js",
     "tree-select": "./src/components/tree-select/index.js",
-    "upload-btn": "./src/components/upload-btn/index.js"
+    "upload-btn": "./src/components/upload-btn/index.js",
+    "loading": "./src/components/loading/index.js"
 }
