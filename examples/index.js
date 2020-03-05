@@ -1,3 +1,4 @@
+import '@babel/polyfill';
 import hljs from 'highlight.js';
 require('highlight.js/styles/default.css')
 import Vue from 'vue';
