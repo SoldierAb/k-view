@@ -1,6 +1,4 @@
 import '@babel/polyfill';
-import hljs from 'highlight.js';
-require('highlight.js/styles/default.css')
 import Vue from 'vue';
 import DemoBox from "./views/DemoBox"
 import Router from 'vue-router';
@@ -16,7 +14,6 @@ Vue.use(Router);
 Vue.config.debug = true;
 
 const myRouter = new Router({
-    mode: 'hash',
     routes,
 });
 

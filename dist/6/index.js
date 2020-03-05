@@ -1,12 +1,12 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[6],{
 
-/***/ 562:
+/***/ 376:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??ref--4-0!./build/md-loader!./docs/zh-CN/table.md?vue&type=template&id=8134f14c&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??ref--4-0!./build/md-loader!./docs/zh-CN/side-nav.md?vue&type=template&id=41027cf5&
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -17,12 +17,12 @@ var staticRenderFns = []
 render._withStripped = true
 
 
-// CONCATENATED MODULE: ./docs/zh-CN/table.md?vue&type=template&id=8134f14c&
+// CONCATENATED MODULE: ./docs/zh-CN/side-nav.md?vue&type=template&id=41027cf5&
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(10);
 
-// CONCATENATED MODULE: ./docs/zh-CN/table.md
+// CONCATENATED MODULE: ./docs/zh-CN/side-nav.md
 
 var script = {}
 
@@ -42,8 +42,8 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "docs/zh-CN/table.md"
-/* harmony default export */ var table = __webpack_exports__["default"] = (component.exports);
+component.options.__file = "docs/zh-CN/side-nav.md"
+/* harmony default export */ var side_nav = __webpack_exports__["default"] = (component.exports);
 
 /***/ })
 
