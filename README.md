@@ -26,6 +26,34 @@ import {
 
 Vue.use(Loading);
 Vue.use(Tree);
+
+```
+
+## On demand
+With the help of [babel-plugin-kimport](https://github.com/SoldierAb/babel-plugin-kimport), we can import components we actually need, making the project smaller than otherwise.
+
+First, install [babel-plugin-component](https://www.npmjs.com/package/babel-plugin-kimport):
+```bash
+  npm i -D babel-plugin-kimport
+```
+
+Then edit babel.config.js:
+
+```javascript
+
+module.exports = {
+  [
+    [
+      'kimport',
+      {
+        libraryName: '@cgj/k-view',
+        camel2DashComponentName: true,
+      },
+      'k-view'
+    ],
+  ],
+};
+
 ```
 
 ## Browser Support
