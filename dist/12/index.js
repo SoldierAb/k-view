@@ -1,12 +1,12 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[10],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[12],{
 
-/***/ 189:
+/***/ 187:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??ref--4-0!./build/md-loader!./docs/zh-CN/tree-select.md?vue&type=template&id=5de839bd&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??ref--4-0!./build/md-loader!./docs/zh-CN/upload-btn.md?vue&type=template&id=fd66bc1c&
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -17,12 +17,12 @@ var staticRenderFns = []
 render._withStripped = true
 
 
-// CONCATENATED MODULE: ./docs/zh-CN/tree-select.md?vue&type=template&id=5de839bd&
+// CONCATENATED MODULE: ./docs/zh-CN/upload-btn.md?vue&type=template&id=fd66bc1c&
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(1);
 
-// CONCATENATED MODULE: ./docs/zh-CN/tree-select.md
+// CONCATENATED MODULE: ./docs/zh-CN/upload-btn.md
 
 var script = {}
 
@@ -42,8 +42,8 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "docs/zh-CN/tree-select.md"
-/* harmony default export */ var tree_select = __webpack_exports__["default"] = (component.exports);
+component.options.__file = "docs/zh-CN/upload-btn.md"
+/* harmony default export */ var upload_btn = __webpack_exports__["default"] = (component.exports);
 
 /***/ })
 

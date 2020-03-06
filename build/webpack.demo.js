@@ -18,7 +18,25 @@ module.exports = merge(baseConfig, {
     optimization: {
         splitChunks: {
             // include all types of chunks
-            chunks: 'all'
+            chunks: 'all',
+            cacheGroups: {
+                vendors: {
+                    test: /[\\/]node_modules[\\/]/, 
+                    priority: -10  
+                },
+                elementBase: {
+                    test: (module) => {
+                      return /element-ui/.test(module.context);
+                    }, 
+                    name: "elementBase",
+                    priority: 10,
+                  },
+                default: {
+                    minChunks: 2,
+                    priority: -20,   
+                    reuseExistingChunk: true
+                }
+            }
         },
         minimize: false,
     },
