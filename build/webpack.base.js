@@ -8,17 +8,18 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const resolveResource = name => path.resolve(__dirname, '../src/theme/' + name);
 const isProduction = process.env.NODE_ENV === 'production';
-
+const minCssLoader = {
+    loader: MiniCssExtractPlugin.loader,
+    options: {
+        hmr: process.env.NODE_ENV === 'development'
+    },
+};
 const webpackConfig = {
-    // entry: {
-    //     kview: './src/index.js'
-    // },
     output: {
         path: path.resolve(__dirname, '../dist/'),
         filename: '[name]/index.js',
         publicPath: '/dist/'
     },
-
     module: {
         rules: [
             {
@@ -35,12 +36,7 @@ const webpackConfig = {
             {
                 test: /\.(sa|sc)ss$/,
                 use: [
-                    isProduction ? {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            hmr: process.env.NODE_ENV === 'development'
-                        },
-                    } : 'style-loader',
+                    isProduction ? minCssLoader : 'style-loader',
                     'css-loader',
                     'sass-loader',
                     {
@@ -119,19 +115,8 @@ const webpackConfig = {
 
     plugins: [
         new VueLoaderPlugin(),
-        new HtmlPlugin({
-            template: './index.html',
-            minify: {
-                removeAttributeQuotes: false  //removeAttrubuteQuotes是却掉属性的双引号。
-            },
-            hash: true,
-        }),
-        new CleanWebpackPlugin({
-            verbose: true
-        }),
+       
         new ProgressBarPlugin(),
-
-
     ],
 
 };
@@ -142,5 +127,18 @@ if (isProduction) {
             filename: '[name]/style.css',
         })
     );
+}else{
+    webpackConfig.plugins.push(
+        new HtmlPlugin({
+            template: './index.html',
+            minify: {
+                removeAttributeQuotes: false  //removeAttrubuteQuotes是却掉属性的双引号。
+            },
+            hash: true,
+        }),
+        new CleanWebpackPlugin({
+            verbose: true
+        }),
+    )
 }
 module.exports = webpackConfig;

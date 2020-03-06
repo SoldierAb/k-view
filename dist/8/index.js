@@ -24,9 +24,7 @@ var render = function() {
             _c("pre", { staticClass: "hljs" }, [
               _c("code", { staticClass: "pre-code html" }, [
                 _vm._v(
-                  '<template>\n    <k-tip :content="contentString" :text="contentString"><p>' +
-                    _vm._s(_vm.contentString) +
-                    '</p></k-tip>\n</template>\n\n<script>\n    export default {\n        data() {\n            return {\n                arr:[1,2,3],\n                contentString: "今天天气真不错，适合去打球，但是没人一起，就算了吧",\n            }\n        },\n        mounted() {},\n    };\n</script>\n'
+                  '<template>\n    <k-tip :content="contentString" :text="contentString"></k-tip>\n</template>\n\n<script>\n    export default {\n        data() {\n            return {\n                contentString: "今天天气真不错，适合去打球，但是没人一起，就算了吧",\n            }\n        },\n    };\n</script>\n'
                 )
               ])
             ])
@@ -74,8 +72,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 /* harmony default export */ var tipvue_type_script_lang_js_ = ({
   name: 'component-kview',
   components: {
@@ -92,7 +88,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             content: _vm.contentString,
             text: _vm.contentString
           }
-        }, [_c("p", [_vm._v(_vm._s(_vm.contentString))])])], 1);
+        })], 1);
       };
 
       var staticRenderFns = [];
@@ -100,11 +96,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var kviewDemoComp = {
         data: function data() {
           return {
-            arr: [1, 2, 3],
             contentString: "今天天气真不错，适合去打球，但是没人一起，就算了吧"
           };
-        },
-        mounted: function mounted() {}
+        }
       };
       return _objectSpread({
         render: render,

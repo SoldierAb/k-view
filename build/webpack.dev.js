@@ -15,13 +15,6 @@ module.exports=merge(baseConfig,{
         overlay:true,
         openPage:'dist/index.html'
     },
-    //  output: {
-    //     path: path.resolve(process.cwd(), './dist'),
-    //     publicPath: './',
-    //     filename: '[name]/index.js',
-    //     chunkFilename: '[id]/index.js',
-    //     libraryTarget: 'commonjs2'
-    // },
     optimization: {
         splitChunks: {
             chunks: 'all'

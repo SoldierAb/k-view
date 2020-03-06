@@ -49,7 +49,6 @@ module.exports=(template, script, style) => {
         ...kviewDemoComp
       }
     })()`;
-    console.log('\n\n', code, '\n\n');
     return code;
 }
 
