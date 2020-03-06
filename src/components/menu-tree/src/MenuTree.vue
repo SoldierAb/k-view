@@ -5,16 +5,12 @@
       :index="dataSource[valueKey]"
     >
       <template slot="title">
-        <div
-          v-if="dataSource.icon"
-          :class="`menu-icon`"
+        <slot
+          name="node"
+          v-bind="{data:dataSource}"
         >
           <span v-bind="dataSource.props">{{ dataSource[labelKey] }}</span>
-        </div>
-        <span
-          v-else
-          v-bind="dataSource.props"
-        >{{ dataSource[labelKey] }}</span>
+        </slot>
       </template>
       <menu-item-group>
         <k-menu-tree
@@ -23,7 +19,24 @@
           :label-key="labelKey"
           :value-key="valueKey"
           :data-source="child"
-        />
+        >
+          <template v-slot:node="{data}">
+            <slot
+              name="node"
+              v-bind="{data:data}"
+            >
+              <span v-bind="data.props">{{ data[labelKey] }}</span>
+            </slot>
+          </template>
+          <template v-slot:leaf="{data}">
+            <slot
+              name="leaf"
+              v-bind="{data:data}"
+            >
+              <span v-bind="data.props">{{ data[labelKey] }}</span>
+            </slot>
+          </template>
+        </k-menu-tree>
       </menu-item-group>
     </submenu>
     <menu-item
@@ -32,22 +45,14 @@
       :class="`${navActive ? 'nav-active' : ''}`"
       :index="dataSource[valueKey]"
     >
-      <router-link
-        slot="title"
-        :class="`${navActive ? 'nav-link-active' : ''}`"
-        :to="`/${dataSource[valueKey]}`"
-      >
-        <div
-          v-if="dataSource.icon"
-          :class="`menu-icon`"
+      <template slot="title">
+        <slot
+          name="leaf"
+          v-bind="{data:dataSource}"
         >
           <span v-bind="dataSource.props">{{ dataSource[labelKey] }}</span>
-        </div>
-        <span
-          v-else
-          v-bind="dataSource.props"
-        >{{ dataSource[labelKey] }}</span>
-      </router-link>
+        </slot>
+      </template>
     </menu-item>
   </nav>
 </template>
@@ -55,29 +60,23 @@
 <style lang="scss">
 .k-menu-tree-container {
   .el-submenu__title {
-    color: $font-color-white;
+    color: $font-color-base;
   }
   .nav-active {
     background: $bg-menu-light !important;
   }
   .nav-link-active {
-    color: $font-color-white;
-  }
-  .menu-icon {
-    background-repeat: no-repeat;
-    background-position-y: center;
-    padding-left: 30px;
-    height: 100%;
+    color: $font-color-base;
   }
 }
 </style>
 
 
 <script>
-import {Submenu,MenuItemGroup,MenuItem} from 'element-ui';
+import { Submenu, MenuItemGroup, MenuItem } from "element-ui";
 export default {
   name: "KMenuTree",
-  components:{Submenu,MenuItemGroup,MenuItem},
+  components: { Submenu, MenuItemGroup, MenuItem },
   props: {
     dataSource: {
       type: Object,
@@ -111,7 +110,7 @@ export default {
     navActive() {
       const menuItemValue = this.dataSource[this.valueKey],
         currentRoute = this.$route.path;
-      return currentRoute && currentRoute===menuItemValue;
+      return currentRoute && currentRoute === menuItemValue;
     },
     showLink() {
       return this.dataSource.show === false ? false : true;

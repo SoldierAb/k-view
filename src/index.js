@@ -1,13 +1,19 @@
 
-import Tree from './components/tree';
-import SideNav from './components/side-nav'
+import FadePop from './components/fade-pop'    
 import Loading from './components/loading'
+import SideNav from './components/side-nav'
+import Table from './components/table'
 import Tip from './components/tip'
-    
+import Tree from './components/tree'
+import UploadBtn from './components/upload-btn'
+
 const components=[
+    FadePop,
     SideNav,
     Tree,
     Tip,
+    Table,
+    UploadBtn,
 ];
 
 const install=(Vue)=>{

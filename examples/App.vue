@@ -5,13 +5,15 @@
         :data-source="menuData"
         label-key="name"
         value-key="name"
-      />
-      <!-- <k-tree
-      v-model="currentValue"
-      :data-source="menuData"
-      label-key="name"
-      value-key="name"
-    /> -->
+      >
+        <template v-slot:leaf="{data}">
+          <router-link
+            :to="`/${data['name']}`"
+          >
+            <span v-bind="data.props"> {{ data[`name`] }}</span>
+          </router-link>
+        </template>
+      </k-side-nav>
     </section>
     <section class="section-box">
       <router-view>未挂载任何组件</router-view>
@@ -140,7 +142,7 @@ body{
       @include md-h;
       font-size: $font-size-h3;
     }
-    table {
+    .markdown-table table{
       border-collapse: collapse;
       border-spacing: 0;
       empty-cells: show;

@@ -104,6 +104,7 @@ export default {
 
 
 ## Attributes
+<div class="markdown-table">
 
 |  属性  |  说明   |  类型|可选值|默认值|是否必须|
 |-------|---------|---|---|---|---|
@@ -118,10 +119,10 @@ export default {
 |show-checkbox|开启复选框（`复选框开启，v-model初始化可只传入需要选中的顶层节点的value`）|-|-|-|-|
 |props|dataSource数据配置选项具体看下表|-|-|-|-|
 
-
+</div>
 
 ##  Props
-
+<div class="markdown-table">
 
 |  参数  |  说明   | 类型  | 默认值|  是否必须|
 |-------|---------|------|--------|----------|
@@ -129,18 +130,25 @@ export default {
 |checked|节点多选选中|Boolean|-|-
 |expand|节点展开|Boolean|-|-
 
-
+</div>
 
 ## Events
+<div class="markdown-table">
+
 | 方法名 | 说明 | 参数|
 | ------ |----- | ---- |
 |on-toggle-expand|节点被点击展开收缩的时触发|传递 `dataSource` 属性的数组中该节点所对应的对象 （ 对象中`expand`属性即当前展开状态 ）
 |on-select-change|Attributes不含show-checkbox，节点被点选的时触发|传递 `dataSource` 属性的数组中所选中的对象 |
 |on-check-change|Attributes含show-checkbox，节点checkbox被点击的时触发|传递 `dataSource` 属性的数组中所选中的对象 |
 
+</div>
 
 ###  methods
+<div class="markdown-table">
+
 | 方法名 | 说明 | 参数|
 | ------ |----- | ---- |
 |getSelectedNodes|获取当前单击选中的所有节点|-|
 |getCheckedNodes|获取当前多选选中的所有节点|-|
+
+</div>

@@ -77,7 +77,7 @@
       }
     }
     .fade-head {
-      font-weight: bold;
+      // font-weight: bold;
       height: 48px;
       line-height: 48px;
       font-size: 14px;
@@ -123,56 +123,63 @@
 
 <script>
 import FadeBody from "./FadeBody";
-
 export default {
   name: "KFadePop",
   components: { FadeBody },
   model: {
     prop: "show",
-    event: "change"
+    event: "change",
   },
   props: {
     draggable: {
       type: Boolean,
       default() {
         return false;
-      }
+      },
     },
     show: {
       type: Boolean,
       default() {
         return false;
-      }
+      },
     },
     modalHidden: {
       type: Boolean,
       default() {
         return true;
-      }
+      },
     },
     title: {
       type: String,
-      default: ""
+      default: "",
     },
+    // eslint-disable-next-line vue/require-default-prop
     beforeClose: {
       type: Function,
-      default() {
-        return new Function();
-      }
     },
-    width,
-    height,
+    // eslint-disable-next-line vue/require-prop-types
+    width: {
+      default: "60%",
+    },
+    // eslint-disable-next-line vue/require-prop-types
+    height: {
+      default: "80%",
+    },
   },
   data() {
     return {
       modalShow: this.show,
-      fadeBoxStyle: {
+    };
+  },
+  computed: {
+    fadeBoxStyle() {
+      return {
         width: this.formate(this.width),
         maxWidth: this.formate(this.width),
         height: this.formate(this.height),
-        maxHeight: this.formate(this.height)
-      }
-    };
+        maxHeight: this.formate(this.height),
+      };
+    },
   },
   methods: {
     closePop() {
@@ -203,7 +210,7 @@ export default {
     },
     modalClick() {
       if (this.modalHidden) this.closePop();
-    }
-  }
+    },
+  },
 };
 </script>

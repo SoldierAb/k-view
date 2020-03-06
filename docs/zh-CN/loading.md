@@ -6,16 +6,30 @@
 
 ```html
 <template>
-    <button class="button" style="color:red" @click="toggleLoading">{{loading}}</button>
+    <a class="k-button" style="color:red" @click="toggleLoading">点击显示/隐藏加载动画{{loading}}</a>
 </template>
 
 <style>
-    .button{
+    .k-button{
+        color:#3a8ee6;
         position:fixed;
-        z-index:999999;
-        top:100px;
+        top:0;
         right:100px;
+        bottom:0;
+        margin:auto;
+        z-index:99999;
+        border:1px solid #3a8ee6;
+        width:300px;
+        height:30px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:yellow;
     }
+    .k-button:hover{
+        cursor:pointer;
+    }
+
 </style>
 
 <script>
@@ -46,6 +60,7 @@
 :::
 
 ###  Attributes
+<div class="markdown-table">
 
 |  属性  |  说明   |  类型|可选值|默认值|是否必须
 |-------|---------|---|---|---|---|
@@ -53,10 +68,16 @@
 |background|背景色|String|-|rgba(0, 0, 0, .6)|-
 |color|加载图标颜色|String|-|#4b9cdb|-
 
+</div>
+
+
 ###  Events
+<div class="markdown-table">
 
 | 方法名 | 说明 |
 | ------ |----- | 
 | show | 显示提示 | 详见Attributes表 |
 | hide | 隐藏提示 | 详见Attributes表 |
+
+</div>
 

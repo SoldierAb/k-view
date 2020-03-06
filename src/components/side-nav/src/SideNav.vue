@@ -1,5 +1,8 @@
 <template>
-  <nav class="side-nav-container">
+  <nav
+    class="side-nav-container"
+    :style="`width:${width}px`"
+  >
     <el-menu
       ref="sideNav"
       class="el-menu-vertical-demo"
@@ -12,7 +15,24 @@
         :data-source="item"
         :label-key="labelKey"
         :value-key="valueKey"
-      />
+      >
+        <template v-slot:node="{data}">
+          <slot
+            name="node"
+            v-bind="{data:data}"
+          >
+            <span v-bind="data.props"> {{ data[labelKey] }}</span>
+          </slot>
+        </template>
+        <template v-slot:leaf="{data}">
+          <slot
+            name="leaf"
+            v-bind="{data:data}"
+          >
+            <span v-bind="data.props"> {{ data[labelKey] }}</span>
+          </slot>
+        </template>
+      </menu-tree>
     </el-menu>
   </nav>
 </template>
@@ -88,7 +108,13 @@ export default {
       default() {
         return [];
       }
-    }
+    },
+    width:{
+      type:Number,
+      default(){
+        return 200;
+      }
+    },
   },
   data() {
     return {

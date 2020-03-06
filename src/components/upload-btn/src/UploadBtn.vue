@@ -123,12 +123,6 @@ export default {
         return {};
       }
     },
-    onRemove: {
-      type: Function,
-      default() {
-        return {};
-      }
-    }
   },
   data() {
     return {
