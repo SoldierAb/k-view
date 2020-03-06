@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0-alpha.0](https://github.com/SoldierAb/k-view/compare/v1.0.0...v1.1.0-alpha.0) (2020-03-06)
+
+
+### Features
+
+* ✨ upadte md ([eb1ba29](https://github.com/SoldierAb/k-view/commit/eb1ba2962712191dac8403f95ce50fa7cadf0ebc))
+
 ## [1.0.0](https://github.com/SoldierAb/k-view/compare/v0.1.3-alpha.0...v1.0.0) (2020-03-06)
 ### Features
 
