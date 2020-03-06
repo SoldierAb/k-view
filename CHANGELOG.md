@@ -3,38 +3,6 @@
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 ## [1.0.0](https://github.com/SoldierAb/k-view/compare/v0.1.3-alpha.0...v1.0.0) (2020-03-06)
-
-### [0.1.3-alpha.0](https://github.com/SoldierAb/k-view/compare/v1.1.0...v0.1.3-alpha.0) (2020-03-06)
-
-
-### Features
-
-* update version ([4ae9e99](https://github.com/SoldierAb/k-view/commit/4ae9e999a37c9d13191c1d24d596f6e271a3a241))
-
-### [0.1.2](https://github.com/SoldierAb/k-view/compare/v1.1.0...v0.1.2) (2020-03-06)
-
-
-### Features
-
-* update version ([4ae9e99](https://github.com/SoldierAb/k-view/commit/4ae9e999a37c9d13191c1d24d596f6e271a3a241))
-
-### [0.1.1](https://github.com/SoldierAb/k-view/compare/v1.1.0...v0.1.1) (2020-03-06)
-
-
-### Features
-
-* update version ([4ae9e99](https://github.com/SoldierAb/k-view/commit/4ae9e999a37c9d13191c1d24d596f6e271a3a241))
-
-## [1.1.0](https://github.com/SoldierAb/k-view/compare/v1.0.2...v1.1.0) (2020-03-06)
-
-
-### Features
-
-* update readme ([3985930](https://github.com/SoldierAb/k-view/commit/3985930ac13cdbf7117d80182500ac9f8421b287))
-
-### [1.0.2](https://github.com/SoldierAb/k-view/compare/v1.0.1...v1.0.2) (2020-03-06)
-
-### [1.0.1](https://github.com/SoldierAb/k-view/compare/v0.1.10...v1.0.1) (2020-03-06)
 ### Features
 
 * ✨ update pub config ([69d3eea](https://github.com/SoldierAb/k-view/commit/69d3eea6a2789fe09b8af067c70fda80688b5662))

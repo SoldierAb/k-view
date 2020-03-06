@@ -32,7 +32,7 @@ Vue.use(Tree);
 ## On demand
 With the help of [babel-plugin-kimport](https://github.com/SoldierAb/babel-plugin-kimport), we can import components we actually need, making the project smaller than otherwise.
 
-First, install [babel-plugin-component](https://www.npmjs.com/package/babel-plugin-kimport):
+First, install [babel-plugin-kimport](https://www.npmjs.com/package/babel-plugin-kimport):
 ```bash
   npm i -D babel-plugin-kimport
 ```
