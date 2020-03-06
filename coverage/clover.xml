@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1581073528066" clover="3.2.0">
-  <project timestamp="1581073528067" name="All files">
+<coverage generated="1583161332936" clover="3.2.0">
+  <project timestamp="1583161332936" name="All files">
     <metrics statements="1431" coveredstatements="349" conditionals="974" coveredconditionals="103" methods="287" coveredmethods="79" elements="2692" coveredelements="531" complexity="0" loc="1431" ncloc="1431" packages="1" files="1" classes="1"/>
     <file name="index.js" path="F:\Workspace\k-view\lib\tip\index.js">
       <metrics statements="1431" coveredstatements="349" conditionals="974" coveredconditionals="103" methods="287" coveredmethods="79"/>
