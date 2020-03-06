@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/SoldierAb/k-view/compare/v0.1.7...v0.1.8) (2020-03-06)
+
+
+### Features
+
+* ✨ add demo:pub bash ([84fe40e](https://github.com/SoldierAb/k-view/commit/84fe40e703a8474c32d6b3d0298eb35fde9b719f))
+* add ([f7243ab](https://github.com/SoldierAb/k-view/commit/f7243ab2b0956a7305d9f8255900b9932e724c69))
+* add demo bundle config ([e67f649](https://github.com/SoldierAb/k-view/commit/e67f6494b70979a340721416f9d6e47cbac87fb3))
+* add dev:build ([d0437d7](https://github.com/SoldierAb/k-view/commit/d0437d79bea4d1eae19b66cff23be61a4ff9bb39))
+* add externals ([1fc1a30](https://github.com/SoldierAb/k-view/commit/1fc1a30d002eeb272d27ea8a38120af0f49603b4))
+* add get-inline-comp ([6fe8998](https://github.com/SoldierAb/k-view/commit/6fe89988a0d49f873602536a154a6f22698561fc))
+* install jest ([6b121d3](https://github.com/SoldierAb/k-view/commit/6b121d30d6ebc39e3ba36ab0f25a7c783043c706))
+* modify dev config ([79473e2](https://github.com/SoldierAb/k-view/commit/79473e204aa2a69794a023fd8285ae507aabb789))
+* update ([a5db972](https://github.com/SoldierAb/k-view/commit/a5db972e8c5756f59572f370db738ec33480b15a))
+* update ([b605c5e](https://github.com/SoldierAb/k-view/commit/b605c5e4f6476107dd5de665e02406446b11f4ac))
+* update dev config ([78ea335](https://github.com/SoldierAb/k-view/commit/78ea33530f2b72885db8babb182ce26bf5aceea2))
+* update gh pages ([3533b08](https://github.com/SoldierAb/k-view/commit/3533b0814e3d337cf7a5d5acab011fddc7b66572))
+* update gitignore ([f94e919](https://github.com/SoldierAb/k-view/commit/f94e919a44b0ae95ef59372a041f8d62ac33c968))
+* update loading ([230e45c](https://github.com/SoldierAb/k-view/commit/230e45ccfdc4eebaeba9d1e530a41bb0f4a8d324))
+* update loading md ([5679664](https://github.com/SoldierAb/k-view/commit/5679664b58207ef7ccd2771c07c3fb5d0549ca96))
+* update output.path ([866a18b](https://github.com/SoldierAb/k-view/commit/866a18b5af2a32213a11b2f5a0308450840b5a77))
+
 ### [0.1.7](https://github.com/SoldierAb/k-view/compare/v0.1.6...v0.1.7) (2020-03-03)
 
 
