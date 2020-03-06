@@ -14,9 +14,13 @@ if (process.env.NODE_ENV === 'production') plugins.push("babel-plugin-transform-
 module.exports = {
   presets: [
     ["@babel/preset-env", {
+      "loose": true,
       "modules": false,
       "useBuiltIns": "usage",
       "corejs":2,
+      "targets": {
+        "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+      }
     }]
   ],
   env: {
