@@ -5,7 +5,12 @@ const Components = require('../components.json');
 
 module.exports = merge(baseConfig, {
     mode: 'production',
-    entry: Components,  
+    entry: Object.assign(
+        {
+            kview:'./src/index.js',
+        },  
+        Components
+    ),
     output: {
         path: path.resolve(process.cwd(), './lib'),
         publicPath: '/dist/',
