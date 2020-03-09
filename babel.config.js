@@ -1,10 +1,10 @@
 const plugins = [
   [
     "component",
-      {
-        "libraryName": "element-ui",
-        "styleLibraryName": "theme-chalk"
-      }
+    {
+      "libraryName": "element-ui",
+      "styleLibraryName": "theme-chalk"
+    }
   ],
   "@babel/plugin-syntax-dynamic-import"
 ];
@@ -26,7 +26,7 @@ module.exports = {
   env: {
     test: {
       presets: [
-        ["@babel/preset-env", { "targets": { "node": "current" }}]
+        ["@babel/preset-env", { "targets": { "node": "current" } }]
       ]
     }
   },

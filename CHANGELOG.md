@@ -4,8 +4,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [1.1.1](https://github.com/SoldierAb/k-view/compare/v1.1.0-alpha.0...v1.1.1) (2020-03-09)
 
-## [1.1.0](https://github.com/SoldierAb/k-view/compare/v1.1.0-alpha.0...v1.1.0) (2020-03-09)
-
 ## [1.1.0-alpha.0](https://github.com/SoldierAb/k-view/compare/v1.0.0...v1.1.0-alpha.0) (2020-03-06)
 
 
