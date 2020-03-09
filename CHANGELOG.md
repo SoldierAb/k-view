@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/SoldierAb/k-view/compare/v1.1.1...v1.2.0) (2020-03-09)
+
+
+### Features
+
+* ✨ add side-nav ([93a8a50](https://github.com/SoldierAb/k-view/commit/93a8a50e929f7c8030e5896ef332d468ab415380))
+* update npmignore ([9e69f31](https://github.com/SoldierAb/k-view/commit/9e69f316787bb70cea58497c6f23a923d509359f))
+
 ### [1.1.1](https://github.com/SoldierAb/k-view/compare/v1.1.0-alpha.0...v1.1.1) (2020-03-09)
 
 ## [1.1.0-alpha.0](https://github.com/SoldierAb/k-view/compare/v1.0.0...v1.1.0-alpha.0) (2020-03-06)
