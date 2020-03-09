@@ -1,5 +1,8 @@
 .DS_Store
 ./node_modules/
+./coverage/
+./dist/
+./example/
 
 npm-debug.log
 yarn-error.log
