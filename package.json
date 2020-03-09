@@ -1,6 +1,6 @@
 {
   "name": "@cgj/k-view",
-  "version": "1.1.0-alpha.0",
+  "version": "1.1.0",
   "main": "./lib/kview/index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config=./build/webpack.dev.js --open --theme=default",
