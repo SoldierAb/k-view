@@ -1,380 +1,62 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[4],{
 
-/***/ 209:
+/***/ "./docs/zh-CN/tip.md":
+/*!***************************!*\
+  !*** ./docs/zh-CN/tip.md ***!
+  \***************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??ref--4-0!./build/md-loader!./docs/zh-CN/loading.md?vue&type=template&id=1e533328&
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "content" },
-    [
-      _c("h1", [_vm._v("Loading 加载动画")]),
-      _c("h3", [_vm._v("使用")]),
-      _c(
-        "demo-box",
-        [
-          _c("template", { slot: "instance" }, [_c("kview-demo-0")], 1),
-          _c("template", { slot: "code-box" }, [
-            _c("pre", { staticClass: "hljs" }, [
-              _c("code", { staticClass: "pre-code html" }, [
-                _vm._v(
-                  '<template>\n    <a class="k-button" style="color:red" @click="toggleLoading">点击显示/隐藏加载动画' +
-                    _vm._s(_vm.loading) +
-                    "</a>\n</template>\n\n<style>\n    .k-button{\n        color:#3a8ee6;\n        position:fixed;\n        top:0;\n        right:100px;\n        bottom:0;\n        margin:auto;\n        z-index:99999;\n        border:1px solid #3a8ee6;\n        width:300px;\n        height:30px;\n        display:flex;\n        justify-content:center;\n        align-items:center;\n        background:yellow;\n    }\n    .k-button:hover{\n        cursor:pointer;\n    }\n\n</style>\n\n<script>\n    export default {\n        data() {\n            return {\n                loading: false,\n            }\n        },\n        methods: {\n            toggleLoading() {\n                this.loading = !this.loading;\n                console.log('loading', this.loading);\n                this.$loading[this.loading ? 'show' : 'hide'](() => {\n                    console.log('call-back');\n                    setTimeout(()=>{\n                        this.loading=false;\n                        this.$loading.hide();\n                    },3000)\n                })\n            },\n        },\n    };\n\n</script>\n"
-                )
-              ])
-            ])
-          ])
-        ],
-        2
-      ),
-      _c("h3", [_vm._v("Attributes")]),
-      _vm._m(0),
-      _c("h3", [_vm._v("Events")]),
-      _vm._m(1)
-    ],
-    1
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "markdown-table" }, [
-      _c("table", [
-        _c("thead", [
-          _c("tr", [
-            _c("th", [_vm._v("属性")]),
-            _c("th", [_vm._v("说明")]),
-            _c("th", [_vm._v("类型")]),
-            _c("th", [_vm._v("可选值")]),
-            _c("th", [_vm._v("默认值")]),
-            _c("th", [_vm._v("是否必须")])
-          ])
-        ]),
-        _c("tbody", [
-          _c("tr", [
-            _c("td", [_vm._v("callback")]),
-            _c("td", [_vm._v("回调函数")]),
-            _c("td", [_vm._v("Function")]),
-            _c("td", [_vm._v("-")]),
-            _c("td", [_vm._v("-")]),
-            _c("td", [_vm._v("-")])
-          ]),
-          _c("tr", [
-            _c("td", [_vm._v("background")]),
-            _c("td", [_vm._v("背景色")]),
-            _c("td", [_vm._v("String")]),
-            _c("td", [_vm._v("-")]),
-            _c("td", [_vm._v("rgba(0, 0, 0, .6)")]),
-            _c("td", [_vm._v("-")])
-          ]),
-          _c("tr", [
-            _c("td", [_vm._v("color")]),
-            _c("td", [_vm._v("加载图标颜色")]),
-            _c("td", [_vm._v("String")]),
-            _c("td", [_vm._v("-")]),
-            _c("td", [_vm._v("#4b9cdb")]),
-            _c("td", [_vm._v("-")])
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "markdown-table" }, [
-      _c("table", [
-        _c("thead", [
-          _c("tr", [_c("th", [_vm._v("方法名")]), _c("th", [_vm._v("说明")])])
-        ]),
-        _c("tbody", [
-          _c("tr", [
-            _c("td", [_vm._v("show")]),
-            _c("td", [_vm._v("显示提示")])
-          ]),
-          _c("tr", [_c("td", [_vm._v("hide")]), _c("td", [_vm._v("隐藏提示")])])
-        ])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-
-
-// CONCATENATED MODULE: ./docs/zh-CN/loading.md?vue&type=template&id=1e533328&
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.object.assign.js
-var es6_object_assign = __webpack_require__(109);
-
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--5-0!./node_modules/vue-loader/lib??ref--4-0!./build/md-loader!./docs/zh-CN/loading.md?vue&type=script&lang=js&
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ var loadingvue_type_script_lang_js_ = ({
-  name: 'component-kview',
-  components: {
-    "kview-demo-0": function () {
-      var render = function render() {
-        var _vm = this;
-
-        var _h = _vm.$createElement;
-
-        var _c = _vm._self._c || _h;
-
-        return _c("div", [_c("a", {
-          staticClass: "k-button",
-          staticStyle: {
-            color: "red"
-          },
-          on: {
-            click: _vm.toggleLoading
-          }
-        }, [_vm._v("点击显示/隐藏加载动画" + _vm._s(_vm.loading))])]);
-      };
-
-      var staticRenderFns = [];
-      render._withStripped = true;
-      var kviewDemoComp = {
-        data: function data() {
-          return {
-            loading: false
-          };
-        },
-        methods: {
-          toggleLoading: function toggleLoading() {
-            var _this = this;
-
-            this.loading = !this.loading;
-            console.log('loading', this.loading);
-            this.$loading[this.loading ? 'show' : 'hide'](function () {
-              console.log('call-back');
-              setTimeout(function () {
-                _this.loading = false;
-
-                _this.$loading.hide();
-              }, 3000);
-            });
-          }
-        }
-      };
-      return Object.assign({
-        render: render,
-        staticRenderFns: staticRenderFns
-      }, kviewDemoComp);
-    }()
-  }
-});
-// CONCATENATED MODULE: ./docs/zh-CN/loading.md?vue&type=script&lang=js&
- /* harmony default export */ var zh_CN_loadingvue_type_script_lang_js_ = (loadingvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./docs/zh-CN/loading.md?vue&type=style&index=0&lang=css&
-var loadingvue_type_style_index_0_lang_css_ = __webpack_require__(217);
-
-// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(0);
-
-// CONCATENATED MODULE: ./docs/zh-CN/loading.md
-
-
-
-
-
-
-/* normalize component */
-
-var component = Object(componentNormalizer["a" /* default */])(
-  zh_CN_loadingvue_type_script_lang_js_,
-  render,
-  staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "docs/zh-CN/loading.md"
-/* harmony default export */ var loading = __webpack_exports__["default"] = (component.exports);
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _tip_md_vue_type_template_id_81357fa6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tip.md?vue&type=template&id=81357fa6& */ \"./docs/zh-CN/tip.md?vue&type=template&id=81357fa6&\");\n/* harmony import */ var _tip_md_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tip.md?vue&type=script&lang=js& */ \"./docs/zh-CN/tip.md?vue&type=script&lang=js&\");\n/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ \"./node_modules/vue-loader/lib/runtime/componentNormalizer.js\");\n\n\n\n\n\n/* normalize component */\n\nvar component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\n  _tip_md_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  _tip_md_vue_type_template_id_81357fa6___WEBPACK_IMPORTED_MODULE_0__[\"render\"],\n  _tip_md_vue_type_template_id_81357fa6___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"],\n  false,\n  null,\n  null,\n  null\n  \n)\n\n/* hot reload */\nif (false) { var api; }\ncomponent.options.__file = \"docs/zh-CN/tip.md\"\n/* harmony default export */ __webpack_exports__[\"default\"] = (component.exports);\n\n//# sourceURL=webpack:///./docs/zh-CN/tip.md?");
 
 /***/ }),
 
-/***/ 214:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(218);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(2)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
-/***/ 217:
+/***/ "./docs/zh-CN/tip.md?vue&type=script&lang=js&":
+/*!****************************************************!*\
+  !*** ./docs/zh-CN/tip.md?vue&type=script&lang=js& ***!
+  \****************************************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_vue_loader_lib_index_js_ref_4_0_build_md_loader_index_js_loading_md_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(214);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_vue_loader_lib_index_js_ref_4_0_build_md_loader_index_js_loading_md_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_vue_loader_lib_index_js_ref_4_0_build_md_loader_index_js_loading_md_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_style_loader_index_js_node_modules_css_loader_dist_cjs_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_vue_loader_lib_index_js_ref_4_0_build_md_loader_index_js_loading_md_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_5_0_node_modules_vue_loader_lib_index_js_ref_4_0_build_md_loader_index_js_tip_md_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/babel-loader/lib??ref--5-0!../../node_modules/vue-loader/lib??ref--4-0!../../build/md-loader!./tip.md?vue&type=script&lang=js& */ \"./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./build/md-loader/index.js!./docs/zh-CN/tip.md?vue&type=script&lang=js&\");\n/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__[\"default\"] = (_node_modules_babel_loader_lib_index_js_ref_5_0_node_modules_vue_loader_lib_index_js_ref_4_0_build_md_loader_index_js_tip_md_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[\"default\"]); \n\n//# sourceURL=webpack:///./docs/zh-CN/tip.md?");
 
 /***/ }),
 
-/***/ 218:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./docs/zh-CN/tip.md?vue&type=template&id=81357fa6&":
+/*!**********************************************************!*\
+  !*** ./docs/zh-CN/tip.md?vue&type=template&id=81357fa6& ***!
+  \**********************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(false);
-// Module
-exports.push([module.i, "\n.k-button{\n    color:#3a8ee6;\n    position:fixed;\n    top:0;\n    right:100px;\n    bottom:0;\n    margin:auto;\n    z-index:99999;\n    border:1px solid #3a8ee6;\n    width:300px;\n    height:30px;\n    display:flex;\n    justify-content:center;\n    align-items:center;\n    background:yellow;\n}\n.k-button:hover{\n    cursor:pointer;\n}\n  ", ""]);
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_ref_4_0_build_md_loader_index_js_tip_md_vue_type_template_id_81357fa6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../node_modules/vue-loader/lib??ref--4-0!../../build/md-loader!./tip.md?vue&type=template&id=81357fa6& */ \"./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./build/md-loader/index.js!./docs/zh-CN/tip.md?vue&type=template&id=81357fa6&\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_ref_4_0_build_md_loader_index_js_tip_md_vue_type_template_id_81357fa6___WEBPACK_IMPORTED_MODULE_0__[\"render\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_ref_4_0_build_md_loader_index_js_tip_md_vue_type_template_id_81357fa6___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"]; });\n\n\n\n//# sourceURL=webpack:///./docs/zh-CN/tip.md?");
 
+/***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./build/md-loader/index.js!./docs/zh-CN/tip.md?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--5-0!./node_modules/vue-loader/lib??ref--4-0!./build/md-loader!./docs/zh-CN/tip.md?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var core_js_modules_es6_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es6.object.assign */ \"./node_modules/core-js/modules/es6.object.assign.js\");\n/* harmony import */ var core_js_modules_es6_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_object_assign__WEBPACK_IMPORTED_MODULE_0__);\n\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: 'component-kview',\n  components: {\n    \"kview-demo-0\": function () {\n      var render = function render() {\n        var _vm = this;\n\n        var _h = _vm.$createElement;\n\n        var _c = _vm._self._c || _h;\n\n        return _c(\"div\", [_c(\"k-tip\", {\n          attrs: {\n            position: \"right\",\n            content: _vm.contentString,\n            text: _vm.contentString\n          }\n        })], 1);\n      };\n\n      var staticRenderFns = [];\n      render._withStripped = true;\n      var kviewDemoComp = {\n        data: function data() {\n          return {\n            contentString: \"今天天气真不错，适合去打球，但是没人一起，就算了吧\"\n          };\n        }\n      };\n      return Object.assign({\n        render: render,\n        staticRenderFns: staticRenderFns\n      }, kviewDemoComp);\n    }()\n  }\n});\n\n//# sourceURL=webpack:///./docs/zh-CN/tip.md?./node_modules/babel-loader/lib??ref--5-0!./node_modules/vue-loader/lib??ref--4-0!./build/md-loader");
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./build/md-loader/index.js!./docs/zh-CN/tip.md?vue&type=template&id=81357fa6&":
+/*!************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??ref--4-0!./build/md-loader!./docs/zh-CN/tip.md?vue&type=template&id=81357fa6& ***!
+  \************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\n    \"div\",\n    { staticClass: \"content\" },\n    [\n      _c(\"h1\", [_vm._v(\"Tip\")]),\n      _c(\"p\", [_vm._v(\"文本溢出气泡展示\")]),\n      _c(\"h2\", [_vm._v(\"代码演示\")]),\n      _c(\n        \"demo-box\",\n        [\n          _c(\"template\", { slot: \"instance\" }, [_c(\"kview-demo-0\")], 1),\n          _c(\"template\", { slot: \"code-box\" }, [\n            _c(\"pre\", { staticClass: \"hljs\" }, [\n              _c(\"code\", { staticClass: \"pre-code html\" }, [\n                _vm._v(\n                  '<template>\\n    <k-tip position=\"right\" :content=\"contentString\" :text=\"contentString\"></k-tip>\\n</template>\\n\\n<script>\\n    export default {\\n        data() {\\n            return {\\n                contentString: \"今天天气真不错，适合去打球，但是没人一起，就算了吧\",\\n            }\\n        },\\n    };\\n</script>\\n'\n                )\n              ])\n            ])\n          ])\n        ],\n        2\n      ),\n      _c(\"h2\", [_vm._v(\"Props\")]),\n      _vm._m(0)\n    ],\n    1\n  )\n}\nvar staticRenderFns = [\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"div\", { staticClass: \"markdown-table\" }, [\n      _c(\"table\", [\n        _c(\"thead\", [\n          _c(\"tr\", [\n            _c(\"th\", [_vm._v(\"参数\")]),\n            _c(\"th\", [_vm._v(\"说明\")]),\n            _c(\"th\", [_vm._v(\"类型\")]),\n            _c(\"th\", [_vm._v(\"默认值\")]),\n            _c(\"th\", [_vm._v(\"是否必须\")])\n          ])\n        ]),\n        _c(\"tbody\", [\n          _c(\"tr\", [\n            _c(\"td\", [_vm._v(\"popperClass\")]),\n            _c(\"td\", [_vm._v(\"附加样式\")]),\n            _c(\"td\", [_vm._v(\"string\")]),\n            _c(\"td\", [_vm._v(\"-\")]),\n            _c(\"td\", [_vm._v(\"-\")])\n          ]),\n          _c(\"tr\", [\n            _c(\"td\", [_vm._v(\"text\")]),\n            _c(\"td\", [_vm._v(\"填充文本\")]),\n            _c(\"td\", [_vm._v(\"string\")]),\n            _c(\"td\", [_vm._v(\"文本\")]),\n            _c(\"td\", [_vm._v(\"-\")])\n          ]),\n          _c(\"tr\", [\n            _c(\"td\", [_vm._v(\"content\")]),\n            _c(\"td\", [_vm._v(\"提示内容\")]),\n            _c(\"td\", [_vm._v(\"string\")]),\n            _c(\"td\", [_vm._v(\"提示内容\")]),\n            _c(\"td\", [_vm._v(\"-\")])\n          ]),\n          _c(\"tr\", [\n            _c(\"td\", [_vm._v(\"position\")]),\n            _c(\"td\", [_vm._v(\"展示位置\")]),\n            _c(\"td\", [_vm._v(\"string\")]),\n            _c(\"td\", [_vm._v(\"top\")]),\n            _c(\"td\", [_vm._v(\"-\")])\n          ]),\n          _c(\"tr\", [\n            _c(\"td\", [_vm._v(\"textWidth\")]),\n            _c(\"td\", [_vm._v(\"文本宽度\")]),\n            _c(\"td\", [_vm._v(\"number\")]),\n            _c(\"td\", [_vm._v(\"110\")]),\n            _c(\"td\", [_vm._v(\"-\")])\n          ])\n        ])\n      ])\n    ])\n  }\n]\nrender._withStripped = true\n\n\n\n//# sourceURL=webpack:///./docs/zh-CN/tip.md?./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??ref--4-0!./build/md-loader");
 
 /***/ })
 

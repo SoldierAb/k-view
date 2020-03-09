@@ -1,3 +1,4 @@
+const isProduction = process.env.NODE_ENV === 'production'
 const plugins = [
   [
     "component",
@@ -9,19 +10,20 @@ const plugins = [
   "@babel/plugin-syntax-dynamic-import"
 ];
 
-if (process.env.NODE_ENV === 'production') plugins.push("babel-plugin-transform-remove-console");
+if (isProduction) plugins.push("babel-plugin-transform-remove-console");
 
 module.exports = {
   presets: [
     ["@babel/preset-env", {
       "loose": true,
       "modules": false,
-      "useBuiltIns": "usage",
-      "corejs":2,
+      "useBuiltIns": isProduction ? false : "usage",
+      "spec": true,
+      "corejs": 2,
       "targets": {
         "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
       }
-    }]
+    }],
   ],
   env: {
     test: {

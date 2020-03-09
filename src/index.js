@@ -25,8 +25,6 @@ const install=(Vue)=>{
     components.forEach(item=>{
         Vue.component(item.name,item);
     })
-
-
 }
 
 

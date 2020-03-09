@@ -13,7 +13,7 @@ module.exports = merge(baseConfig, {
     ),
     output: {
         path: path.resolve(process.cwd(), './lib'),
-        publicPath: '/dist/',
+        publicPath: '/lib/',
         filename: '[name]/index.js',
         chunkFilename: '[id]/index.js',
         libraryTarget: 'commonjs2'

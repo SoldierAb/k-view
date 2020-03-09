@@ -117,6 +117,10 @@ const webpackConfig = {
         new VueLoaderPlugin(),
        
         new ProgressBarPlugin(),
+
+        new CleanWebpackPlugin({
+            verbose: true
+        }),
     ],
 
 };
@@ -125,7 +129,7 @@ if (isProduction) {
     webpackConfig.plugins.push(
         new MiniCssExtractPlugin({
             filename: '[name]/style.css',
-        })
+        }),
     );
 }else{
     webpackConfig.plugins.push(
@@ -136,9 +140,7 @@ if (isProduction) {
             },
             hash: true,
         }),
-        new CleanWebpackPlugin({
-            verbose: true
-        }),
+      
     )
 }
 module.exports = webpackConfig;

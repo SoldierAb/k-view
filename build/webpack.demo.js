@@ -4,7 +4,7 @@ const baseConfig = require('./webpack.base');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = merge(baseConfig, {
-    mode: 'production',
+    mode: 'development',
     entry: {
         kview: './examples/index'
     },
