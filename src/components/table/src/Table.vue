@@ -105,6 +105,14 @@
   </el-table>
 </template>
 
+<style lang="scss">
+  .el-table{
+    .empty-text{
+      color:$font-color-base;
+    }
+  }
+</style>
+
 <script>
 import { Table, TableColumn } from "element-ui";
 export default {
