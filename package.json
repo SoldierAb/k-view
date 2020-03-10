@@ -110,9 +110,10 @@
     "yorkie": "^2.0.0"
   },
   "dependencies": {
-    "babel-plugin-component": "^1.1.1"
+    "babel-plugin-component": "^1.1.1",
+    "core-js": "^3.6.4"
   },
-  "description": "```\r npm i k-view\r ```",
+  "description": "```\r npm i @cgj/k-view\r ```",
   "directories": {
     "example": "examples"
   },

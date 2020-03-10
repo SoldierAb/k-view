@@ -16,10 +16,10 @@ module.exports = {
   presets: [
     ["@babel/preset-env", {
       "loose": true,
-      "modules": false,
+      "modules":false,
       "useBuiltIns": isProduction ? false : "usage",
       "spec": true,
-      "corejs": 2,
+      "corejs": 3,
       "targets": {
         "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
       }

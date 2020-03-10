@@ -1,4 +1,3 @@
-// import '@babel/polyfill';
 import Vue from 'vue';
 import DemoBox from "./views/DemoBox"
 import Router from 'vue-router';
