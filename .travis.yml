@@ -6,7 +6,7 @@ branchs:
         - master
 cache:
         directories:
-        - ./node_modules
+        - node_modules
 before_install:
         - export TZ='Asia/Xiamen'        
 install: 
