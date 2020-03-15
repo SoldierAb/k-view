@@ -7,7 +7,7 @@
     "build": "cross-env NODE_ENV=production webpack  --config=./build/webpack.pub.js",
     "demo": "webpack --config=./build/webpack.demo.js --theme=default",
     "lib": "webpack  --config=./build/webpack.pub.js",
-    "analyz": "NODE_ENV=production npm_config_report=true npm run build",
+    "analyz": "cross-env NODE_ENV=production npm_config_report=true npm run build",
     "lint": "eslint --ext .js,.vue src examples --fix",
     "test": "npm run lib && jest --coverage",
     "test:watch": "npm run lib && jest --coverage --watchAll",

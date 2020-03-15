@@ -1,7 +1,7 @@
 language: node_js
 node_js:
         - 10
-branchs:
+branches:
         only:
         - master
 cache:
@@ -18,12 +18,12 @@ after_success:
         - npm run test
 deploy:
         provider: pages
-        skip-cleanup: true
-        github-token: $GITHUB_TOKEN
-        local-dir: ./dist/
-        target-branch: gh-pages
+        cleanup: true
+        token: $GITHUB_TOKEN
+        local_dir: ./dist/
+        target_branch: gh-pages
         verbose: true
         on:
-                branch: master
+                branches: master
 
 
