@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/SoldierAb/k-view/compare/v1.2.3...v1.3.0) (2020-03-15)
+
+
+### Features
+
+* ✨ add markdown 、select-search ([9dd9f9f](https://github.com/SoldierAb/k-view/commit/9dd9f9f148e864b04d9576528b95386602a7b143))
+* ✨ merge master ([3c38f51](https://github.com/SoldierAb/k-view/commit/3c38f518a558a40acac8ffe38409ef89cc8ea42b))
+* add travis cache ([b4f23e5](https://github.com/SoldierAb/k-view/commit/b4f23e53e7f915ae289d28b301608161f8ad55e8))
+
 ### [1.2.3](https://github.com/SoldierAb/k-view/compare/v1.2.2...v1.2.3) (2020-03-10)
 
 ### [1.2.2](https://github.com/SoldierAb/k-view/compare/v1.2.1...v1.2.2) (2020-03-09)
