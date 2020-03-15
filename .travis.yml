@@ -18,8 +18,9 @@ after_success:
         - npm run test
 deploy:
         provider: pages
-        cleanup: true
-        token: $GITHUB_TOKEN
+        skip_cleanup: true
+        keep_history: true
+        github_token: $GITHUB_TOKEN
         local_dir: ./dist/
         target_branch: gh-pages
         verbose: true
