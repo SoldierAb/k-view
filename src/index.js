@@ -6,6 +6,8 @@ import Table from './components/table'
 import Tip from './components/tip'
 import Tree from './components/tree'
 import UploadBtn from './components/upload-btn'
+import Markdown from './components/markdown'
+import SelectSearch from './components/select-search'
 
 const components=[
     FadePop,
@@ -14,6 +16,8 @@ const components=[
     Tip,
     Table,
     UploadBtn,
+    Markdown,
+    SelectSearch,
 ];
 
 const install=(Vue)=>{

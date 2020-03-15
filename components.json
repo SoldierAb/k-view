@@ -5,5 +5,7 @@
     "fade-pop": "./src/components/fade-pop/index.js",
     "side-nav": "./src/components/side-nav/index.js",
     "upload-btn": "./src/components/upload-btn/index.js",
-    "loading": "./src/components/loading/index.js"
+    "loading": "./src/components/loading/index.js",
+    "markdown": "./src/components/markdown/index.js",
+    "select-search": "./src/components/select-search/index.js"
 }
