@@ -24,6 +24,6 @@ deploy:
         target_branch: gh-pages
         verbose: true
         on:
-                branches: master
+                branch: master
 
 
