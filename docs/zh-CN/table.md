@@ -15,7 +15,7 @@
 
 <script>
     import Vue from 'vue'
-    import Table from '../../src/components/Table'
+    import Table from '../../src/components/table'
     Vue.use(Table);
     const getPermissionByKey = key => {
         return {
