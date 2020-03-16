@@ -33,6 +33,9 @@
 </style>
 
 <script>
+import Vue from 'vue'
+    import Loading from '../../src/components/loading'
+    Vue.use(Loading);
     export default {
         data() {
             return {
@@ -60,7 +63,7 @@
 :::
 
 ###  Attributes
-<div class="markdown-table">
+<div class="markdown-Loading">
 
 |  属性  |  说明   |  类型|可选值|默认值|是否必须
 |-------|---------|---|---|---|---|
@@ -72,7 +75,7 @@
 
 
 ###  Events
-<div class="markdown-table">
+<div class="markdown-Loading">
 
 | 方法名 | 说明 |
 | ------ |----- | 

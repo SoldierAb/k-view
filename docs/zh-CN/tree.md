@@ -23,6 +23,9 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import Tree from '../../src/components/tree'
+Vue.use(Tree);
 
 export default {
   data() {

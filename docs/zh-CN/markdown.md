@@ -11,6 +11,9 @@
 </template>
 
 <script>
+import Vue from 'vue'
+    import MarkDown from '../../src/components/markdown'
+    Vue.use(MarkDown);
     export default {
         data() {
             return {
@@ -59,7 +62,7 @@
 
 ##  Props
 
-<div class="markdown-table">
+<div class="markdown-MarkDown">
 
 |  参数  |  说明   | 类型  | 默认值|  是否必须|
 |-------|---------|------|--------|----------|
@@ -94,7 +97,7 @@
     save: true, // 保存（触发events中的save事件）
     navigation: true,
     boxShadow: false,
-    editable: false,
+    ediMarkDown: false,
     toolbarsFlag: false,
     defaultOpen: "preview",
     toolbars: {

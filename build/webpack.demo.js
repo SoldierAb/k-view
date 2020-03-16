@@ -2,7 +2,8 @@ const path = require('path');
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.base');
 
-module.exports = merge(baseConfig, {
+
+const demoConfig = merge(baseConfig, {
     mode: 'development',
     entry: {
         kview: './examples/index'
@@ -44,4 +45,8 @@ module.exports = merge(baseConfig, {
         'vue-router': 'VueRouter',
         'element-ui': 'ELEMENT',
     },
+   
 })
+
+
+module.exports = demoConfig

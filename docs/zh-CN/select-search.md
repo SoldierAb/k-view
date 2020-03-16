@@ -11,6 +11,9 @@
 </template>
 
 <script>
+import Vue from 'vue'
+    import SelectSearch from '../../src/components/select-search'
+    Vue.use(SelectSearch);
     export default {
         data() {
             return {
@@ -48,7 +51,7 @@
 
 ##  Props
 
-<div class="markdown-table">
+<div class="markdown-SelectSearch">
 
 |  参数  |  说明   | 类型  | 默认值|  是否必须|
 |-------|---------|------|--------|----------|

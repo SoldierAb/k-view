@@ -10,6 +10,9 @@
 </template>
 
 <script>
+import Vue from 'vue'
+    import UploadBtn from '../../src/components/upload-btn'
+    Vue.use(UploadBtn);
     export default {
         data() {
             return {
@@ -26,7 +29,7 @@
 :::
 
 ##  Props
-<div class="markdown-table">
+<div class="markdown-UploadBtn">
 
 |  参数  |  说明   | 类型  | 默认值|  是否必须|
 |-------|---------|------|--------|----------|

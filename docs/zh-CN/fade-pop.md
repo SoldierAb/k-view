@@ -25,6 +25,9 @@
 </style>
 
 <script>
+    import Vue from 'vue'
+    import FadePop from '../../src/components/fade-pop'
+    Vue.use(FadePop);
     export default{
         data(){
             return {

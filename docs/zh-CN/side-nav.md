@@ -10,6 +10,9 @@
 </template>
 
 <script>
+import Vue from 'vue'
+    import SideNav from '../../src/components/side-nav'
+    Vue.use(SideNav);
     export default {
         data() {
             return {
@@ -84,7 +87,7 @@
 
 ##  Props
 
-<div class="markdown-table">
+<div class="markdown-SideNav">
 
 |  参数  |  说明   | 类型  | 默认值|  是否必须|
 |-------|---------|------|--------|----------|

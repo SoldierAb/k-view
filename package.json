@@ -6,11 +6,9 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config=./build/webpack.dev.js --open --theme=default",
     "build": "cross-env NODE_ENV=production webpack  --config=./build/webpack.pub.js",
     "demo": "webpack --config=./build/webpack.demo.js --theme=default",
-    "lib": "webpack  --config=./build/webpack.pub.js",
-    "analyz": "cross-env NODE_ENV=production npm_config_report=true npm run build",
     "lint": "eslint --ext .js,.vue src examples --fix",
-    "test": "npm run lib && jest --coverage",
-    "test:watch": "npm run lib && jest --coverage --watchAll",
+    "test": "npm run build && jest --coverage",
+    "test:watch": "npm run build && jest --coverage --watchAll",
     "release": "standard-version",
     "commit": "git add . && git-cz",
     "postinstall": "node scripts/post-install || echo \"ignore\""

@@ -3,9 +3,10 @@ const HtmlPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const BuildTheme = process.env.npm_config_theme || 'default';
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BuildTheme = process.env.npm_config_theme || 'default';
+const analyz = process.env.npm_config_analyz;
 const resolveResource = name => path.resolve(__dirname, '../src/theme/' + name);
 const isProduction = process.env.NODE_ENV === 'production';
 const minCssLoader = {
@@ -143,4 +144,11 @@ if (isProduction) {
       
     )
 }
+
+if(analyz){
+    webpackConfig.plugins.push(
+        new BundleAnalyzerPlugin()
+    );
+}
+
 module.exports = webpackConfig;

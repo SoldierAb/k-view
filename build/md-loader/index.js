@@ -15,7 +15,13 @@ const separateStyle = (str) => {
 }
 
 const separateScript = (str) => {
-  res = str.match(/<(script)>([\s\S]+)<\/\1>/);
+  // res = str.match(/<(script)>([\s\S]+)<\/\1>/);
+  res=str.match(/export([\s])default([\s\S]+)<\/script>/);
+  return res && res[2] ? 'export default '+res[2].trim() : '';
+}
+
+const separateImports = (str)=>{
+  res = str.match(/<(script)>([\s\S]+)export/);
   return res && res[2] ? res[2].trim() : '';
 }
 
@@ -26,7 +32,8 @@ module.exports = function (source) {
   let startIndex = 0;
   let compInstancesString = '';
   let compStylesString = '';
-  
+  let compScriptHeaderString = '';
+
   let id = 0; // demo 的 id
   const content = md.render(source);
   const startTag = '<!--kview-demo:';
@@ -44,6 +51,7 @@ module.exports = function (source) {
     const compTpl = content.slice(compStartIndex + startTagLen, compEndIndex);
     const templateTpl = separateTemplate(compTpl);
     const scriptTpl = separateScript(compTpl);
+    const importTpl = separateImports(compTpl);
     const styleTpl = separateStyle(compTpl);
     let code = getInlineCompInstance(templateTpl, scriptTpl,styleTpl);
     const demoComponentName = `kview-demo-${id}`;
@@ -51,6 +59,7 @@ module.exports = function (source) {
 
     compInstancesString += `${JSON.stringify(demoComponentName)}: ${code},`;
     compStylesString+=styleTpl;
+    compScriptHeaderString+=importTpl;
     // 重新计算下一次的位置
     id++;
     startIndex = compEndIndex + endTagLen;
@@ -61,6 +70,7 @@ module.exports = function (source) {
   let pageScript = '';
   if (compInstancesString) {
     pageScript = `<script>
+        ${compScriptHeaderString}
         export default {
           name: 'component-kview',
           components: {

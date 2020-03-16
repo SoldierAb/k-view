@@ -2,12 +2,12 @@ import Vue from 'vue';
 import DemoBox from "./views/DemoBox"
 import Router from 'vue-router';
 import App from './App.vue';
-import KVIEW from '../src';
+// import KVIEW from '../src';
 import routes from './routes'
 import formatTime from '../src/utils/format-time'
 
 Vue.component(DemoBox.name, DemoBox)
-Vue.use(KVIEW);
+// Vue.use(KVIEW);
 Vue.use(Router);
 
 // 开启debug模式
