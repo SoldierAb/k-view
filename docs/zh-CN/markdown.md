@@ -62,7 +62,7 @@ import Vue from 'vue'
 
 ##  Props
 
-<div class="markdown-MarkDown">
+<div class="markdown-table">
 
 |  参数  |  说明   | 类型  | 默认值|  是否必须|
 |-------|---------|------|--------|----------|

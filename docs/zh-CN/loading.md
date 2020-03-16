@@ -63,7 +63,7 @@ import Vue from 'vue'
 :::
 
 ###  Attributes
-<div class="markdown-Loading">
+<div class="markdown-table">
 
 |  属性  |  说明   |  类型|可选值|默认值|是否必须
 |-------|---------|---|---|---|---|
@@ -75,7 +75,7 @@ import Vue from 'vue'
 
 
 ###  Events
-<div class="markdown-Loading">
+<div class="markdown-table">
 
 | 方法名 | 说明 |
 | ------ |----- | 
