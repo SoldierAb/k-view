@@ -134,7 +134,7 @@ export default {
     draggable: {
       type: Boolean,
       default() {
-        return false;
+        return true;
       },
     },
     show: {

@@ -1,5 +1,4 @@
 import draggable from "../../utils/draggable";
-
 import FadePop from "./src/FadePop";
 
 FadePop.install = Vue => {
