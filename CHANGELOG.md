@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/SoldierAb/k-view/compare/v1.3.0...v1.4.0) (2020-03-17)
+
+
+### Features
+
+* ✨ update md table class ([1eacc05](https://github.com/SoldierAb/k-view/commit/1eacc0530e84eb5e3bf8a23204c1013ba3be05ea))
+
+
+### Bug Fixes
+
+* 🐛 modify table.md ([52176f0](https://github.com/SoldierAb/k-view/commit/52176f0ada783ee674ac9f18b4c2e926e2c05b1d))
+
 ## [1.3.0](https://github.com/SoldierAb/k-view/compare/v1.2.3...v1.3.0) (2020-03-15)
 
 
