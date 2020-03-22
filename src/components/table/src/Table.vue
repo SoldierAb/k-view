@@ -7,6 +7,7 @@
     :span-method="spanMethod"
     :default-expand-all="defaultExpandAll"
     :border="border"
+    :stripe="stripe"
     @row-click="rowClick"
     @cell-click="cellClick"
     @sort-change="sortChange"
@@ -157,6 +158,12 @@ export default {
         return true;
       },
     },
+    stripe:{
+      type: Boolean,
+      default() {
+        return false;
+      },
+    }
   },
   data() {
     return {

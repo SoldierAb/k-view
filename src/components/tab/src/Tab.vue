@@ -34,7 +34,12 @@ export default {
     event: "change",
   },
   props: {
-    tabVal,
+    // eslint-disable-next-line vue/require-prop-types
+    tabVal:{
+      default(){
+        return "";
+      },
+    },
     options: {
       type: Array,
       default() {

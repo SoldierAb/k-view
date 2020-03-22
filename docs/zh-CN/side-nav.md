@@ -79,6 +79,19 @@ import Vue from 'vue'
                 }]
             }
         },
+        mounted(){
+            setTimeout(()=>{
+                this.menuData=[{
+                    "label": "失败记录",
+                    "value": "fail",
+                    "icon": "fail"
+                }, {
+                    "label": "操作日志",
+                    "value": "log",
+                    "icon": "log"
+                }]
+            },3000)
+        }
     };
 </script>
 ```
