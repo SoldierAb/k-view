@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/SoldierAb/k-view/compare/v1.5.0...v1.6.0) (2020-03-23)
+
+
+### Features
+
+* ✨ add menu-tree active support ([ac49149](https://github.com/SoldierAb/k-view/commit/ac49149032dc47cc45d1c9315e4ac41dce830ddd))
+
 ## [1.5.0](https://github.com/SoldierAb/k-view/compare/v1.4.0...v1.5.0) (2020-03-22)
 
 
