@@ -55,3 +55,14 @@ $bug-type-4:#00cc00;
     margin: 0 0 16px;
     transition: all 0.2s;
   }
+
+
+  .el-menu-item.is-active {
+    color: #409eff;
+    border-right: 4px solid #7893ff;
+    background: rgba(245,246,250,1);
+
+    &:hover {
+      background: rgba(245,246,250,1);
+    }
+  } 

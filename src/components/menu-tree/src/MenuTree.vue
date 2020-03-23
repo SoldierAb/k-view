@@ -43,7 +43,7 @@
       v-show="showLink"
       v-else
       :class="`${navActive ? 'nav-active' : ''}`"
-      :index="dataSource[valueKey]"
+      :index="router?`/${dataSource[valueKey]}`:`${dataSource[valueKey]}`"
     >
       <template slot="title">
         <slot
@@ -78,6 +78,12 @@ export default {
   name: "KMenuTree",
   components: { Submenu, MenuItemGroup, MenuItem },
   props: {
+    router:{
+      type:Boolean,
+      default(){
+        return false;
+      },
+    },
     dataSource: {
       type: Object,
       default() {

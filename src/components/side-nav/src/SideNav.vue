@@ -6,6 +6,8 @@
     <el-menu
       ref="sideNav"
       class="el-menu-vertical-demo"
+      :default-active="defaultActive"
+      :router="router"
       @open="handleOpen"
       @close="handleClose"
     >
@@ -15,6 +17,7 @@
         :data-source="item"
         :label-key="labelKey"
         :value-key="valueKey"
+        :router="router"
       >
         <template v-slot:node="{data}">
           <slot
@@ -91,6 +94,18 @@ export default {
     MenuTree
   },
   props: {
+    router:{
+      type:Boolean,
+      default(){
+        return false;
+      }
+    },
+    defaultActive:{
+      type:String,
+      default(){
+        return ""
+      }
+    },
     valueKey: {
       type: String,
       default() {

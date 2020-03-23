@@ -13,7 +13,6 @@ module.exports = merge(baseConfig, {
         compress: true,
         hot: true,
         overlay: true,
-        openPage: 'dist/index.html'
     },
     optimization: {
         splitChunks: {

@@ -5,14 +5,12 @@
         :data-source="menuData"
         label-key="name"
         value-key="name"
+        router
+        :default-active="$route.path"
       >
-        <template v-slot:leaf="{data}">
-          <router-link
-            :to="`/${data['name']}`"
-          >
+        <!-- <template v-slot:leaf="{data}">
             <span v-bind="data.props"> {{ data[`name`] }}</span>
-          </router-link>
-        </template>
+        </template> -->
       </k-side-nav>
     </section>
     <section class="section-box">

@@ -19,7 +19,7 @@ const webpackConfig = {
     output: {
         path: path.resolve(__dirname, '../dist/'),
         filename: '[name]/index.js',
-        publicPath: '/dist/'
+        publicPath: '/'
     },
     module: {
         rules: [
