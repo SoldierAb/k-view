@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.2](https://github.com/SoldierAb/k-view/compare/v1.6.1...v1.6.2) (2020-03-23)
+
+
+### Bug Fixes
+
+* 🐛 fix k-side-nav router mode deep ([d5a7127](https://github.com/SoldierAb/k-view/commit/d5a71277fc35e0ed304f09d7c2d8f7af6945954d))
+
 ### [1.6.1](https://github.com/SoldierAb/k-view/compare/v1.6.0...v1.6.1) (2020-03-23)
 
 ## [1.6.0](https://github.com/SoldierAb/k-view/compare/v1.5.0...v1.6.0) (2020-03-23)
