@@ -90,7 +90,7 @@ eval("var $ = __webpack_require__(/*! ../internals/export */ \"./node_modules/co
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".k-tab-container {\\n  display: inline-block;\\n}\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/components/tab/src/Tab.vue?./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/sass-resources-loader/lib/loader.js??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options");
+eval("exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".el-menu-item.is-active {\\n  color: #409eff;\\n  border-right: 4px solid #7893ff;\\n  background: #f5f6fa;\\n}\\n.el-menu-item.is-active:hover {\\n    background: #f5f6fa;\\n}\\n.k-tab-container {\\n  display: inline-block;\\n}\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/components/tab/src/Tab.vue?./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/sass-resources-loader/lib/loader.js??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options");
 
 /***/ }),
 
