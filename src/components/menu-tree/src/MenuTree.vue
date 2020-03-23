@@ -19,6 +19,7 @@
           :label-key="labelKey"
           :value-key="valueKey"
           :data-source="child"
+          :router="router"
         >
           <template v-slot:node="{data}">
             <slot
