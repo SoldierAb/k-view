@@ -137,8 +137,8 @@ export default {
     };
   },
   mounted() {
-    let { dataSource } = this;
-    if (Array.isArray(dataSource)) this.initMenu();
+    // let { dataSource } = this;
+    // if (Array.isArray(dataSource)) this.initMenu();
   },
   methods: {
     initMenu() {
@@ -157,11 +157,11 @@ export default {
       });
     },
     handleOpen(key, keyPath) {
-      this.pushMenu(key);
+      // this.pushMenu(key);
       this.$emit("open", key, keyPath);
     },
     handleClose(key, keyPath) {
-      this.popMenu(key);
+      // this.popMenu(key);
       this.$emit("close", key, keyPath);
     },
 
