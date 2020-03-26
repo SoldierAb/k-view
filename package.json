@@ -53,6 +53,8 @@
     "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.3.4",
+    "@sentry/browser": "^5.15.0",
+    "@sentry/integrations": "^5.15.0",
     "@vue/test-utils": "^1.0.0-beta.31",
     "assert": "^2.0.0",
     "babel-eslint": "^10.0.3",
