@@ -68,6 +68,7 @@
       border-radius: 4px;
       letter-spacing: 1px;
       padding: 2px;
+      margin: 2px 0;
       white-space: nowrap;
     }
 
