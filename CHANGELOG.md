@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.0](https://github.com/SoldierAb/k-view/compare/v1.8.0...v1.9.0) (2020-04-01)
+
+
+### Features
+
+* ✨ add tree node margin for multiple select ([2ce2122](https://github.com/SoldierAb/k-view/commit/2ce21220fc11788899aa08a40e06fe846c68e0a8))
+
 ## [1.8.0](https://github.com/SoldierAb/k-view/compare/v1.7.0...v1.8.0) (2020-04-01)
 
 
