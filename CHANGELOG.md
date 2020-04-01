@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/SoldierAb/k-view/compare/v1.7.0...v1.8.0) (2020-04-01)
+
+
+### Features
+
+* ✨ update tree md ([ae3bbc6](https://github.com/SoldierAb/k-view/commit/ae3bbc6cc4adec46e3e5332405122ab30fe1b767))
+* ✨ 不同设备登录校验提示 ([1d8a111](https://github.com/SoldierAb/k-view/commit/1d8a1114c0bc032a63b1e3cb37e4fb4cdb238c2e))
+
 ## [1.7.0](https://github.com/SoldierAb/k-view/compare/v1.6.2...v1.7.0) (2020-03-23)
 
 
