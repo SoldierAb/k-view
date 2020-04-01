@@ -5,108 +5,141 @@
 ## 代码演示
 
 :::kview
+
 ```html
 <template>
-   <k-tree
-      only-leaf
-      show-checkbox
-      type="tree"
-      v-model="selectValue"
-      :label-key="labelKey"
-      :value-key="valueKey"
-      :data-source="list"
-      @on-toggle-expand="toggleExpand"
-      @on-select-change="selectChange"
-      @on-check-change="checkChange"
-    ></k-tree>
-    list: {{list}}
+    <k-tree 
+        v-model="selectValue" 
+        :show-checkbox="showCheckbox" 
+        :only-leaf="onlyLeaf" 
+        :multiple="multiple" 
+        :label-key="labelKey" 
+        :value-key="valueKey" 
+        :data-source="list" 
+        @on-toggle-expand="toggleExpand" 
+        @on-select-change="selectChange" 
+        @on-check-change="checkChange"/>
+    <div class="attrs-box">
+        <button @click="onlyLeaf=!onlyLeaf">toggleOnlyLeaf-> onlyLeaf : {{onlyLeaf}}</button>
+        <button @click="showCheckbox = !showCheckbox">toggleShowCheckbox-> showCheckbox : {{showCheckbox}}</button>
+        <button @click="multiple = !multiple;showCheckbox = false">toggleMultiple (showCheckbox should be false)-> multiple : {{multiple}} </button>
+    </div>
+    <div class="data-box">
+        <p>dataSource -> list: {{list}}</p>
+        <p>v-model -> {{selectValue}}</p>
+    </div>
 </template>
 
 <script>
-import Vue from 'vue'
-import Tree from '../../src/components/tree'
-Vue.use(Tree);
+    import Vue from 'vue'
+    import Tree from '../../src/components/tree'
+    Vue.use(Tree);
 
-export default {
-  data() {
-    return {
-        list: [
-        {
-          name: "霍山县",
-          pId: "341500000000000",
-          open: "False",
-          id: "341525000000000",
-          children: [
-            {
-              name: "衡山镇",
-              pId: "341525000000000",
-              open: "False",
-              id: "341525100000000"
+    export default {
+        data() {
+            return {
+                onlyLeaf: true,
+                showCheckbox: true,
+                multiple: true,
+                defaultExpandAll: true,
+                list: [{
+                    name: "霍山县",
+                    pId: "341500000000000",
+                    open: "False",
+                    id: "341525000000000",
+                    children: [{
+                            name: "衡山镇",
+                            pId: "341525000000000",
+                            open: "False",
+                            id: "341525100000000",
+                            children: [{
+                                    name: "衡山镇",
+                                    pId: "341525000000000",
+                                    open: "False",
+                                    id: "341525100000000"
+                                },
+                                {
+                                    name: "与儿街镇",
+                                    pId: "341525000000000",
+                                    open: "False",
+                                    id: "341525104000000"
+                                },
+                            ]
+                        },
+                        {
+                            name: "与儿街镇",
+                            pId: "341525000000000",
+                            open: "False",
+                            id: "341525104000000"
+                        },
+                        {
+                            name: "黑石渡镇",
+                            pId: "341525000000000",
+                            open: "False",
+                            id: "341525105000000"
+                        },
+                        {
+                            name: "诸佛庵镇",
+                            pId: "341525000000000",
+                            open: "False",
+                            id: "341525106000000"
+                        },
+                        {
+                            name: "高桥湾现代产业园",
+                            pId: "341525000000000",
+                            open: "False",
+                            id: "341525401000000"
+                        }
+                    ]
+                }],
+                showCheckBox: false,
+                type: 'select',
+                labelKey: "name",
+                valueKey: "id",
+                childrenKey: 'children',
+                selectValue: '341525401000000', //双向数据绑定当前选中值
+            };
+        },
+        mounted() {
+            setTimeout(() => {
+                this.selectValue = "341525106000000";
+            }, 3000)
+        },
+        watch: {
+            selectValue() {
+                console.log('selectValue', this.selectValue);
             },
-            {
-              name: "与儿街镇",
-              pId: "341525000000000",
-              open: "False",
-              id: "341525104000000"
+        },
+
+        methods: {
+            toggleExpand(node) {
+                console.log('toggleExpand', node);
             },
-            {
-              name: "黑石渡镇",
-              pId: "341525000000000",
-              open: "False",
-              id: "341525105000000"
+            selectChange(node) {
+                console.log('selectChange', node);
             },
-            {
-              name: "诸佛庵镇",
-              pId: "341525000000000",
-              open: "False",
-              id: "341525106000000"
+            checkChange(nodes) {
+                console.log('checkChange', nodes);
             },
-            {
-              name: "高桥湾现代产业园",
-              pId: "341525000000000",
-              open: "False",
-              id: "341525401000000"
-            }
-          ]
         }
-      ],
-      showCheckBox: false,
-      type:'select',
-      labelKey: "name",
-      valueKey: "id",
-      childrenKey:'children',
-      selectValue:'341525401000000',       //双向数据绑定当前选中值
     };
-  },
-  mounted(){
-    setTimeout(()=>{
-      this.selectValue = "341525106000000";
-    },3000)
-  },
-  watch:{
-      selectValue(){
-          console.log('selectValue',this.selectValue);
-      },
-  },
-
-  methods: {
-    toggleExpand(node){
-      console.log('toggleExpand',node);
-    },
-    selectChange(node){
-      console.log('selectChange',node);
-    },
-    checkChange(nodes){
-      console.log('checkChange',nodes);
-    },
-  }
-};
 </script>
+
+<style>
+    .attrs-box {
+        margin: 10px;
+    }
+
+    .data-box p {
+        margin: 10px;
+    }
+</style>
 ```
+
 :::
 
-
 ## Attributes
+
 <div class="markdown-table">
 
 |  属性  |  说明   |  类型|可选值|默认值|是否必须|
@@ -116,15 +149,16 @@ export default {
 |labelKey|数据显示key|String| -|label|是
 |valueKey|取值key (不传默认传递节点完整数据)|String|-|value|-
 |childrenKey|子集key|String|-|children|-
-|v-model|双向数据绑定 , `props需传入valueKey，为 “,” 拼接的字符串`|String|-|-|-|
+|v-model|双向数据绑定 , `props需传入valueKey，为 “,” 拼接的字符串` |String|-|-|-|
 |multiple|单击多选|-|-|-|-
 |only-leaf|只取叶子节点数据|-|-|-|-|
-|show-checkbox|开启复选框（`复选框开启，v-model初始化可只传入需要选中的顶层节点的value`）|-|-|-|-|
+|show-checkbox|开启复选框（ `复选框开启，v-model初始化可只传入需要选中的顶层节点的value` ）|-|-|-|-|
 |props|dataSource数据配置选项具体看下表|-|-|-|-|
 
 </div>
 
 ##  Props
+
 <div class="markdown-table">
 
 |  参数  |  说明   | 类型  | 默认值|  是否必须|
@@ -136,17 +170,19 @@ export default {
 </div>
 
 ## Events
+
 <div class="markdown-table">
 
 | 方法名 | 说明 | 参数|
 | ------ |----- | ---- |
-|on-toggle-expand|节点被点击展开收缩的时触发|传递 `dataSource` 属性的数组中该节点所对应的对象 （ 对象中`expand`属性即当前展开状态 ）
+|on-toggle-expand|节点被点击展开收缩的时触发|传递 `dataSource` 属性的数组中该节点所对应的对象 （ 对象中 `expand` 属性即当前展开状态 ）
 |on-select-change|Attributes不含show-checkbox，节点被点选的时触发|传递 `dataSource` 属性的数组中所选中的对象 |
 |on-check-change|Attributes含show-checkbox，节点checkbox被点击的时触发|传递 `dataSource` 属性的数组中所选中的对象 |
 
 </div>
 
 ###  methods
+
 <div class="markdown-table">
 
 | 方法名 | 说明 | 参数|
@@ -155,3 +191,4 @@ export default {
 |getCheckedNodes|获取当前多选选中的所有节点|-|
 
 </div>
+

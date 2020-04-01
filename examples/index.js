@@ -53,7 +53,17 @@ Vue.filter("filterAct", (val, type, property) => {
   });
 
 const myRouter = new Router({
-    routes,
+    routes:[
+      {
+        path:"/",
+        name:"quick-start",
+        meta:{
+            title:"quick-start",
+        },
+        component:()=>import(`../README.md`)
+      },
+      ...routes,
+    ],
 });
 
 myRouter.beforeEach((to, from, next) => {

@@ -1,10 +1,10 @@
 const lang = 'zh-CN';
 const components = require('../components.json')
-
 const routes = Object.keys(components).map(key=>{
     return {
         path:`/${key}`,
         name:key,
+        value:key,
         meta:{
             title:key
         },

@@ -7,11 +7,11 @@
 
 ## Install
 ```shell
-npm i @cgj/k-view -S
+  npm i @cgj/k-view -S
 ```
 
 ## Quick Start
-``` javascript
+```javascript
 
 import KView from '@cgj/k-view'
 import '@cgj/k-view/lib/kview/style.css'
@@ -33,8 +33,11 @@ Vue.use(Tree);
 With the help of [babel-plugin-kimport](https://github.com/SoldierAb/babel-plugin-kimport), we can import components we actually need, making the project smaller than otherwise.
 
 First, install [babel-plugin-kimport](https://www.npmjs.com/package/babel-plugin-kimport):
+
 ```bash
+
   npm i -D babel-plugin-kimport
+
 ```
 
 Then edit babel.config.js:

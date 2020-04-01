@@ -67,8 +67,7 @@
     .node-label {
       border-radius: 4px;
       letter-spacing: 1px;
-      padding: 2px 4px;
-      margin: 2px 0;
+      padding: 2px;
       white-space: nowrap;
     }
 
@@ -126,6 +125,8 @@
 
   .tree-checkbox {
     vertical-align: middle;
+    display: inline-block;
+    padding-left:6px;
   }
 
   .arrow-icon {
@@ -185,10 +186,7 @@
 <script>
 import TreeNode from "./TreeNode.vue"
 import Emitter from "../../../utils/emitter"
-
-
-window.getType = (obj, type) =>
-  Object.prototype.toString.call(obj).includes(`${type.slice(1)}`);
+import getType from "./util/type"
 
 export default {
   name: "KTree",
@@ -198,6 +196,12 @@ export default {
   mixins: [Emitter],
 
   props: {
+    defaultExpandAll:{
+      type:Boolean,
+      default(){
+        return true;
+      }
+    },
     value: {
       type:String,
       default(){
@@ -294,15 +298,15 @@ export default {
     setFlatState() {
       let flatState = [],
         markKey = 0,
-        { childrenKey,showCheckbox,multiple } = this;
+        { childrenKey,showCheckbox,multiple,defaultExpandAll } = this;
 
       const toFlateJson = (node, parentNode) => {
 
         node.nodeKey = markKey++;
 
-        if(getType(node.expand,'undefined')){
-          this.$set(node,'expand',Boolean(node.expand));
-        }
+        // if(getType(node.expand,'undefined')){
+        //   }
+          this.$set(node,'expand',defaultExpandAll?defaultExpandAll:Boolean(node.expand));
 
         flatState[node.nodeKey] = { node: node, nodeKey: node.nodeKey }; //nodeKey与索引对应
 

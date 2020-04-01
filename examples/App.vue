@@ -4,7 +4,7 @@
       <k-side-nav
         :data-source="menuData"
         label-key="name"
-        value-key="name"
+        value-key="value"
         router
         :default-active="$route.path"
       >
@@ -30,7 +30,16 @@ export default {
 
   data() {
     return {
-      menuData: routes,
+      menuData: [
+        {
+          name:"quick-start",
+          value:"",
+        },
+        {
+          name:'components',
+          children:routes,
+        }
+      ],
       currentValue:''
     };
   },

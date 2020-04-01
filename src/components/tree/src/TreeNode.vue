@@ -24,15 +24,14 @@
           v-else
           class="tree-arrow"
         />
-        <span v-if="showCheckbox">
+        <div class="tree-checkbox">
           <input
-            class="tree-checkbox"
+            v-if="showCheckbox"
             type="checkbox"
             :checked="nodeData.checked"
             @change.stop="handleCheck"
           >
-        </span>
-
+        </div>
         <span
           :class="labelClasses"
           :style="`${showTip?'width:calc(100% - 40px)':''}`"
@@ -76,6 +75,7 @@
 <script>
 import Emitter from "../../../utils/emitter";
 import Icon from "../../icon";
+import getType from "./util/type"
 
 export default {
   name: "KTreeNode",

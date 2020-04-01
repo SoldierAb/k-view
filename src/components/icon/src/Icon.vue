@@ -11,7 +11,7 @@
 
 <style lang="scss">
 .k-icon {
-  padding: 2px 4px;
+  padding: 2px 4px !important;
   .icon {
     width: 15px;
     height: 15px;
