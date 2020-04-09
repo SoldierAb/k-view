@@ -1,11 +1,12 @@
-import draggable from "../../utils/draggable";
+// import draggable from "../../utils/draggable";
+import drag  from '../../utils/drag'
 import FadePop from "./src/FadePop";
 
 FadePop.install = Vue => {
   Vue.directive("draggable", {
     inserted: function(el, binding) {
-      if (binding.value !== false) {
-        draggable(el.parentNode, el);
+      if (binding.value) {
+        drag(el.parentNode);
       }
     },
   });
