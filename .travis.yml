@@ -16,6 +16,16 @@ script:
   - npm run build
 after_success:
   - npm run test
+deploy:
+  provider: pages
+  skip_cleanup: true
+  keep_history: true
+  github_token: $GITHUB_TOKEN
+  local_dir: ./dist/
+  target_branch: gh-pages
+  verbose: true
+  on:
+    branch: master
 jobs:                            
   include:
     - stage: npm release   
@@ -27,14 +37,4 @@ jobs:
           skip_cleanup: true       
           on:
             tags: true
-          # ⋮
-        - provider: pages
-          skip_cleanup: true
-          keep_history: true
-          github_token: $GITHUB_TOKEN
-          local_dir: ./dist/
-          target_branch: gh-pages
-          verbose: true
-          on:
-            branch: master
 
