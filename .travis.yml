@@ -26,8 +26,8 @@ jobs:
         local_dir: ./dist/
         target_branch: gh-pages
         verbose: true
-    on:
-      branch: master
+        on:
+          branch: master
     - stage: npm release
       if: tag IS present
       node_js: "10"
