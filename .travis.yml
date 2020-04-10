@@ -24,20 +24,18 @@ jobs:
         provider: npm
         email: "$EMAIL"
         api_key: "$NPM_TOKEN"
-        skip_cleanup: true 
+        skip_cleanup: true       # 为了防止 Travis CI 清理额外的文件夹并删除你做的改变
         on:
           tags: true
-
-    - stage: "gh-pages"
-      provider: pages
-      skip_cleanup: true
-      keep_history: true
-      github_token: $GITHUB_TOKEN
-      local_dir: ./dist/
-      target_branch: gh-pages
-      verbose: true
-      on:
-        branch: master
- 
+deploy:
+  provider: pages
+  skip_cleanup: true
+  keep_history: true
+  github_token: $GITHUB_TOKEN
+  local_dir: ./dist/
+  target_branch: gh-pages
+  verbose: true
+  on:
+    branch: master
 
 
