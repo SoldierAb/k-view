@@ -1,5 +1,6 @@
 language: node_js
 node_js:
+  - 8
   - 10
 branches:
   only:
@@ -16,6 +17,7 @@ script:
   - npm run build
 after_success:
   - npm run test
+  
 deploy:
   - provider: pages
     skip_cleanup: true
@@ -26,4 +28,18 @@ deploy:
     verbose: true
     on:
       branch: master
-
+jobs:
+  include:
+    - stage: npm release
+      if: tag IS present
+      node_js: "10"
+      script: yarn compile
+      before_deploy:
+        - cd dist
+      deploy:
+        provider: npm
+        email: "$EMAIL"
+        api_key: "$NPM_TOKEN"
+        skip_cleanup: true
+        on:
+          tags: true
