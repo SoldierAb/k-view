@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.14.0](https://github.com/SoldierAb/k-view/compare/v1.13.0...v1.14.0) (2020-04-10)
+
+
+### Features
+
+* ✨ modify tag matching ([6cc1e62](https://github.com/SoldierAb/k-view/commit/6cc1e62285fbbfa65ecbc1ba617a1b3c850d9acf))
+
 ## [1.13.0](https://github.com/SoldierAb/k-view/compare/v1.12.0...v1.13.0) (2020-04-10)
 
 
