@@ -18,8 +18,11 @@
         :style="[fadeBoxStyle]"
         class="fade-box"
       >
-        <fade-body v-draggable="draggable">
-          <div class="fade-head clearfix">
+        <fade-body>
+          <div
+            v-draggable="draggable"
+            class="fade-head clearfix"
+          >
             <span class="fade-head-content">{{ title }}</span>
             <span
               class="fade-head-close"
@@ -71,6 +74,9 @@
     .fade-head-close {
       float: right;
       padding: 0 10px;
+      &:hover{
+        cursor: pointer;
+      }
       img {
         vertical-align: middle;
         width: 32px;
@@ -134,7 +140,7 @@ export default {
     draggable: {
       type: Boolean,
       default() {
-        return true;
+        return false;
       },
     },
     show: {

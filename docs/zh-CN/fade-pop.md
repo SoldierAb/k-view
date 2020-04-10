@@ -7,7 +7,7 @@
 ```html
 <template>
     <a class="k-link" @click="showPop = true">点击弹出，点击阴影消失</a>
-   <k-fade-pop v-model="showPop" draggable modalHidden title="标题" :width="800" :height="200">
+   <k-fade-pop v-model="showPop" modalHidden title="标题" :width="800" :height="200">
        展示内容
    </k-fade-pop>
 </template>
