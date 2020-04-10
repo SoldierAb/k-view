@@ -1,6 +1,5 @@
 language: node_js
 node_js:
-  - 8
   - 10
 branches:
   only:
@@ -15,27 +14,24 @@ install:
 script:
   - npm run demo
   - npm run build
-after_success:
-  - npm run test
-  
-deploy:
-  - provider: pages
-    skip_cleanup: true
-    keep_history: true
-    github_token: $GITHUB_TOKEN
-    local_dir: ./dist/
-    target_branch: gh-pages
-    verbose: true
-    on:
-      branch: master
 jobs:
   include:
+    - stage: "gh-page"
+      script: npm run demo
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        keep_history: true
+        github_token: $GITHUB_TOKEN
+        local_dir: ./dist/
+        target_branch: gh-pages
+        verbose: true
+    on:
+      branch: master
     - stage: npm release
       if: tag IS present
       node_js: "10"
       script: npm run build
-      before_deploy:
-        - cd dist
       deploy:
         provider: npm
         email: "$EMAIL"
@@ -43,3 +39,5 @@ jobs:
         skip_cleanup: true
         on:
           tags: true
+after_success:
+  - npm run test
