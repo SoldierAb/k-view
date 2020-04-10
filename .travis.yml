@@ -15,7 +15,7 @@ script:
   - npm run demo
   - npm run build
 after_success:
-  - npm run test
+  - npm run test  
 jobs:
   include:
     - stage: "gh-page"
@@ -40,3 +40,4 @@ jobs:
         skip_cleanup: true
         on:
           tags: true
+
