@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](https://github.com/SoldierAb/k-view/compare/v1.11.0...v1.12.0) (2020-04-10)
+
+
+### Features
+
+* ✨ merge yml ([f180264](https://github.com/SoldierAb/k-view/commit/f1802648b7cd02b0af20fe3ff8c7df09df6926b6))
+* update yml ([48372df](https://github.com/SoldierAb/k-view/commit/48372dffa49fa2d27f83e760feda246e7f368fc6))
+
 ## [1.11.0](https://github.com/SoldierAb/k-view/compare/v1.10.1...v1.11.0) (2020-04-10)
 
 
