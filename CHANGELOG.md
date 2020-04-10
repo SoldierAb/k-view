@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/SoldierAb/k-view/compare/v1.9.0...v1.10.0) (2020-04-10)
+
+
+### Features
+
+* ✨ add drag event util for fade-pop ([0b1cdfa](https://github.com/SoldierAb/k-view/commit/0b1cdfacfbf139319d6672fa2ecc2cf46a3304e6))
+* ✨ add drag util ([60ef54f](https://github.com/SoldierAb/k-view/commit/60ef54fb958f2903deedcae9b64deed5c0eed9c6))
+* ✨ add fade-pop footer ([6cd5bdf](https://github.com/SoldierAb/k-view/commit/6cd5bdf517a3656a2b5abee248d336f78a3bfa92))
+
 ## [1.9.0](https://github.com/SoldierAb/k-view/compare/v1.8.0...v1.9.0) (2020-04-01)
 
 
