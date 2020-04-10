@@ -31,8 +31,32 @@
               <i class="el-icon-close" />
             </span>
           </div>
-          <div class="fade-body">
+          <div
+            class="fade-body"
+            :style="`height:calc(100% - ${(footer?2:1)*48}px)`"
+          >
             <slot />
+          </div>
+          <div
+            v-if="footer"
+            class="fade-footer"
+            :style="`justify-content:${typeof footer === 'string'?footer:'flex-end'}`"
+          >
+            <slot name="footer">
+              <k-button
+                size="small"
+                @click="closePop"
+              >
+                取消
+              </k-button>
+              <k-button
+                size="small"
+                type="primary"
+                @click="$emit('submit')"
+              >
+                确定
+              </k-button>
+            </slot>
           </div>
         </fade-body>
       </div>
@@ -42,6 +66,7 @@
 
 <style lang="scss">
 .fade-pop-container {
+  $header-height:48px;
   .fade-modal {
     position: fixed;
     top: 0;
@@ -84,8 +109,8 @@
     }
     .fade-head {
       // font-weight: bold;
-      height: 48px;
-      line-height: 48px;
+      height: $header-height;
+      line-height: $header-height;
       font-size: 14px;
       padding-left: 4px;
       font-size: 18px;
@@ -100,8 +125,15 @@
     }
     .fade-body {
       background-size: 100% 100%;
-      height: calc(100% - 60px);
-      padding: 10px;
+      height: calc(100% - #{$header-height});
+    }
+    .fade-footer{
+      height:48px;
+      padding: 0 20px;
+      border-top:1px solid $bg-gray;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
     }
   }
 }
@@ -129,14 +161,22 @@
 
 <script>
 import FadeBody from "./FadeBody";
+import {Button} from "element-ui";
+
 export default {
   name: "KFadePop",
-  components: { FadeBody },
+  components: { FadeBody ,KButton:Button},
   model: {
     prop: "show",
     event: "change",
   },
   props: {
+    footer:{
+      type: Boolean,
+      default() {
+        return false;
+      },
+    },
     draggable: {
       type: Boolean,
       default() {

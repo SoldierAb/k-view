@@ -7,6 +7,7 @@
 <style lang="scss">
 .fade-body-container {
   height: 100%;
+  position: relative;
 }
 </style>
 

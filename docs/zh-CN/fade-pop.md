@@ -7,7 +7,7 @@
 ```html
 <template>
     <a class="k-link" @click="showPop = true">点击弹出，点击阴影消失</a>
-   <k-fade-pop v-model="showPop" modalHidden title="标题" :width="800" :height="200">
+   <k-fade-pop v-model="showPop" draggable modal-hidden footer title="标题" :width="800" :height="400" @submit="submit">
        展示内容
    </k-fade-pop>
 </template>
@@ -33,7 +33,12 @@
             return {
                 showPop:false,
             }
-        }
+        },
+        methods:{
+            submit(){
+                alert('submit');
+            },
+        },
     }
 </script>
 
@@ -52,5 +57,7 @@
 |beforeClose|关闭前钩子函数|Function|-|-
 |width|宽度|String、Number|'60%'|-
 |height|高度|String、Number|'80%'|-
+|draggable|是否可拖拽|boolean|false|-
+|footer|是否显示底部按钮 或 justify-content属性值|boolean ( 是否展示，为true则justify-content默认flex-end )；string ( 展示，其为justify-content属性值，默认 : flex-end ) |false|-
 
 </div>
