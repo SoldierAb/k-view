@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.16.0](https://github.com/SoldierAb/k-view/compare/v1.15.0...v1.16.0) (2020-04-15)
+
+
+### Features
+
+* ✨ add tree width position Attributes ([5ef0a57](https://github.com/SoldierAb/k-view/commit/5ef0a57da1914efa94f434188cafeaf1673d1ea0))
+
 ## [1.15.0](https://github.com/SoldierAb/k-view/compare/v1.14.0...v1.15.0) (2020-04-10)
 
 
