@@ -23,7 +23,6 @@
 import Vue from 'vue'
 import routes from "./routes";
 import SideNav from '../src/components/side-nav'
-
 Vue.use(SideNav);
 
 export default {

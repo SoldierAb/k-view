@@ -1,5 +1,8 @@
 <template>
-  <div class="tree-container">
+  <div
+    class="tree-container"
+    :style="`width:${width}px;`"
+  >
     <div class="tree-body">
       <tree-node
         v-for="(item ,index) in stateTree"
@@ -10,6 +13,7 @@
         :label-key="labelKey"
         :show-checkbox="showCheckbox"
         :show-tip="showTip"
+        :position="position"
       >
         <slot
           v-slot:custom-node="{nodeData,children}"
@@ -44,9 +48,8 @@
   position: relative;
   display: inline-block;
   background: $bg-base;
-  height: 100%;
-  width: 100%;
   text-align: left;
+  height: 100%;
 
   .tip-box {
     vertical-align: bottom;
@@ -69,7 +72,7 @@
       letter-spacing: 1px;
       padding: 2px;
       margin: 2px 0;
-      white-space: nowrap;
+      // @include overflow-text(1)
     }
 
     .node-label-active {
@@ -201,6 +204,18 @@ export default {
       type:Boolean,
       default(){
         return true;
+      }
+    },
+    width:{
+      type:Number,
+      default(){
+        return 260;
+      },
+    },
+     position:{
+      type:String,
+      default(){
+        return "right"
       }
     },
     value: {

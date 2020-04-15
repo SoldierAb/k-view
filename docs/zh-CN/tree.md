@@ -18,14 +18,14 @@
         :data-source="list" 
         @on-toggle-expand="toggleExpand" 
         @on-select-change="selectChange" 
-        @on-check-change="checkChange"/>
+        @on-check-change="checkChange" 
+    />
     <div class="attrs-box">
-        <button @click="onlyLeaf=!onlyLeaf">toggleOnlyLeaf-> onlyLeaf : {{onlyLeaf}}</button>
-        <button @click="showCheckbox = !showCheckbox">toggleShowCheckbox-> showCheckbox : {{showCheckbox}}</button>
-        <button @click="multiple = !multiple;showCheckbox = false">toggleMultiple (showCheckbox should be false)-> multiple : {{multiple}} </button>
+        <button class="btn" @click="onlyLeaf=!onlyLeaf">是否只绑定叶子节点数据-> onlyLeaf : {{onlyLeaf}}</button>
+        <button class="btn" @click="showCheckbox = !showCheckbox">是否展示多选-> showCheckbox : {{showCheckbox}}</button>
+        <button class="btn" @click="multiple = !multiple;showCheckbox = false">是否打击多选 (showCheckbox should be false)-> multiple : {{multiple}} </button>
     </div>
     <div class="data-box">
-        <p>dataSource -> list: {{list}}</p>
         <p>v-model -> {{selectValue}}</p>
     </div>
 </template>
@@ -129,6 +129,32 @@
     .attrs-box {
         margin: 10px;
     }
+    .btn {
+            padding: 4px 10px;
+            color: #409eff;
+            background: #ecf5ff;
+            border-color: #b3d8ff;
+            display: inline-block;
+            line-height: 1;
+            white-space: nowrap;
+            cursor: pointer;
+            background: #fff;
+            border: 1px solid #dcdfe6;
+            color: #606266;
+            -webkit-appearance: none;
+            text-align: center;
+            box-sizing: border-box;
+            outline: none;
+            margin: 0;
+            transition: .1s;
+            font-weight: 500;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            padding: 12px 20px;
+            font-size: 14px;
+            border-radius: 4px;
+        }
 
     .data-box p {
         margin: 10px;
@@ -144,13 +170,14 @@
 
 |  属性  |  说明   |  类型|可选值|默认值|是否必须|
 |-------|---------|---|---|---|---|
-|dataSource|数据源| Array | - |-  |是
-|type|组件类型|String|tree、select|select|-
+|dataSource|数据源| Array | - |-  |是|
+|width|占用宽度(溢出文本将展示tip)|Number| -|260|-|
+|position|文本溢出tip展示位置|string|top、left、right、bottom|top|-|
 |labelKey|数据显示key|String| -|label|是
-|valueKey|取值key (不传默认传递节点完整数据)|String|-|value|-
-|childrenKey|子集key|String|-|children|-
+|valueKey|取值key (不传默认传递节点完整数据)|String|-|value|-|
+|childrenKey|子集key|String|-|children|-|
 |v-model|双向数据绑定 , `props需传入valueKey，为 “,” 拼接的字符串` |String|-|-|-|
-|multiple|单击多选|-|-|-|-
+|multiple|单击多选|-|-|-|-|
 |only-leaf|只取叶子节点数据|-|-|-|-|
 |show-checkbox|开启复选框（ `复选框开启，v-model初始化可只传入需要选中的顶层节点的value` ）|-|-|-|-|
 |props|dataSource数据配置选项具体看下表|-|-|-|-|

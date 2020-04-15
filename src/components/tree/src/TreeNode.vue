@@ -41,19 +41,26 @@
             name="custom-node"
             v-bind="{nodeData,children}"
           > 
-            <img
-              v-if="imgSource.node&&imgSource.leaf"
-              width="18"
-              height="18"
-              class="label-icon"
-              :src="children&&children.length?imgSource.node:imgSource.leaf"
-              alt
+           
+            <k-tip
+              :position="position"
+              :content="nodeData[labelKey]"
+              text-width=""
             >
-            <icon
-              v-else
-              :type="`${children&&children.length?'file-b-':'file'}`"
-            />
-            <label>{{ nodeData[labelKey] }}</label>
+              <img
+                v-if="imgSource.node&&imgSource.leaf"
+                width="18"
+                height="18"
+                class="label-icon"
+                :src="children&&children.length?imgSource.node:imgSource.leaf"
+                alt
+              >
+              <icon
+                v-else
+                :type="`${children&&children.length?'file-b-':'file'}`"
+              />
+              {{ nodeData[labelKey] }}
+            </k-tip>
           </slot>
         </span>
      
@@ -66,6 +73,7 @@
           :show-checkbox="showCheckbox"
           :node-data="item"
           :label-key="labelKey"
+          :position="position"
         />
       </li>
     </ul>
@@ -75,13 +83,20 @@
 <script>
 import Emitter from "../../../utils/emitter";
 import Icon from "../../icon";
-import getType from "./util/type"
+import getType from "./util/type";
+import Tip from "../../tip"
 
 export default {
   name: "KTreeNode",
-  components: { Icon },
+  components: { Icon ,KTip:Tip},
   mixins: [Emitter],
   props: {
+    position:{
+      type:String,
+      default(){
+        return "right"
+      }
+    },
     showTip: {
       type: Boolean
     },
