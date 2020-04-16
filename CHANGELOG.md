@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.17.0](https://github.com/SoldierAb/k-view/compare/v1.16.0...v1.17.0) (2020-04-16)
+
+
+### Features
+
+* ✨ delete common el-menu-active class ([7ec3438](https://github.com/SoldierAb/k-view/commit/7ec3438be376fa1623ed0abb1170aa53b3cda3da))
+
 ## [1.16.0](https://github.com/SoldierAb/k-view/compare/v1.15.0...v1.16.0) (2020-04-15)
 
 
