@@ -1,4 +1,5 @@
 {   
+    "chat-box": "./src/components/chat-box/index.js",
     "tab": "./src/components/tab/index.js",
     "tip": "./src/components/tip/index.js",
     "tree": "./src/components/tree/index.js",
