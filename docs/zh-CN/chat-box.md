@@ -1,4 +1,4 @@
-#  Loading 加载动画
+#  chat-box demo
 
 ### 使用
 
@@ -120,26 +120,4 @@ import Vue from 'vue'
 ```
 
 :::
-
-###  Attributes
-<div class="markdown-table">
-
-|  属性  |  说明   |  类型|可选值|默认值|是否必须
-|-------|---------|---|---|---|---|
-|callback|回调函数|Function|-|-|-
-|background|背景色|String|-|rgba(0, 0, 0, .6)|-
-|color|加载图标颜色|String|-|#4b9cdb|-
-
-</div>
-
-
-###  Events
-<div class="markdown-table">
-
-| 方法名 | 说明 |
-| ------ |----- | 
-| show | 显示提示 | 详见Attributes表 |
-| hide | 隐藏提示 | 详见Attributes表 |
-
-</div>
 
