@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.18.0](https://github.com/SoldierAb/k-view/compare/v1.17.0...v1.18.0) (2020-05-19)
+
+
+### Features
+
+* ✨ add chat-box demo ([3d7798f](https://github.com/SoldierAb/k-view/commit/3d7798f88e624924ddb631e0126bfee5c8fec298))
+* ✨ add entry lib index ([896f527](https://github.com/SoldierAb/k-view/commit/896f527743a947af6663072f92c8538e5ee7cea6))
+* ✨ del chat-box demo ([fa7fa72](https://github.com/SoldierAb/k-view/commit/fa7fa72710aab7608ac5b7c8ee5fa94bdc505b8b))
+
 ## [1.17.0](https://github.com/SoldierAb/k-view/compare/v1.16.0...v1.17.0) (2020-04-16)
 
 
