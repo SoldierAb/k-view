@@ -90,7 +90,6 @@
     "node-sass": "^4.13.1",
     "nodemon": "^1.18.10",
     "postcss-loader": "^3.0.0",
-    "pre-commit": "^1.2.2",
     "progress-bar-webpack-plugin": "^1.12.1",
     "sass-loader": "^8.0.2",
     "sass-resources-loader": "^2.0.0",
