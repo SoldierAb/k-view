@@ -238,10 +238,10 @@ return /******/ (function(modules) { // webpackBootstrap
 /*!*************************!*\
   !*** ./components.json ***!
   \*************************/
-/*! exports provided: kview, tab, tip, tree, table, fade-pop, side-nav, upload-btn, loading, markdown, select-search, default */
+/*! exports provided: tab, tip, tree, table, fade-pop, side-nav, upload-btn, loading, markdown, select-search, default */
 /***/ (function(module) {
 
-eval("module.exports = JSON.parse(\"{\\\"kview\\\":\\\"./src/index.js\\\",\\\"tab\\\":\\\"./src/components/tab/index.js\\\",\\\"tip\\\":\\\"./src/components/tip/index.js\\\",\\\"tree\\\":\\\"./src/components/tree/index.js\\\",\\\"table\\\":\\\"./src/components/table/index.js\\\",\\\"fade-pop\\\":\\\"./src/components/fade-pop/index.js\\\",\\\"side-nav\\\":\\\"./src/components/side-nav/index.js\\\",\\\"upload-btn\\\":\\\"./src/components/upload-btn/index.js\\\",\\\"loading\\\":\\\"./src/components/loading/index.js\\\",\\\"markdown\\\":\\\"./src/components/markdown/index.js\\\",\\\"select-search\\\":\\\"./src/components/select-search/index.js\\\"}\");\n\n//# sourceURL=webpack:///./components.json?");
+eval("module.exports = JSON.parse(\"{\\\"tab\\\":\\\"./src/components/tab/index.js\\\",\\\"tip\\\":\\\"./src/components/tip/index.js\\\",\\\"tree\\\":\\\"./src/components/tree/index.js\\\",\\\"table\\\":\\\"./src/components/table/index.js\\\",\\\"fade-pop\\\":\\\"./src/components/fade-pop/index.js\\\",\\\"side-nav\\\":\\\"./src/components/side-nav/index.js\\\",\\\"upload-btn\\\":\\\"./src/components/upload-btn/index.js\\\",\\\"loading\\\":\\\"./src/components/loading/index.js\\\",\\\"markdown\\\":\\\"./src/components/markdown/index.js\\\",\\\"select-search\\\":\\\"./src/components/select-search/index.js\\\"}\");\n\n//# sourceURL=webpack:///./components.json?");
 
 /***/ }),
 
