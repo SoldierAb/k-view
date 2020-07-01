@@ -1,7 +1,7 @@
 <template>
   <div class="upload-btn-container">
     <div class="upload-btn-box">
-      <label>上传文件</label>
+      <label>{{ k('k.upload.label') }}</label>
       <input
         ref="inputUpload"
         class="upload-btn"
@@ -56,10 +56,11 @@
 <script>
 import uploadAct from "../../../utils/upload";
 import Emitter from "../../../utils/emitter";
+import Locale from "../.././../mixins/locale"
 
 export default {
   name: "KUploadBtn",
-  mixins: [Emitter],
+  mixins: [Locale,Emitter],
   props: {
     multiple: {
       //是否多选
@@ -169,7 +170,6 @@ export default {
     upload(file) {
       if (!this.beforeUpload) {
         //如果没有校验规则直接开始上传
-
         return this.post(file);
       }
 

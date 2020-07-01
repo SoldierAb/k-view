@@ -8,6 +8,7 @@ import Tree from './components/tree'
 import UploadBtn from './components/upload-btn'
 import Markdown from './components/markdown'
 import SelectSearch from './components/select-search'
+import locale from './locale'
 
 const components=[
     FadePop,
@@ -20,8 +21,10 @@ const components=[
     SelectSearch,
 ];
 
-const install=(Vue)=>{
-
+const install=(Vue, opts = {})=>{
+    locale.use(opts.lang);
+    locale.i18n(opts.i18n);
+    
     if (install.installed) return;
 
     Vue.use(Loading)
@@ -29,6 +32,8 @@ const install=(Vue)=>{
     components.forEach(item=>{
         Vue.component(item.name,item);
     })
+
+    install.installed= true;
 }
 
 
@@ -37,6 +42,8 @@ if (typeof window !== 'undefined'&&window.Vue){
 }
 
 const KVIEW = {
+    locale: locale.use,
+    i18n: locale.i18n,
     install,
     ...components,
 }

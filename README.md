@@ -12,7 +12,6 @@
 
 ## Quick Start
 ```javascript
-
 import KView from '@cgj/k-view'
 import '@cgj/k-view/lib/kview/style.css'
 Vue.use(KView);
@@ -26,6 +25,14 @@ import {
 
 Vue.use(Loading);
 Vue.use(Tree);
+
+```
+
+## Language Support
+```javascript
+// import lang from '@cgj/k-view/lib/locale/lang/zh-CN' //  Use by default
+import lang from '@cgj/k-view/lib/locale/lang/en'  
+Vue.use(KView,{lang});
 
 ```
 

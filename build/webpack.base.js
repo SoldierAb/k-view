@@ -4,6 +4,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const BuildTheme = process.env.npm_config_theme || 'default';
 const analyz = process.env.npm_config_analyz;
@@ -121,6 +122,18 @@ const webpackConfig = {
 
         new CleanWebpackPlugin({
             verbose: true
+        }),
+        new CopyPlugin({
+            patterns: [
+              { 
+                from: '**/*', 
+                to: path.resolve(__dirname, '../lib/locale/lang'),
+                context: path.resolve(__dirname, '../src/locale/lang/'),
+                // transformPath() {
+                //     return '/';
+                // },
+              }
+            ]
         }),
     ],
 
