@@ -8,7 +8,8 @@ const routes = Object.keys(components).map(key=>{
         meta:{
             title:key
         },
-        component:()=>import(`../docs/${lang}/${key}.md`)
+        // component:()=>import(`../docs/${lang}/${key}.md`)
+        component:resolve => require([`../docs/${lang}/${key}.md`], resolve)
     }
 })
 export default routes;
