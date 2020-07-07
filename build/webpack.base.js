@@ -123,18 +123,18 @@ const webpackConfig = {
         new CleanWebpackPlugin({
             verbose: true
         }),
-        new CopyPlugin({
-            patterns: [
-              { 
-                from: '**/*', 
-                to: path.resolve(__dirname, '../lib/locale/lang'),
-                context: path.resolve(__dirname, '../src/locale/lang/'),
-                // transformPath() {
-                //     return '/';
-                // },
-              }
-            ]
-        }),
+        // new CopyPlugin({
+        //     patterns: [
+        //       { 
+        //         from: '**/*', 
+        //         to: path.resolve(__dirname, '../lib/locale/lang'),
+        //         context: path.resolve(__dirname, '../src/locale/lang/'),
+        //         // transformPath() {
+        //         //     return '/';
+        //         // },
+        //       }
+        //     ]
+        // }),
     ],
 
 };

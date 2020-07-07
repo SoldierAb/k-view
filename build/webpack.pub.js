@@ -2,13 +2,20 @@ const path = require('path');
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.base');
 const Components = require('../components.json');
+const requireContext = require('require-context')
+const keys = requireContext(path.join(__dirname,'../src/locale/lang'),false,/\.js$/).keys()
+const langs = {}
+keys.forEach(key=>{
+    langs[`locale/lang/${key.split('.js')[0]}`] =`./src/locale/lang/${key}` 
+})
 
 module.exports = merge(baseConfig, {
     mode: 'production',
     entry: Object.assign(
         {
-            kview:'./src/index.js',
+            vizier:'./src/index.js',
         },  
+        langs,
         Components
     ),
     output: {

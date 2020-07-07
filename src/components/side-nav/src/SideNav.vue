@@ -7,6 +7,7 @@
       ref="sideNav"
       class="el-menu-vertical-demo"
       :default-active="defaultActive"
+      :default-openeds="defaultOpeneds"
       :router="router"
       @open="handleOpen"
       @close="handleClose"
@@ -104,6 +105,12 @@ export default {
       type:String,
       default(){
         return ""
+      }
+    },
+    defaultOpeneds: {
+      type:Array,
+      default(){
+        return []
       }
     },
     valueKey: {

@@ -32,8 +32,6 @@ const install=(Vue, opts = {})=>{
     components.forEach(item=>{
         Vue.component(item.name,item);
     })
-
-    install.installed= true;
 }
 
 

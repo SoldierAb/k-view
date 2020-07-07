@@ -75,6 +75,7 @@
     "nodemon": "^1.18.10",
     "postcss-loader": "^3.0.0",
     "progress-bar-webpack-plugin": "^1.12.1",
+    "require-context": "^1.1.0",
     "sass-loader": "^8.0.2",
     "sass-resources-loader": "^2.0.0",
     "standard-version": "^7.0.1",
