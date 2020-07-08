@@ -62,7 +62,7 @@
 
 <div class="markdown-table">
 
-|  参数  |  说明   | 类型  | 默认值|  是否必须|
+|  Attribute  |  Description   | Type  | Default|  Require|
 |-------|---------|------|--------|----------|
 |mode|模式(editor、preview)|string|editor|-
 |v-model|双向绑定，markdown 字符串|string|-|-
@@ -87,7 +87,7 @@
     imagelink: true, // 图片链接
     help: true, // 帮助
     code: true, // code
-    subfield: true, // 是否需要分栏
+    subfield: true, // true -需要分栏
     fullscreen: true, // 全屏编辑
     readmodel: true, // 沉浸式阅读
     undo: true, // 上一步

@@ -1,6 +1,6 @@
-#  ColTable 横向表格
+##  ColTable 
 
-### 使用
+### Basic usage
 
 :::kview 
 
@@ -62,11 +62,11 @@
 
 <div class="markdown-table">
 
-|  参数  |  说明   | 类型  | 默认值|  是否必须|
+|  Attribute  |  Description   | Type  | Default|  Require|
 |-------|---------|------|--------|----------|
-|bodyData|数据|Array\<Object\>|[]|-
-|headerData|表头配置|Array\<Object\>|[]|是
-|headerWidth|表头宽度|Number|120（单位：px）|否
+|bodyData|table data|Array\<Object\>|[]|-
+|headerData|table header columns|Array\<Object\>|[]|true
+|headerWidth|table header columns width|Number|120（unit: px）| -
 
 </div>
 
@@ -74,9 +74,9 @@
 
 <div class="markdown-table">
 
-| 方法名 | 说明 | 参数|
+| Event Name | Description | Parameters|
 | ------ |----- | ---- |
-|cell-click|单元格点击事件|传递 thItem, bodyDataIndex, bodyData|
+|cell-click|triggers when clicking a cell| thItem, bodyDataIndex, bodyData|
 
 </div>
 

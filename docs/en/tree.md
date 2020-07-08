@@ -21,9 +21,9 @@
         @on-check-change="checkChange" 
     />
     <div class="attrs-box">
-        <button class="btn" @click="onlyLeaf=!onlyLeaf">是否只绑定叶子节点数据-> onlyLeaf : {{onlyLeaf}}</button>
-        <button class="btn" @click="showCheckbox = !showCheckbox">是否展示多选-> showCheckbox : {{showCheckbox}}</button>
-        <button class="btn" @click="multiple = !multiple;showCheckbox = false">是否打击多选 (showCheckbox should be false)-> multiple : {{multiple}} </button>
+        <button class="btn" @click="onlyLeaf=!onlyLeaf">true -只绑定叶子节点数据-> onlyLeaf : {{onlyLeaf}}</button>
+        <button class="btn" @click="showCheckbox = !showCheckbox">true -展示多选-> showCheckbox : {{showCheckbox}}</button>
+        <button class="btn" @click="multiple = !multiple;showCheckbox = false">true -打击多选 (showCheckbox should be false)-> multiple : {{multiple}} </button>
     </div>
     <div class="data-box">
         <p>v-model -> {{selectValue}}</p>
@@ -166,12 +166,12 @@
 
 <div class="markdown-table">
 
-|  属性  |  说明   |  类型|可选值|默认值|是否必须|
+|  属性  |  Description   |  Type|可选值|Default|Require|
 |-------|---------|---|---|---|---|
-|dataSource|数据源| Array | - |-  |是|
+|dataSource|数据源| Array | - |-  |true|
 |width|占用宽度(溢出文本将展示tip)|Number| -|260|-|
 |position|文本溢出tip展示位置|string|top、left、right、bottom|top|-|
-|labelKey|数据显示key|String| -|label|是
+|labelKey|数据显示key|String| -|label|true
 |valueKey|取值key (不传默认传递节点完整数据)|String|-|value|-|
 |childrenKey|子集key|String|-|children|-|
 |v-model|双向数据绑定 , `props需传入valueKey，为 “,” 拼接的字符串` |String|-|-|-|
@@ -186,7 +186,7 @@
 
 <div class="markdown-table">
 
-|  参数  |  说明   | 类型  | 默认值|  是否必须|
+|  Attribute  |  Description   | Type  | Default|  Require|
 |-------|---------|------|--------|----------|
 |selected|节点单选选中|Boolean|-|-
 |checked|节点多选选中|Boolean|-|-
@@ -198,7 +198,7 @@
 
 <div class="markdown-table">
 
-| 方法名 | 说明 | 参数|
+| Event Name | Description | Attribute|
 | ------ |----- | ---- |
 |on-toggle-expand|节点被点击展开收缩的时触发|传递 `dataSource` 属性的数组中该节点所对应的对象 （ 对象中 `expand` 属性即当前展开状态 ）
 |on-select-change|Attributes不含show-checkbox，节点被点选的时触发|传递 `dataSource` 属性的数组中所选中的对象 |
@@ -210,7 +210,7 @@
 
 <div class="markdown-table">
 
-| 方法名 | 说明 | 参数|
+| Event Name | Description | Attribute|
 | ------ |----- | ---- |
 |getSelectedNodes|获取当前单击选中的所有节点|-|
 |getCheckedNodes|获取当前多选选中的所有节点|-|

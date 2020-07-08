@@ -4,7 +4,7 @@
 
 ## 代码演示
 
-### 基础用法
+### Basic usage
 :::kview
 
 ```html
@@ -179,28 +179,28 @@
 
 <div class="markdown-table">
 
-|  参数  |  说明   | 类型  | 默认值|  是否必须|
+|  Attribute  |  Description   | Type  | Default|  Require|
 |-------|---------|------|--------|----------|
 |tableData|数据|Array|[]|-
-|height|表格高度|Number|-|是
-|headerData|表头配置(详见下方HeaderData)|Array|[]|是
+|height|表格高度|Number|-|true
+|headerData|表头配置(详见下方HeaderData)|Array|[]|true
 
 </div>
 
 ## HeaderData
 <div class="markdown-table">
 
-|  参数  |  说明   | 类型  | 默认值|  是否必须|
+|  Attribute  |  Description   | Type  | Default|  Require|
 |-------|---------|------|--------|----------|
-|label|表头文本|String|-|是|
-|prop|数据项展示key|String|-|是|
+|label|表头文本|String|-|true|
+|prop|数据项展示key|String|-|true|
 |width|列宽|Number|-|-|
-|formatType|格式化类型|String|-|-|
+|formatType|格式化Type|String|-|-|
 |fixed|定位|String|-|-|
-|showRules|展示规则|Function类型，返回值为Boolean|-|-|
-|disableRules|禁用规则|Function类型，返回值为Boolean|-|-|
-|type|表头类型|String|-|-|
-|sortable|是否可排序|Boolean|-|-|
+|showRules|展示规则|FunctionType，返回值为Boolean|-|-|
+|disableRules|禁用规则|FunctionType，返回值为Boolean|-|-|
+|type|表头Type|String|-|-|
+|sortable|true -可排序|Boolean|-|-|
 |comps|操作项配置（详见下方HeaderData-Comps）|Array|-|-|
 
 </div>
@@ -208,14 +208,14 @@
 ## HeaderData-Comps
 <div class="markdown-table">
 
-|  参数  |  说明   | 类型  | 默认值|  是否必须|
+|  Attribute  |  Description   | Type  | Default|  Require|
 |-------|---------|------|--------|----------|
-|label|填充文本|String|-|是|
-|comp|全局绑定的组件key|String|-|是|
-|event|触发的事件key|String|-|是|
+|label|填充文本|String|-|true|
+|comp|全局绑定的组件key|String|-|true|
+|event|触发的事件key|String|-|true|
 |props|当前操作comp接收的额外属性|Object|-|-|
-|showRules|展示规则|Function类型，返回值为Boolean|-|-|
-|disableRules|禁用规则|Function类型，返回值为Boolean|-|-|
+|showRules|展示规则|FunctionType，返回值为Boolean|-|-|
+|disableRules|禁用规则|FunctionType，返回值为Boolean|-|-|
 
 </div>
 
@@ -223,7 +223,7 @@
 
 <div class="markdown-table">
 
-| 方法名 | 说明 | 参数|
+| Event Name | Description | Attribute|
 | ------ |----- | ---- |
 |row-click|行点击事件|传递row, col, event|
 |cell-click|行点击事件|传递cell, row, col, event|

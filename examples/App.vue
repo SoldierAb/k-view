@@ -48,13 +48,12 @@ import zhCN from "../src/locale/lang/zh-CN";
 import { use } from "../src/locale";
 import { langRouteMap as menuDataMap } from "./router"
 const {vizier,...comps} = require('../components.json')
-
+const [,curlang] = location.hash.split('/')
 const langPkg = {
   en,
   "zh-CN": zhCN
 };
-
-console.log(menuDataMap)
+use(langPkg[curlang]);
 
 export default {
   data() {
@@ -74,7 +73,7 @@ export default {
           value: "en"
         }
       ],
-      tab: "zh-CN",
+      tab: curlang,
       isRouteAlive: true
     };
   },

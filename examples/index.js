@@ -5,7 +5,6 @@ import App from './App.vue';
 import KView from '../src';
 import { routes } from './router'
 import { Select,Option } from 'element-ui'
-
 Vue.use(Select)
 Vue.use(Option)
 

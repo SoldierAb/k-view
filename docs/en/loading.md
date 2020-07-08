@@ -1,6 +1,6 @@
 #  Loading 加载动画
 
-### 使用
+### Basic usage
 
 :::kview 
 
@@ -62,7 +62,7 @@
 ###  Attributes
 <div class="markdown-table">
 
-|  属性  |  说明   |  类型|可选值|默认值|是否必须
+|  属性  |  Description   |  Type|可选值|Default|Require
 |-------|---------|---|---|---|---|
 |callback|回调函数|Function|-|-|-
 |background|背景色|String|-|rgba(0, 0, 0, .6)|-
@@ -74,7 +74,7 @@
 ###  Events
 <div class="markdown-table">
 
-| 方法名 | 说明 |
+| Event Name | Description |
 | ------ |----- | 
 | show | 显示提示 | 详见Attributes表 |
 | hide | 隐藏提示 | 详见Attributes表 |

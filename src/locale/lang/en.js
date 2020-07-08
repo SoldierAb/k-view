@@ -3,6 +3,10 @@ export default {
       upload: {
         label: 'upload'
       },
+      fadePop:{
+        confirm:'confirm',
+        cancel:'cancel',
+      }
     }
   };
   

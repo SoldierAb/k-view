@@ -47,14 +47,14 @@
                 size="small"
                 @click="closePop"
               >
-                取消
+                {{ k('k.fadePop.cancel') }}
               </k-button>
               <k-button
                 size="small"
                 type="primary"
                 @click="$emit('submit')"
               >
-                确定
+                {{ k('k.fadePop.confirm') }}
               </k-button>
             </slot>
           </div>
@@ -162,10 +162,12 @@
 <script>
 import FadeBody from "./FadeBody";
 import {Button} from "element-ui";
+import Locale from "../.././../mixins/locale"
 
 export default {
   name: "KFadePop",
   components: { FadeBody ,KButton:Button},
+  mixins: [Locale],
   model: {
     prop: "show",
     event: "change",

@@ -2,6 +2,7 @@
 import FadePop from './components/fade-pop'    
 import Loading from './components/loading'
 import SideNav from './components/side-nav'
+import Tab from './components/tab'
 import Table from './components/table'
 import ColTable from './components/col-table'
 import Tip from './components/tip'
@@ -17,6 +18,7 @@ const components=[
     SideNav,
     Tree,
     Tip,
+    Tab,
     Table,
     ColTable,
     UploadBtn,

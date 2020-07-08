@@ -17,7 +17,7 @@
     export default {
         data() {
             return {
-                contentString: "今天天气真不错，适合去打球，但是没人一起，就算了吧",
+                contentString: "今天天气真不错，适合去打球，但true没人一起，就算了吧",
             }
         },
     };
@@ -29,7 +29,7 @@
 ##  Props
 <div class="markdown-table">
 
-|  参数  |  说明   | 类型  | 默认值|  是否必须|
+|  Attribute  |  Description   | Type  | Default|  Require|
 |-------|---------|------|--------|----------|
 |popperClass|附加样式|string|-|-
 |text|填充文本|string|文本|-
