@@ -11,9 +11,7 @@
 </template>
 
 <script>
-import Vue from 'vue'
-    import MarkDown from '../../src/components/markdown'
-    Vue.use(MarkDown);
+
     export default {
         data() {
             return {

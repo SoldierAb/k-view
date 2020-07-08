@@ -1,12 +1,13 @@
+const langs = ['en','zh-CN']
 const {vizier,...comps} = require('../../components.json')
 
 export const createRoutes =  (lang = 'zh-CN')=>{
 
     let routes = Object.keys(comps).map(key=>{
         return {
-            path:`/${key}`,
+            path:`/${lang}/${key}`,
+            pathKey:`${lang}/${key}`,
             name:key,
-            value:key,
             meta:{
                 title:key
             },
@@ -14,21 +15,35 @@ export const createRoutes =  (lang = 'zh-CN')=>{
         }
     })
 
-    routes = routes.concat({
-        path:"/",
+    routes.unshift({
+        path:`/${lang}`,
+        pathKey:`${lang}`,
         name:"quick-start",
         meta:{
             title:"quick-start",
         },
-        component:()=>import(`../../README.md`)
+        component:()=>import(`../../README-${lang}.md`)
     })
 
     return routes
 };
 
+export const routes = langs.reduce((prev,lang)=>{
+    const langRoutes = createRoutes(lang)
+    prev.push(...langRoutes)
+    return prev
+},[{
+    path:'/',
+    pathKey:'/',
+    name:"quick-start",
+    meta:{
+        title:"quick-start",
+    },
+    component:()=>import(`../../README-zh-CN.md`)
+}])
 
-export let routes = createRoutes()
-
-export const setLangRoutes = lang =>{
-    routes = createRoutes(lang)
-}
+export const langRouteMap = langs.reduce((prev,lang)=>{
+    const langRoutes = createRoutes(lang)
+    prev[lang]=langRoutes
+    return prev
+},{})

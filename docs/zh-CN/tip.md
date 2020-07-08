@@ -12,9 +12,7 @@
 </template>
 
 <script>
-    import Tip from '../../src/components/tip';
-    import Vue from 'vue';
-    Vue.use(Tip);
+    
     
     export default {
         data() {

@@ -23,7 +23,7 @@
         <k-side-nav
           :data-source="menuData"
           label-key="name"
-          value-key="value"
+          value-key="pathKey"
           router
           :default-active="$route.path"
           :default-openeds="['components']"
@@ -43,44 +43,18 @@
 
 <script>
 import Vue from "vue";
-import { routes, setLangRoutes } from "./router";
-import { myRouter } from "./index";
-
 import en from "../src/locale/lang/en";
 import zhCN from "../src/locale/lang/zh-CN";
 import { use } from "../src/locale";
+import { langRouteMap as menuDataMap } from "./router"
+const {vizier,...comps} = require('../components.json')
 
-const comps = routes.filter(item => item.name !== "quick-start");
-
-const lang = {
+const langPkg = {
   en,
   "zh-CN": zhCN
 };
 
-const menuDataMap = {
-  en: [
-    {
-      name: "quick-start",
-      value: ""
-    },
-    {
-      name: "components",
-      value: "components",
-      children: comps
-    }
-  ],
-  "zh-CN": [
-    {
-      name: "快速开始",
-      value: ""
-    },
-    {
-      name: "组件",
-      value: "components",
-      children: comps
-    }
-  ]
-};
+console.log(menuDataMap)
 
 export default {
   data() {
@@ -105,8 +79,8 @@ export default {
     };
   },
   watch: {
-    currentValue(val) {
-      this.$router.push(`/${val}`);
+    currentValue(path) {
+      this.$router.push(`${path}`);
     },
     tab(val) {
       this.toggleLang(val);
@@ -119,9 +93,13 @@ export default {
     selectChange(node) {
       console.log("selectChange", node);
     },
-    toggleLang(val) {
-      use(lang[val]);
-      this.menuData = menuDataMap[val];
+    toggleLang(lang) {
+      use(langPkg[lang]);
+      this.menuData = menuDataMap[lang];
+      const [,,compPath] = this.$route.path.split('/')
+      this.$router.push(`/${lang}/${compPath||''}`)
+    },
+    reloadView(){
       this.$set(this, "isRouteAlive", false);
       this.$nextTick(() => {
         this.$set(this, "isRouteAlive", true);

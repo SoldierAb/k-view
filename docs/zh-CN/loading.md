@@ -33,9 +33,6 @@
 </style>
 
 <script>
-import Vue from 'vue'
-    import Loading from '../../src/components/loading'
-    Vue.use(Loading);
     export default {
         data() {
             return {

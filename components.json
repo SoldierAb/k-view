@@ -3,6 +3,7 @@
     "tip": "./src/components/tip/index.js",
     "tree": "./src/components/tree/index.js",
     "table": "./src/components/table/index.js",
+    "col-table": "./src/components/col-table/index.js",
     "fade-pop": "./src/components/fade-pop/index.js",
     "side-nav": "./src/components/side-nav/index.js",
     "upload-btn": "./src/components/upload-btn/index.js",

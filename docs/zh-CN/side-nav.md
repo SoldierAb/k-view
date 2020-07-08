@@ -10,9 +10,7 @@
 </template>
 
 <script>
-import Vue from 'vue'
-    import SideNav from '../../src/components/side-nav'
-    Vue.use(SideNav);
+
     export default {
         data() {
             return {

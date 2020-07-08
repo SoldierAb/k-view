@@ -11,9 +11,7 @@
 </template>
 
 <script>
-import Vue from 'vue'
-    import SelectSearch from '../../src/components/select-search'
-    Vue.use(SelectSearch);
+
     export default {
         data() {
             return {

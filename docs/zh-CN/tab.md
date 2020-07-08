@@ -13,9 +13,6 @@
 </template>
 
 <script>
-    import Tab from '../../src/components/tab';
-    import Vue from 'vue';
-    Vue.use(Tab);
 
     export default {
         data() {

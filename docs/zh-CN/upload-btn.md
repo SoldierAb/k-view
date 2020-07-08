@@ -10,9 +10,7 @@
 </template>
 
 <script>
-import Vue from 'vue'
-    import UploadBtn from '../../src/components/upload-btn'
-    Vue.use(UploadBtn);
+
     export default {
         data() {
             return {
