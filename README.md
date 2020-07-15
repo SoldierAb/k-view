@@ -42,13 +42,13 @@ Vue.use(Tree);
   import Provider from  "@cgj/k-view/lib/provider"
   Vue.use(Provider)
   
-  // import zhCN from "@cgj/k-view/lib/locale/lang/zh-CN"; //  Use by default
-  import enUS from "@cgj/k-view/lib/locale/lang/en-US";
-
+  // import enUS from "@cgj/k-view/lib/locale/lang/en-US"; //  Use by default
+  import zhCN from "@cgj/k-view/lib/locale/lang/zh-CN"; 
+  
   export default{
     data(){
       return {
-        locale:enUS
+        locale:zhCN
       }
     }
   }
