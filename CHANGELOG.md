@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.20.0](https://github.com/SoldierAb/k-view/compare/v1.19.0...v1.20.0) (2020-07-15)
+
+
+### Features
+
+* ✨ modify lang md ([3022fbf](https://github.com/SoldierAb/k-view/commit/3022fbfd99fc9718cd530e763c986bf0fb0fc830))
+
 ## [1.19.0](https://github.com/SoldierAb/k-view/compare/v1.18.1...v1.19.0) (2020-07-07)
 
 
