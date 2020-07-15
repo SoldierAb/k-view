@@ -83,7 +83,7 @@
     "require-context": "^1.1.0",
     "sass-loader": "^8.0.2",
     "sass-resources-loader": "^2.0.0",
-    "standard-version": "^7.0.1",
+    "standard-version": "^8.0.1",
     "style-loader": "^0.23.1",
     "transliteration": "^2.1.8",
     "uglifyjs-webpack-plugin": "^2.0.1",
