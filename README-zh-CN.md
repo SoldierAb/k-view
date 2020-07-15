@@ -29,15 +29,32 @@ Vue.use(Tree);
 ```
 
 ## 语言支持
-```javascript
-// import zhCN from "@cgj/k-view/lib/locale/lang/zh-CN"; //  默认使用
-import en from "@cgj/k-view/lib/locale/lang/en";
 
-import KView from '@cgj/k-view'
-Vue.use(KView,{lang:en}); 
-// 或
+```html
+<template>
+  <k-provider :locale="locale">
+    <router-view />
+  </k-provider>
+</template>
 
-KView.locale.use(en);
+<script>
+  import Vue from "vue"
+  import Provider from  "@cgj/k-view/lib/provider"
+  Vue.use(Provider)
+  
+  // import zhCN from "@cgj/k-view/lib/locale/lang/zh-CN"; //  默认使用
+  import enUS from "@cgj/k-view/lib/locale/lang/en-US";
+
+  export default{
+    data(){
+      return {
+        locale:enUS
+      }
+    }
+  }
+
+<script>
+
 ```
 
 ## 按需加载

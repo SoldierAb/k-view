@@ -1,9 +1,9 @@
 <template>
-  <nav :class="`k-menu-tree-container`">
+  <nav class="k-menu-tree-container">
     <submenu
       v-if="dataSource[childrenKey] && dataSource[childrenKey].length"
       :index="dataSource[valueKey]"
-    >
+    > 
       <template slot="title">
         <slot
           name="node"
@@ -50,7 +50,7 @@
         <slot
           name="leaf"
           v-bind="{data:dataSource}"
-        >
+        > 
           <span v-bind="dataSource.props">{{ dataSource[labelKey] }}</span>
         </slot>
       </template>
@@ -89,26 +89,26 @@ export default {
       type: Object,
       default() {
         return {};
-      }
+      },
     },
     valueKey: {
       type: String,
       default() {
         return "name";
-      }
+      },
     },
     labelKey: {
       type: String,
       default() {
         return "title";
-      }
+      },
     },
     childrenKey: {
       type: String,
       default() {
         return "children";
-      }
-    }
+      },
+    },
   },
   data() {
     return {};
@@ -121,7 +121,7 @@ export default {
     },
     showLink() {
       return this.dataSource.show === false ? false : true;
-    }
-  }
+    },
+  },
 };
 </script>

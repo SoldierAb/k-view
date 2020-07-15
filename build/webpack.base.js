@@ -111,7 +111,8 @@ const webpackConfig = {
         extensions: ['.js', '.vue', '.json'],
         alias: {
             '@': path.resolve(__dirname, 'src'),
-            'vue': 'vue/dist/vue.js'
+            'vue': 'vue/dist/vue.js',
+            'k-view':path.resolve(__dirname, '../'),
         }
     },
 

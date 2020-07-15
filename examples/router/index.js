@@ -1,5 +1,5 @@
-const langs = ['en','zh-CN']
-const {vizier,...comps} = require('../../components.json')
+const langs = ['en-US','zh-CN']
+const comps = require('../../components.json')
 
 export const createRoutes =  (lang = 'zh-CN')=>{
 
@@ -22,7 +22,7 @@ export const createRoutes =  (lang = 'zh-CN')=>{
         meta:{
             title:"quick-start",
         },
-        component:()=>import(`../../README-${lang}.md`)
+        component:()=>import(`../../README${lang === langs[0] ? '':`-${lang}`}.md`)
     })
 
     return routes
@@ -39,7 +39,7 @@ export const routes = langs.reduce((prev,lang)=>{
     meta:{
         title:"quick-start",
     },
-    component:()=>import(`../../README-zh-CN.md`)
+    redirect:'/en-US'
 }])
 
 export const langRouteMap = langs.reduce((prev,lang)=>{

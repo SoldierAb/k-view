@@ -1,7 +1,8 @@
 <template>
   <div class="upload-btn-container">
     <div class="upload-btn-box">
-      <label>{{ k('k.upload.label') }}</label>
+      <!-- <label>{{ k('k.upload.label') }}</label> -->
+      <label>{{ kviewConfig.locale.k.upload.label }}</label>
       <input
         ref="inputUpload"
         class="upload-btn"
@@ -56,73 +57,74 @@
 <script>
 import uploadAct from "../../../utils/upload";
 import Emitter from "../../../utils/emitter";
-import Locale from "../.././../mixins/locale"
+// import Locale from "../.././../mixins/locale";
+import Inject from "../.././../mixins/inject";
 
 export default {
   name: "KUploadBtn",
-  mixins: [Locale,Emitter],
+  mixins: [Inject,Emitter],
   props: {
     multiple: {
       //是否多选
       type: Boolean,
       default() {
         return false;
-      }
+      },
     },
     headers: {
       type: Object,
       default() {
         return {};
-      }
+      },
     },
     fileName: {
       //文件上传key
       type: String,
-      default: "file"
+      default: "file",
     },
     data: {
       //额外数据
       type: Object,
       default() {
         return {};
-      }
+      },
     },
     url: {
       type: String,
       require: true,
       default(){
-        return ``
-      }
+        return ``;
+      },
     },
     withCredentials: {
       //是否支持cookie验证
       type: Boolean,
-      default: false
+      default: false,
     },
     beforeUpload: {
       //上传之前验证函数
       type: Function,
       default() {
         return {};
-      }
+      },
     },
     onProgress: {
       type: Function,
       default() {
         return {};
-      }
+      },
     },
     onSuccess: {
       type: Function,
       default() {
         return {};
-      }
+      },
     },
     onError: {
       type: Function,
       default() {
         return {};
-      }
+      },
     },
   },
   data() {
@@ -188,7 +190,7 @@ export default {
           },
           () => {
             // this.$emit('cancel', file);
-          }
+          },
         );
       } else if (before !== false) {
         this.post(file);
@@ -215,7 +217,7 @@ export default {
       uploadAct({
         headers: this.headers,
         withCredentials: this.withCredentials,
-        file: file,
+        file,
         data: this.data,
         filename: this.fileName,
         action: this.url,
@@ -227,7 +229,7 @@ export default {
         },
         onError: (err, response) => {
           this.handleError(err, response, file);
-        }
+        },
       });
     },
 
@@ -235,7 +237,7 @@ export default {
      * @description 上传进度
      */
     handleProgress(e, file) {
-      let { percent } = e;
+      // let { percent } = e;
       this.onProgress(e, file, this.fileList);
     },
 
@@ -259,7 +261,7 @@ export default {
 
     handleError(err, res, file) {
       this.onError(err, res, file, this.fileList);
-    }
-  }
+    },
+  },
 };
 </script>

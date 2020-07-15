@@ -47,14 +47,16 @@
                 size="small"
                 @click="closePop"
               >
-                {{ k('k.fadePop.cancel') }}
+                <!-- {{ k('k.fadePop.cancel') }} -->
+                {{ kviewConfig.locale.k.fadePop.cancel }}
               </k-button>
               <k-button
                 size="small"
                 type="primary"
                 @click="$emit('submit')"
               >
-                {{ k('k.fadePop.confirm') }}
+                <!-- {{ k('k.fadePop.confirm') }} -->
+                {{ kviewConfig.locale.k.fadePop.confirm }}
               </k-button>
             </slot>
           </div>
@@ -63,6 +65,111 @@
     </transition>
   </div>
 </template>
+
+<script>
+import FadeBody from "./FadeBody";
+import {Button} from "element-ui";
+// import Locale from "../.././../mixins/locale"
+import Inject from "../.././../mixins/inject"
+
+export default {
+  name: "KFadePop",
+  components: { FadeBody ,KButton:Button},
+  mixins: [Inject],
+  model: {
+    prop: "show",
+    event: "change",
+  },
+  props: {
+    footer:{
+      type: Boolean,
+      default() {
+        return false;
+      },
+    },
+    draggable: {
+      type: Boolean,
+      default() {
+        return false;
+      },
+    },
+    show: {
+      type: Boolean,
+      default() {
+        return false;
+      },
+    },
+    modalHidden: {
+      type: Boolean,
+      default() {
+        return true;
+      },
+    },
+    title: {
+      type: String,
+      default: "",
+    },
+    // eslint-disable-next-line vue/require-default-prop
+    beforeClose: {
+      type: Function,
+    },
+    // eslint-disable-next-line vue/require-prop-types
+    width: {
+      default: "60%",
+    },
+    // eslint-disable-next-line vue/require-prop-types
+    height: {
+      default: "80%",
+    },
+  },
+  data() {
+    return {
+      modalShow: this.show,
+    };
+  },
+  computed: {
+    fadeBoxStyle() {
+      return {
+        width: this.formate(this.width),
+        maxWidth: this.formate(this.width),
+        height: this.formate(this.height),
+        maxHeight: this.formate(this.height),
+      };
+    },
+  },
+  methods: {
+    closePop() {
+      if (
+        !Object.prototype.toString.call(this.beforeClose).includes("unction")
+      ) {
+        this.$emit("change", false);
+        return;
+      }
+      const before = this.beforeClose();
+      if (before && before.then) {
+        before.then(isShow => {
+          this.$emit("change", isShow);
+        });
+      } else {
+        this.$emit("change", false);
+      }
+    },
+    afterLeave() {
+      this.modalShow = false;
+    },
+    formate(value) {
+      if (isNaN(Number(value))) {
+        return value;
+      } else {
+        return value + "px";
+      }
+    },
+    modalClick() {
+      if (this.modalHidden) this.closePop();
+    },
+  },
+};
+</script>
 
 <style lang="scss">
 .fade-pop-container {
@@ -158,107 +265,3 @@
   transition: all 0.4s ease;
 }
 </style>
-
-<script>
-import FadeBody from "./FadeBody";
-import {Button} from "element-ui";
-import Locale from "../.././../mixins/locale"
-
-export default {
-  name: "KFadePop",
-  components: { FadeBody ,KButton:Button},
-  mixins: [Locale],
-  model: {
-    prop: "show",
-    event: "change",
-  },
-  props: {
-    footer:{
-      type: Boolean,
-      default() {
-        return false;
-      },
-    },
-    draggable: {
-      type: Boolean,
-      default() {
-        return false;
-      },
-    },
-    show: {
-      type: Boolean,
-      default() {
-        return false;
-      },
-    },
-    modalHidden: {
-      type: Boolean,
-      default() {
-        return true;
-      },
-    },
-    title: {
-      type: String,
-      default: "",
-    },
-    // eslint-disable-next-line vue/require-default-prop
-    beforeClose: {
-      type: Function,
-    },
-    // eslint-disable-next-line vue/require-prop-types
-    width: {
-      default: "60%",
-    },
-    // eslint-disable-next-line vue/require-prop-types
-    height: {
-      default: "80%",
-    },
-  },
-  data() {
-    return {
-      modalShow: this.show,
-    };
-  },
-  computed: {
-    fadeBoxStyle() {
-      return {
-        width: this.formate(this.width),
-        maxWidth: this.formate(this.width),
-        height: this.formate(this.height),
-        maxHeight: this.formate(this.height),
-      };
-    },
-  },
-  methods: {
-    closePop() {
-      if (
-        !Object.prototype.toString.call(this.beforeClose).includes("unction")
-      ) {
-        this.$emit("change", false);
-        return;
-      }
-      const before = this.beforeClose();
-      if (before && before.then) {
-        before.then(isShow => {
-          this.$emit("change", isShow);
-        });
-      } else {
-        this.$emit("change", false);
-      }
-    },
-    afterLeave() {
-      this.modalShow = false;
-    },
-    formate(value) {
-      if (isNaN(Number(value))) {
-        return value;
-      } else {
-        return value + "px";
-      }
-    },
-    modalClick() {
-      if (this.modalHidden) this.closePop();
-    },
-  },
-};
-</script>

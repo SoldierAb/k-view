@@ -7,8 +7,8 @@
       ref="sideNav"
       class="el-menu-vertical-demo"
       :default-active="defaultActive"
-      :default-openeds="defaultOpeneds"
       :router="router"
+      :default-openeds="defaultOpeneds"
       @open="handleOpen"
       @close="handleClose"
     >
@@ -25,15 +25,15 @@
             name="node"
             v-bind="{data:data}"
           >
-            <span v-bind="data.props"> {{ data[labelKey] }}</span>
+            <span v-bind="data.props">  {{ data[labelKey] }}</span>
           </slot>
         </template>
         <template v-slot:leaf="{data}">
           <slot
             name="leaf"
             v-bind="{data:data}"
-          >
-            <span v-bind="data.props"> {{ data[labelKey] }}</span>
+          > 
+            <span v-bind="data.props">{{ data[labelKey] }}</span>
           </slot>
         </template>
       </menu-tree>
@@ -88,110 +88,74 @@
 import { Menu } from "element-ui";
 import MenuTree from "../../menu-tree";
 
+
 export default {
   name: "KSideNav",
   components: {
     ElMenu:Menu,
-    MenuTree
+    MenuTree,
   },
   props: {
     router:{
       type:Boolean,
       default(){
         return false;
-      }
+      },
     },
     defaultActive:{
       type:String,
       default(){
-        return ""
-      }
+        return "";
+      },
     },
     defaultOpeneds: {
       type:Array,
       default(){
-        return []
-      }
+        return [];
+      },
     },
     valueKey: {
       type: String,
       default() {
         return "value";
-      }
+      },
     },
     labelKey: {
       type: String,
       default() {
         return "label";
-      }
+      },
     },
     dataSource: {
       type: Array,
       default() {
         return [];
-      }
+      },
     },
     width:{
       type:Number,
       default(){
         return 200;
-      }
+      },
     },
   },
   data() {
     return {
-      menuData: []
+      menuData: [],
     };
   },
   mounted() {
-    // let { dataSource } = this;
-    // if (Array.isArray(dataSource)) this.initMenu();
+   
   },
   methods: {
-    initMenu() {
-      this.$nextTick(() => {
-        let sideNav = localStorage.getItem("sideNav");
-        sideNav = JSON.parse(sideNav);
-        if (Array.isArray(sideNav) && sideNav.length) {
-          sideNav.forEach((item, index) => {
-            ((item, index) => {
-              setTimeout(() => {
-                this.$refs.sideNav.open(item);
-              }, index * 300);
-            })(item, index);
-          });
-        }
-      });
-    },
     handleOpen(key, keyPath) {
-      // this.pushMenu(key);
+      console.log('open ',key,keyPath);
       this.$emit("open", key, keyPath);
     },
     handleClose(key, keyPath) {
-      // this.popMenu(key);
+      console.log('close ',key,keyPath);
       this.$emit("close", key, keyPath);
     },
-
-    pushMenu(name) {
-      this.menuData.push(name);
-      let sideNav = localStorage.getItem("sideNav");
-      sideNav = JSON.parse(sideNav);
-      sideNav = Array.isArray(sideNav) && sideNav.length ? sideNav : [];
-      this.menuData = Array.from(new Set([...this.menuData, ...sideNav]));
-      localStorage.setItem("sideNav", JSON.stringify(this.menuData));
-    },
-
-    popMenu(name) {
-      let sideNav = localStorage.getItem("sideNav");
-      sideNav = JSON.parse(sideNav);
-      sideNav = Array.isArray(sideNav) && sideNav.length ? sideNav : [];
-      this.menuData = Array.from(new Set([...this.menuData, ...sideNav]));
-      let index = this.menuData.findIndex(item => item === name);
-      if (index !== -1) {
-        this.menuData.splice(index, 1);
-      }
-      localStorage.setItem("sideNav", JSON.stringify(this.menuData));
-    }
-  }
+  },
 };
 </script>

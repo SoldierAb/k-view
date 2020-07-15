@@ -1,0 +1,33 @@
+image: hub.xxx.cc/library/base-node:1.0.2
+
+variables:
+  GROUP: library
+  DOCKER_DRIVER: overlay
+  DC_REGISTRY_PROXY: https://harbor-proxy.xxx.cc
+
+stages:
+  - deploy
+
+deploy_job:
+  stage: deploy
+  only:
+    - ci
+  before_script:
+    - export PROJECT_IMAGE_NAME=$(cat package.json | grep name | head -1 | awk -F "[\"]" '/name/{print$4}')
+    - export BUILD_TAG=$(cat package.json | grep version | head -1 | awk -F "[\"]" '/version/{print$4}')
+    - echo $BUILD_TAG
+  script:
+    # - npm install
+    - npm install --registry=https://npm.xxx.cc/repository/npm-all/
+    - npm run test
+    - npm run build
+    - npm config set //npm.xxx.cc/repository/npm-inner/:_authToken=${INNER_TOKEN}
+    - npm publish --verbose
+    - npm run demo
+    - curl -o ci-tool https://gitlab.xxx.cc/DevOpsGroup/ci-common/raw/master/ci-tool?inline=false
+    - chmod +x ci-tool && ./ci-tool run -g $GROUP -p $PROJECT_IMAGE_NAME --other-tags="latest"
+  cache:
+    paths:
+      - node_modules/
+  tags:
+    - rancher_docker

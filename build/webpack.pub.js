@@ -13,7 +13,8 @@ module.exports = merge(baseConfig, {
     mode: 'production',
     entry: Object.assign(
         {
-            vizier:'./src/index.js',
+            kview:'./src/index.js',
+            provider:'./src/components/provider',
         },  
         langs,
         Components

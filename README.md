@@ -29,15 +29,32 @@ Vue.use(Tree);
 ```
 
 ## Language Support
-```javascript
-// import zhCN from "@cgj/k-view/lib/locale/lang/zh-CN"; //  Use by default
-import en from "@cgj/k-view/lib/locale/lang/en";
 
-import KView from '@cgj/k-view'
-Vue.use(KView,{lang:en}); 
-// or 
+```html
+<template>
+  <k-provider :locale="locale">
+    <router-view />
+  </k-provider>
+</template>
 
-KView.locale.use(en);
+<script>
+  import Vue from "vue"
+  import Provider from  "@cgj/k-view/lib/provider"
+  Vue.use(Provider)
+  
+  // import zhCN from "@cgj/k-view/lib/locale/lang/zh-CN"; //  Use by default
+  import enUS from "@cgj/k-view/lib/locale/lang/en-US";
+
+  export default{
+    data(){
+      return {
+        locale:enUS
+      }
+    }
+  }
+
+<script>
+
 ```
 
 ## On demand

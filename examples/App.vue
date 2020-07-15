@@ -30,9 +30,9 @@
         />
       </section>
       <section class="section-box">
-        <router-view v-if="isRouteAlive">
-          未挂载任何组件
-        </router-view>
+        <k-provider :locale="locale">
+          <router-view />
+        </k-provider>
       </section>
     </section>
     <footer class="k-view-footer">
@@ -42,48 +42,73 @@
 </template>
 
 <script>
-import Vue from "vue";
-import en from "../src/locale/lang/en";
+import { langRouteMap } from "./router";
+import enUS from "../src/locale/lang/en-US";
 import zhCN from "../src/locale/lang/zh-CN";
-import { use } from "../src/locale";
-import { langRouteMap as menuDataMap } from "./router"
-const {vizier,...comps} = require('../components.json')
-const [,curlang] = location.hash.split('/')
-const langPkg = {
-  en,
-  "zh-CN": zhCN
+
+const lang = {
+  "en-US":enUS,
+  "zh-CN": zhCN,
 };
-use(langPkg[curlang]);
+
+
+console.log(langRouteMap)
+
+
+const menuDataMap = {
+  "en-US": [
+    {
+      name: "quick-start",
+      pathKey:''
+    },
+    {
+      name: "components",
+      pathKey: "components",
+      children: langRouteMap['en-US'].filter(item=>item.name!=='quick-start'),
+    },
+  ],
+  "zh-CN": [
+    {
+      name: "快速开始",
+      pathKey:'zh-CN'
+    },
+    {
+      name: "组件",
+      pathKey: "components",
+      children: langRouteMap['zh-CN'].filter(item=>item.name!=='quick-start'),
+    },
+  ],
+};
+
+
+console.log(menuDataMap)
 
 export default {
   data() {
-    const menuData = menuDataMap["zh-CN"];
+    const menuData = menuDataMap["en-US"];
     let markKey = 0;
     return {
       markKey,
       menuData,
-      currentValue: "",
       options: [
         {
-          label: "中文",
-          value: "zh-CN"
-        },
-        {
           label: "En",
-          value: "en"
-        }
+          value: "en-US",
+        },
+         {
+          label: "中文",
+          value: "zh-CN",
+        },
       ],
-      tab: curlang,
-      isRouteAlive: true
+      tab: "en-US",
+      locale:lang['en-US'],
+      isRouteAlive: true,
     };
   },
   watch: {
-    currentValue(path) {
-      this.$router.push(`${path}`);
-    },
     tab(val) {
       this.toggleLang(val);
-    }
+    },
   },
   methods: {
     toggleExpand(node) {
@@ -92,19 +117,13 @@ export default {
     selectChange(node) {
       console.log("selectChange", node);
     },
-    toggleLang(lang) {
-      use(langPkg[lang]);
-      this.menuData = menuDataMap[lang];
+    toggleLang(val) {
+      this.locale = lang[val];
+      this.menuData = menuDataMap[val];
       const [,,compPath] = this.$route.path.split('/')
-      this.$router.push(`/${lang}/${compPath||''}`)
+      this.$router.push(`/${val}/${compPath||''}`)
     },
-    reloadView(){
-      this.$set(this, "isRouteAlive", false);
-      this.$nextTick(() => {
-        this.$set(this, "isRouteAlive", true);
-      });
-    }
-  }
+  },
 };
 </script>
 
