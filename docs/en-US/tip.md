@@ -1,8 +1,6 @@
 # Tip
 
-文本溢出气泡展示
-
-## 代码演示
+### Basic usage
 
 :::kview 
 
@@ -17,7 +15,7 @@
     export default {
         data() {
             return {
-                contentString: "今天天气真不错，适合去打球，但true没人一起，就算了吧",
+                contentString: "Hello world Hello world Hello world Hello world Hello world",
             }
         },
     };
@@ -31,11 +29,11 @@
 
 |  Attribute  |  Description   | Type  | Default|  Require|
 |-------|---------|------|--------|----------|
-|popperClass|附加样式|string|-|-
-|text|填充文本|string|文本|-
-|content|提示内容|string|提示内容|-
-|position|展示位置|string|top|-
-|textWidth|文本宽度|number|110|-
+|popperClass|custom class name|string|-|-
+|text|text|string|文本|-
+|content|display content|string|提示内容|-
+|position|position of Tip|string|top|-
+|textWidth|text width limit|number (unit: px) |110|-
 
 </div>
 

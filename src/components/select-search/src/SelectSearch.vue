@@ -2,7 +2,6 @@
   <span class="select-search-container">
     <k-input
       v-model="value"
-      style="width:320px"
       class="input-with-select"
       :size="size"
       clearable
@@ -11,6 +10,7 @@
         slot="prepend"
         v-model="key"
         placeholder="请选择"
+        :style="`width:${preWidth}px`"
       >
         <k-option
           v-for="item in options"
@@ -50,6 +50,12 @@ export default {
       type:String,
       default(){
         return ""
+      }
+    },
+    preWidth:{
+      type:Number,
+      default(){
+        return 120
       }
     },
     searchObj: {

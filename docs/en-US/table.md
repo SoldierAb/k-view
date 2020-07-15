@@ -1,8 +1,4 @@
-# Table 表格
-
-基于Element 的 Table 进行二次封装，用于展示多条结构类似的数据，可根据配置文件作自定义展示。
-
-## 代码演示
+# Table
 
 ### Basic usage
 :::kview
@@ -18,19 +14,19 @@
     const getPermissionByKey = key => {
         return {
             PERMISSION_VOICE_LIB_DETAIL: {
-                label: '查看',
+                label: 'More Detail',
                 has: true
             },
             PERMISSION_VOICE_LIB_DEL: {
-                label: '删除',
+                label: 'Delete Voice Library',
                 has: false
             },
             PERMISSION_VOICE_LIB_DL_VP:{
-                label:'下载',
+                label:'Download',
                 has:true
             },
             PERMISSION_VOICE_LIB_DEL_VP:{
-                label:'删除声纹',
+                label:'Delete Voice',
                 has:true
             }
         } [key]
@@ -53,30 +49,30 @@
                         },
                     },
                     {
-                        label: "编号",
+                        label: "ID",
                         prop: "id",
                     },
                     {
-                        label: "声纹库名",
+                        label: "Voice Library",
                         prop: "name",
                     },
                     {
-                        label: "声纹总量/条",
+                        label: "Voice Count",
                         prop: "count",
                     },
                     {
-                        label: "建库时间",
+                        label: "Created At",
                         prop: "created_at",
                         sortable:true,
-                        formatType: "time", //全局注册的Vue.filter
+                        formatType: "time", //global Vue.filter
                     },
                     {
-                        label: "操作",
+                        label: "Actions",
                         fixed: "right",
                         width: 240,
                         comps: [{
-                                label: "查看详情",
-                                comp: "ElButton", //全局注册的组件
+                                label: "More Detail",
+                                comp: "ElButton", //global component
                                 event: "detail",
                                 props: {
                                     style: "margin-right:10px;",
@@ -94,7 +90,7 @@
                                 },
                             },
                             {
-                                label: "删除",
+                                label: "Delete",
                                 comp: "ElButton",
                                 event: "delete",
                                 props: {
@@ -119,7 +115,7 @@
                 tableData: [{
                     "id": 36,
                     "branch_id": 28,
-                    "name": "速度发送方发送刚刚",
+                    "name": "Library One",
                     "is_deleted": 0,
                     "count": 0,
                     "voice_group_id": "6ec878df4f2311ea8cb20233488cb340",
@@ -128,7 +124,7 @@
                 }, {
                     "id": 35,
                     "branch_id": 20,
-                    "name": "测试库",
+                    "name": "Library Two",
                     "is_deleted": 0,
                     "count": 0,
                     "voice_group_id": "9f1533814eff11ea8bf10233484e9886",
@@ -137,7 +133,7 @@
                 }, {
                     "id": 32,
                     "branch_id": 10,
-                    "name": "测试",
+                    "name": "Library Three",
                     "is_deleted": 0,
                     "count": 0,
                     "voice_group_id": "db49acac4ef611ea8bf10233484e9886",
@@ -181,9 +177,9 @@
 
 |  Attribute  |  Description   | Type  | Default|  Require|
 |-------|---------|------|--------|----------|
-|tableData|数据|Array|[]|-
-|height|表格高度|Number|-|true
-|headerData|表头配置(详见下方HeaderData)|Array|[]|true
+|tableData|data|Array|[]|-
+|height|Table's height. By default it has an auto height. If its value is a number, the height is measured in pixels;|Number|-|true
+|headerData|configuration dataSource of Columns , see the following table|Array|[]|true
 
 </div>
 
@@ -192,16 +188,16 @@
 
 |  Attribute  |  Description   | Type  | Default|  Require|
 |-------|---------|------|--------|----------|
-|label|表头文本|String|-|true|
-|prop|数据项展示key|String|-|true|
-|width|列宽|Number|-|-|
-|formatType|格式化Type|String|-|-|
-|fixed|定位|String|-|-|
-|showRules|展示规则|FunctionType，返回值为Boolean|-|-|
-|disableRules|禁用规则|FunctionType，返回值为Boolean|-|-|
-|type|表头Type|String|-|-|
-|sortable|true -可排序|Boolean|-|-|
-|comps|操作项配置（详见下方HeaderData-Comps）|Array|-|-|
+|label|Column label|String|-|true|
+|prop|Column field|String|-|true|
+|width|Column width|Number|-|-|
+|formatType|function key that formats cell content|String|-|-|
+|fixed||String|-|-|
+|showRules|display rule|Function return Boolean|-|-|
+|disableRules|disabled rule|Function return Boolean|-|-|
+|type|Column type|String|-|-|
+|sortable|whether column can be sorted|Boolean|-|-|
+|comps|configuration dataSource of actions（see the following table - HeaderData-Comps）|Array|-|-|
 
 </div>
 
@@ -210,12 +206,12 @@
 
 |  Attribute  |  Description   | Type  | Default|  Require|
 |-------|---------|------|--------|----------|
-|label|填充文本|String|-|true|
-|comp|全局绑定的组件key|String|-|true|
-|event|触发的事件key|String|-|true|
-|props|当前操作comp接收的额外属性|Object|-|-|
-|showRules|展示规则|FunctionType，返回值为Boolean|-|-|
-|disableRules|禁用规则|FunctionType，返回值为Boolean|-|-|
+|label|component label|String|-|true|
+|comp|the component name|String|-|true|
+|event|trigger event type|String|-|true|
+|props|the component's props|Object|-|-|
+|showRules|display rule|Function return Boolean|-|-|
+|disableRules|disabled rule|Function return Boolean|-|-|
 
 </div>
 
@@ -225,10 +221,10 @@
 
 | Event Name | Description | Attribute|
 | ------ |----- | ---- |
-|row-click|行点击事件|传递row, col, event|
-|cell-click|行点击事件|传递cell, row, col, event|
-|selection-change|headerData含多选操作配置，表格项被点选的时触发|传递 `tableData` 属性的数组中所选中的对象 |
-|sort-change|headerData含排序配置（sortable），排序按钮点击时出发|传递 column, prop, order |
+|row-click|triggers when clicking a row|paramters: row, col, event|
+|cell-click|triggers when clicking a cell|paramters: cell, row, col, event|
+|selection-change|triggers when selection changes|returns the currently selected array of rows |
+|sort-change|triggers when Table's sorting changes|paramters: column, prop, order |
 
 </div>
 

@@ -1,4 +1,6 @@
-# 选择查找
+# Select Search
+
+### Basic usage
 
 :::kview
 
@@ -6,7 +8,7 @@
 <template>
     <k-select-search :options="keyOption" v-model="searchObj" />
     <div class="select-text">
-        当前搜索对象 searchObj: {{searchObj}}
+        current searchObj: {{searchObj}}
     </div>
 </template>
 
@@ -18,15 +20,15 @@
                 keyOption: [
                     {
                         key: "",
-                        label: "全部",
+                        label: "any",
                     },
                     {
                         key: "condition1",
-                        label: "黄金糕",
+                        label: "label-one",
                     },
                     {
                         key: "condition2",
-                        label: "双皮奶",
+                        label: "label-two",
                     },
                 ],
                 searchObj: {
@@ -53,8 +55,9 @@
 
 |  Attribute  |  Description   | Type  | Default|  Require|
 |-------|---------|------|--------|----------|
-|size|尺寸（normal、small、mini）|string|normal|-
-|v-model|双向绑定，当前选项数据|选项key为truthy则为对应选项的key和输入内容组成的对象{key:"输入内容"}， 选项key为falsy 则为对应输入的字符串|-|-
-|options|下拉选项|Array\<object\>|-|-
+|size|size（normal、small、mini）|string|normal|-
+|value / v-model|binding value|if key is truthy return {key:"input content"} ;if key is falsy return the input content|-|-
+|options|options |Array\<object\>|-|-
+|preWidth|Select bar width |Number （unit: px）|120|-
 
 </div>

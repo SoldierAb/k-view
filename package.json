@@ -1,5 +1,5 @@
 {
-  "name": "k-view",
+  "name": "@cgj/k-view",
   "version": "1.20.0",
   "main": "./lib/kview/index.js",
   "scripts": {
@@ -24,8 +24,9 @@
   },
   "email": "ab140140@163.com",
   "keywords": [
-    "eleme",
     "vue",
+    "ant-de",
+    "eleme",
     "components"
   ],
   "author": "cgj",

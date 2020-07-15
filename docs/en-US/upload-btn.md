@@ -17,7 +17,7 @@
             }
         },
         methods: {
-           
+          
         },
     };
 
@@ -29,18 +29,18 @@
 ##  Props
 <div class="markdown-table">
 
-|  property  |  des  | type  | default|  require |
+|  Attribute  |  Description  | Type  | Default|  Require |
 |-------|---------|------|--------|----------|
-|multiple|true -多选|Boolean|false|-
-|headers|请求头信息|Object|-|-
-|fileName|文件字段名|String|file|-
-|data|附加上传数据|Object|-|-
-|url|上传接口|String|-|true
-|withCredentials|true -支持cookie验证|Boolean|false|-
-|beforeUpload|上传之前验证函数; 接收Attribute：（fileName : string, file : File）,需Promise返回过滤后的文件|Function|-|-
-|onProgress|上传进度函数；接收Attribute：（e : Event, file : File, fileList : Array\<File\>）|Function|-|-
-|onSuccess|上传成功函数;接收Attribute：（res : Result, file : File, fileList : Array\<File\>）|Function|-|-
-|onError|上传失败函数；接收Attribute：（err : Error, res：result, file : File, fileList : Array\<File\>）|Function|-|-
+|multiple|whether uploading multiple files is permitted|Boolean|false|-
+|headers|request headers|Object|-|-
+|fileName|key name for uploaded file|String|file|-
+|data|additions options of request|Object|-|-
+|url|request URL|String|-|true
+|withCredentials|whether cookies are sent|Boolean|false|-
+|beforeUpload|hook function before uploading with the file to be uploaded as its parameter. If false is returned or a Promise is returned and then is rejected, uploading will be aborted; Paramters：（fileName : string, file : File）|Function|-|-
+|onProgress|hook function when some progress occurs; Paramters:（e : Event, file : File, fileList : Array\<File\>）|Function|-|-
+|onSuccess|hook function when uploaded successfully; Paramters:（res : Result, file : File, fileList : Array\<File\>）|Function|-|-
+|onError|hook function when some errors occurs; Paramters:（err : Error, res：result, file : File, fileList : Array\<File\>）|Function|-|-
 
 </div>
 

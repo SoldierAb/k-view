@@ -51,10 +51,6 @@ const lang = {
   "zh-CN": zhCN,
 };
 
-
-console.log(langRouteMap)
-
-
 const menuDataMap = {
   "en-US": [
     {
@@ -79,9 +75,6 @@ const menuDataMap = {
     },
   ],
 };
-
-
-console.log(menuDataMap)
 
 export default {
   data() {

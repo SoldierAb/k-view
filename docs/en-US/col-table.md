@@ -16,33 +16,33 @@
             return {
                 headerData:[
                     {
-                        label:'姓名',
+                        label:'name',
                         key:'name'
                     },
                     {
-                        label:'年龄',
+                        label:'age',
                         key:'age'
                     },
                     {
-                        label:'老公',
+                        label:'husband',
                         key:'husband'
                     }
                 ],
                 bodyData:[
                     {
-                        name:'迪丽热巴',
+                        name:'Rose',
                         age:24,
-                        husband:'阿兵'
+                        husband:'John'
                     },
                     {
-                        name:'古力娜扎',
+                        name:'Jane',
                         age:23,
-                        husband:'阿兵'
+                        husband:'Richart'
                     },
                     {
-                        name:'佟丽娅',
+                        name:'Maria',
                         age:25,
-                        husband:'阿兵'
+                        husband:'Mick'
                     },
                 ]
             }

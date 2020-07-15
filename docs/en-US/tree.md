@@ -1,8 +1,6 @@
-# VUE 树形控件
+# Tree
 
-  用清晰的层级结构展示信息，可下拉选择、展开或折叠，提供单选多选功能，支持v-model双向数据绑定
-
-## 代码演示
+### Basic usage
 
 :::kview
 
@@ -21,9 +19,9 @@
         @on-check-change="checkChange" 
     />
     <div class="attrs-box">
-        <button class="btn" @click="onlyLeaf=!onlyLeaf">true -只绑定叶子节点数据-> onlyLeaf : {{onlyLeaf}}</button>
-        <button class="btn" @click="showCheckbox = !showCheckbox">true -展示多选-> showCheckbox : {{showCheckbox}}</button>
-        <button class="btn" @click="multiple = !multiple;showCheckbox = false">true -打击多选 (showCheckbox should be false)-> multiple : {{multiple}} </button>
+        <button class="btn" @click="onlyLeaf=!onlyLeaf"> onlyLeaf : {{onlyLeaf}}</button>
+        <button class="btn" @click="showCheckbox = !showCheckbox"> showCheckbox : {{showCheckbox}}</button>
+        <button class="btn" @click="multiple = !multiple;showCheckbox = false">multiple select mode (showCheckbox should be false)-> multiple : {{multiple}} </button>
     </div>
     <div class="data-box">
         <p>v-model -> {{selectValue}}</p>
@@ -41,23 +39,24 @@
                 multiple: true,
                 defaultExpandAll: true,
                 list: [{
-                    name: "霍山县",
+                    name: "Node-1",
                     pId: "341500000000000",
                     open: "False",
                     id: "341525000000000",
-                    children: [{
-                            name: "衡山镇",
+                    children: [
+                        {
+                            name: "Node-1-1",
                             pId: "341525000000000",
                             open: "False",
                             id: "341525100000000",
                             children: [{
-                                    name: "衡山镇",
+                                    name: "Node-1-1-1",
                                     pId: "341525000000000",
                                     open: "False",
                                     id: "341525100000000"
                                 },
                                 {
-                                    name: "与儿街镇",
+                                    name: "Node-1-1-2",
                                     pId: "341525000000000",
                                     open: "False",
                                     id: "341525104000000"
@@ -65,25 +64,25 @@
                             ]
                         },
                         {
-                            name: "与儿街镇",
+                            name: "Node-1-2",
                             pId: "341525000000000",
                             open: "False",
                             id: "341525104000000"
                         },
                         {
-                            name: "黑石渡镇",
+                            name: "Node-1-3",
                             pId: "341525000000000",
                             open: "False",
                             id: "341525105000000"
                         },
                         {
-                            name: "诸佛庵镇",
+                            name: "Node-1-4",
                             pId: "341525000000000",
                             open: "False",
                             id: "341525106000000"
                         },
                         {
-                            name: "高桥湾现代产业园",
+                            name: "Node-1-5-Overflow Content Node",
                             pId: "341525000000000",
                             open: "False",
                             id: "341525401000000"
@@ -95,7 +94,7 @@
                 labelKey: "name",
                 valueKey: "id",
                 childrenKey: 'children',
-                selectValue: '341525401000000', //双向数据绑定当前选中值
+                selectValue: '341525401000000', // binding value
             };
         },
         mounted() {
@@ -166,19 +165,19 @@
 
 <div class="markdown-table">
 
-|  属性  |  Description   |  Type|可选值|Default|Require|
+|  Attribute  |  Description   |  Type|Accepted Value|Default|Require|
 |-------|---------|---|---|---|---|
-|dataSource|数据源| Array | - |-  |true|
-|width|占用宽度(溢出文本将展示tip)|Number| -|260|-|
-|position|文本溢出tip展示位置|string|top、left、right、bottom|top|-|
-|labelKey|数据显示key|String| -|label|true
-|valueKey|取值key (不传默认传递节点完整数据)|String|-|value|-|
-|childrenKey|子集key|String|-|children|-|
-|v-model|双向数据绑定 , `props需传入valueKey，为 “,” 拼接的字符串` |String|-|-|-|
+|dataSource|tree data| Array | - |-  |true|
+|width|node content width  (unit: px)|Number| -|260|-|
+|position|position of node's Tip|string|top、left、right、bottom|top|-|
+|labelKey|specify which key of node object is used as the node's label|String| -|label|true
+|valueKey|specify which key of node object is used as the node's value (return node object when it's empty)|String|-|value|-|
+|childrenKey|specify which node object is used as the node's subtree|String|-|children|-|
+|v-model|binding value , ` valueKey field is required; string composed of the value of the object's valueKey and the comma ` |String|-|-|-|
 |multiple|单击多选|-|-|-|-|
-|only-leaf|只取叶子节点数据|-|-|-|-|
-|show-checkbox|开启复选框（ `复选框开启，v-model初始化可只传入需要选中的顶层节点的value` ）|-|-|-|-|
-|props|dataSource数据配置选项具体看下表|-|-|-|-|
+|only-leaf|only binding leaf node value|-|-|-|-|
+|show-checkbox|whether node is selectable|-|-|-|-|
+|props|configuration dataSource options, see the following table|-|-|-|-|
 
 </div>
 
@@ -188,9 +187,9 @@
 
 |  Attribute  |  Description   | Type  | Default|  Require|
 |-------|---------|------|--------|----------|
-|selected|节点单选选中|Boolean|-|-
-|checked|节点多选选中|Boolean|-|-
-|expand|节点展开|Boolean|-|-
+|selected|node selected|Boolean|-|-
+|checked|node checked|Boolean|-|-
+|expand|node expanded|Boolean|-|-
 
 </div>
 
@@ -200,9 +199,9 @@
 
 | Event Name | Description | Attribute|
 | ------ |----- | ---- |
-|on-toggle-expand|节点被点击展开收缩的时触发|传递 `dataSource` 属性的数组中该节点所对应的对象 （ 对象中 `expand` 属性即当前展开状态 ）
-|on-select-change|Attributes不含show-checkbox，节点被点选的时触发|传递 `dataSource` 属性的数组中所选中的对象 |
-|on-check-change|Attributes含show-checkbox，节点checkbox被点击的时触发|传递 `dataSource` 属性的数组中所选中的对象 |
+|on-toggle-expand|triggers when current node open|parameter: node （  `expand`  ）
+|on-select-change|(`show-checkbox is false`)triggers when the selected state of the node changes|paramter: the currently selected array of nodes |
+|on-check-change|(`show-checkbox is true`)triggers when the checked state of the node changes|paramter: the currently checked array of nodes  |
 
 </div>
 
@@ -212,8 +211,8 @@
 
 | Event Name | Description | Attribute|
 | ------ |----- | ---- |
-|getSelectedNodes|获取当前单击选中的所有节点|-|
-|getCheckedNodes|获取当前多选选中的所有节点|-|
+|getSelectedNodes|(`show-checkbox is false`)If the node can be selected , it returns the currently selected array of nodes|-|
+|getCheckedNodes|(`show-checkbox is true`)If the node can be checked , it returns the currently checked array of nodes|-|
 
 </div>
 

@@ -53,7 +53,6 @@
 }
 </style>
 
-
 <script>
 import uploadAct from "../../../utils/upload";
 import Emitter from "../../../utils/emitter";
@@ -131,7 +130,6 @@ export default {
     return {
       fileList: [],
       markId: 0, //文件标识
-     
     };
   },
   methods: {

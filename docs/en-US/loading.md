@@ -1,4 +1,4 @@
-#  Loading 加载动画
+#  Loading
 
 ### Basic usage
 
@@ -6,31 +6,8 @@
 
 ```html
 <template>
-    <a class="k-button" style="color:red" @click="toggleLoading">点击显示/隐藏加载动画{{loading}}</a>
+    <el-button @click="toggleLoading">toggle show -> {{loading}}</el-button>
 </template>
-
-<style>
-    .k-button{
-        color:#3a8ee6;
-        position:fixed;
-        top:0;
-        right:100px;
-        bottom:0;
-        margin:auto;
-        z-index:99999;
-        border:1px solid #3a8ee6;
-        width:300px;
-        height:30px;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        background:yellow;
-    }
-    .k-button:hover{
-        cursor:pointer;
-    }
-
-</style>
 
 <script>
     export default {
@@ -62,11 +39,11 @@
 ###  Attributes
 <div class="markdown-table">
 
-|  属性  |  Description   |  Type|可选值|Default|Require
+|  Attribute  |  Description   |  Type| Accepted Values | Default | Require
 |-------|---------|---|---|---|---|
-|callback|回调函数|Function|-|-|-
-|background|背景色|String|-|rgba(0, 0, 0, .6)|-
-|color|加载图标颜色|String|-|#4b9cdb|-
+|callback|hook function after show or hide|Function|-|-|-
+|background| background color of the mask|String|-|rgba(0, 0, 0, .6)|-
+|color|dot color|String|-|#4b9cdb|-
 
 </div>
 
@@ -76,8 +53,8 @@
 
 | Event Name | Description |
 | ------ |----- | 
-| show | 显示提示 | 详见Attributes表 |
-| hide | 隐藏提示 | 详见Attributes表 |
+| show | display |
+| hide | hide | 
 
 </div>
 

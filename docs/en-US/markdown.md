@@ -1,8 +1,7 @@
-# markdown 编辑器
+# markdown editor
 
-## 代码演示
+### Basic usage
 
-### 编辑模式
 :::kview
 
 ```html
@@ -30,7 +29,7 @@
 
 :::
 
-### 预览模式
+### Prview Mode
 
 :::kview
 
@@ -64,9 +63,9 @@
 
 |  Attribute  |  Description   | Type  | Default|  Require|
 |-------|---------|------|--------|----------|
-|mode|模式(editor、preview)|string|editor|-
-|v-model|双向绑定，markdown 字符串|string|-|-
-|markdownOption|markdown配置，[参考链接](https://github.com/hinesboy/mavonEditor#props)|object|详见markkdownOption 默认配置|-
+|mode|display mode(editor、preview)|string|editor|-
+|value / v-mode|binding value|string|-|-
+|markdownOption| [config](https://github.com/hinesboy/mavonEditor#props)|object|read markdownOption below|-
 
 </div>
 

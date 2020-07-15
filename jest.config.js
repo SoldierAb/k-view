@@ -21,7 +21,7 @@ module.exports = {
     '^vue$': 'vue/dist/vue.common.js',
   },
   setupFiles: ['<rootDir>/test/unit/setup'], // 类似 webpack.entry
-  coverageDirectory: '<rootDir>/test/coverage', // 类似 webpack.output
+  coverageDirectory: '<rootDir>/coverage', // 类似 webpack.output
   collectCoverageFrom: [ // 类似 webpack 的 rule.include
     'src/**/*.{js,vue}',
     '!src/main.js',
