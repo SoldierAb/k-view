@@ -159,13 +159,15 @@ body {
   .k-view-content {
     padding: $k-view-header-footer-height 10px;
     position: relative;
-    height: calc(100% - #{2 * $k-view-header-footer-height});
     max-width: 1400px;
     width: 75%;
     margin: 0 auto;
+    overflow: auto;
     .section-nav {
       width: 300px;
       position: fixed;
+      top:0;
+      padding: $k-view-header-footer-height 10px;
       height: 100%;
       background: white;
     }
@@ -173,7 +175,6 @@ body {
       padding: 20px 20px 20px 330px;
       border: 1px solid $border-color-light;
       height: 100%;
-      overflow: auto;
       .content {
         h1,
         h2,
