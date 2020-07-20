@@ -59,11 +59,11 @@ if (typeof window !== 'undefined'&&window.Vue){
     install(window.Vue);
 }
 
-const VizierUI = {
+const KView = {
     // i18n: locale.i18n,
     // locale,
     install,
     ...components,
 };
 
-export default VizierUI;
+export default KView;

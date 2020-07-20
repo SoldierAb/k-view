@@ -1,13 +1,5 @@
 const isProduction = process.env.NODE_ENV === "production";
 const plugins = [
-  [
-    "kimport",
-    {
-      libraryName: "vizier-ui",
-      camel2DashComponentName: true,
-    },
-    "vizier-ui",
-  ],
   ["import", {
     libraryName: "ant-design-vue",
     libraryDirectory: "es",
