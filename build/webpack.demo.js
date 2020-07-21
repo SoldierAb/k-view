@@ -1,7 +1,7 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.base');
-
+const CopyPlugin = require('copy-webpack-plugin');
 
 const demoConfig = merge(baseConfig, {
     mode: 'development',
@@ -21,19 +21,19 @@ const demoConfig = merge(baseConfig, {
             chunks: 'all',
             cacheGroups: {
                 vendors: {
-                    test: /[\\/]node_modules[\\/]/, 
-                    priority: -10  
+                    test: /[\\/]node_modules[\\/]/,
+                    priority: -10
                 },
                 elementBase: {
                     test: (module) => {
-                      return /element-ui/.test(module.context);
-                    }, 
+                        return /element-ui/.test(module.context);
+                    },
                     name: "elementBase",
                     priority: 10,
-                  },
+                },
                 default: {
                     minChunks: 2,
-                    priority: -20,   
+                    priority: -20,
                     reuseExistingChunk: true
                 }
             }
@@ -45,7 +45,17 @@ const demoConfig = merge(baseConfig, {
         'vue-router': 'VueRouter',
         'element-ui': 'ELEMENT',
     },
-   
+    plugins: [
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: './**/*',
+                    context:'public/',
+                    to: './',
+                },
+            ],
+        }),
+    ]
 })
 
 

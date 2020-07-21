@@ -14,7 +14,8 @@ deploy_job:
     - ci
   before_script:
     - export PROJECT_IMAGE_NAME=$(cat package.json | grep name | head -1 | awk -F "[\"]" '/name/{print$4}')
-    - export BUILD_TAG=$(cat package.json | grep version | head -1 | awk -F "[\"]" '/version/{print$4}')
+    # - export BUILD_TAG=$(cat package.json | grep version | head -1 | awk -F "[\"]" '/version/{print$4}')
+    - export BUILD_TAG=$CI_COMMIT_TAG
     - echo $BUILD_TAG
   script:
     # - npm install

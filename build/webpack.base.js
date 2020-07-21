@@ -56,7 +56,7 @@ const webpackConfig = {
                         loader: 'url-loader',
                         options: {
                             limit: 10000,
-                            name: path.posix.join('fonts', 'k-view.[ext]')
+                            name: path.posix.join('fonts', 'k-view.[name].[ext]')
                         }
                     }
                 ]
@@ -149,7 +149,7 @@ if (isProduction) {
 }else{
     webpackConfig.plugins.push(
         new HtmlPlugin({
-            template: './index.html',
+            template: './public/index.html',
             minify: {
                 removeAttributeQuotes: false  //removeAttrubuteQuotes是却掉属性的双引号。
             },
