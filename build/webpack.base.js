@@ -55,7 +55,7 @@ const webpackConfig = {
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: 10000,
+                            limit: 100000,
                             name: path.posix.join('fonts', 'k-view.[name].[ext]')
                         }
                     }
