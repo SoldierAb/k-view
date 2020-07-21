@@ -1,6 +1,6 @@
 {
   "name": "@cgj/k-view",
-  "version": "1.20.4",
+  "version": "1.20.1",
   "main": "./lib/kview/index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config=./build/webpack.dev.js --open --theme=default",
@@ -25,9 +25,18 @@
   "email": "ab140140@163.com",
   "keywords": [
     "vue",
-    "ant-de",
     "eleme",
-    "components"
+    "components",
+    "ant",
+    "design",
+    "antd",
+    "vue",
+    "vueComponent",
+    "component",
+    "components",
+    "ui",
+    "framework",
+    "frontend"
   ],
   "author": "cgj",
   "license": "MIT",
