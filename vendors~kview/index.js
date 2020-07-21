@@ -1469,7 +1469,7 @@ eval("\nvar content = __webpack_require__(/*! !../../../css-loader/dist/cjs.js!.
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"fonts/k-view.eot\";\n\n//# sourceURL=webpack:///./node_modules/mavon-editor/dist/font/fontello.eot?");
+eval("module.exports = __webpack_require__.p + \"fonts/k-view.fontello.eot\";\n\n//# sourceURL=webpack:///./node_modules/mavon-editor/dist/font/fontello.eot?");
 
 /***/ }),
 
@@ -1480,7 +1480,7 @@ eval("module.exports = __webpack_require__.p + \"fonts/k-view.eot\";\n\n//# sour
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"fonts/k-view.svg\";\n\n//# sourceURL=webpack:///./node_modules/mavon-editor/dist/font/fontello.svg?");
+eval("module.exports = __webpack_require__.p + \"fonts/k-view.fontello.svg\";\n\n//# sourceURL=webpack:///./node_modules/mavon-editor/dist/font/fontello.svg?");
 
 /***/ }),
 
@@ -1491,7 +1491,7 @@ eval("module.exports = __webpack_require__.p + \"fonts/k-view.svg\";\n\n//# sour
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"fonts/k-view.ttf\";\n\n//# sourceURL=webpack:///./node_modules/mavon-editor/dist/font/fontello.ttf?");
+eval("module.exports = __webpack_require__.p + \"fonts/k-view.fontello.ttf\";\n\n//# sourceURL=webpack:///./node_modules/mavon-editor/dist/font/fontello.ttf?");
 
 /***/ }),
 

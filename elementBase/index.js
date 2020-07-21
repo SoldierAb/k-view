@@ -443,7 +443,7 @@ eval("\nvar content = __webpack_require__(/*! !../../../css-loader/dist/cjs.js!.
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"fonts/k-view.ttf\";\n\n//# sourceURL=webpack:///./node_modules/element-ui/lib/theme-chalk/fonts/element-icons.ttf?");
+eval("module.exports = __webpack_require__.p + \"fonts/k-view.element-icons.ttf\";\n\n//# sourceURL=webpack:///./node_modules/element-ui/lib/theme-chalk/fonts/element-icons.ttf?");
 
 /***/ }),
 
@@ -454,7 +454,7 @@ eval("module.exports = __webpack_require__.p + \"fonts/k-view.ttf\";\n\n//# sour
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"fonts/k-view.woff\";\n\n//# sourceURL=webpack:///./node_modules/element-ui/lib/theme-chalk/fonts/element-icons.woff?");
+eval("module.exports = __webpack_require__.p + \"fonts/k-view.element-icons.woff\";\n\n//# sourceURL=webpack:///./node_modules/element-ui/lib/theme-chalk/fonts/element-icons.woff?");
 
 /***/ }),
 
