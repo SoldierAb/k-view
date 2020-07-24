@@ -1,6 +1,6 @@
 <template>
-  <div
-    class="tree-container"
+  <div 
+    class="tree-container" 
     :style="`width:${width}px;`"
   >
     <div class="tree-body">
@@ -15,31 +15,39 @@
         :show-tip="showTip"
         :position="position"
       >
-        <slot
-          v-slot:custom-node="{nodeData,children}"
-          name="custom-node"
-        > 
-          <img
-            v-if="imgSource.node&&imgSource.leaf"
-            width="18"
-            height="18"
-            class="label-icon"
-            :src="children&&children.length?imgSource.node:imgSource.leaf"
-            alt
+        <template v-slot:tree-node="{nodeData,children}">
+          <slot 
+            name="custom-node"
+            v-bind="{nodeData,children}"
           >
-          <icon
-            v-else
-            :type="`${children&&children.length?'file-b-':'file'}`"
-          />
-          <label>{{ nodeData[labelKey] }}</label>
-        </slot>
+            <k-tip
+              :position="position"
+              :content="nodeData[labelKey]"
+              text-width=""
+            >
+              <img
+                v-if="imgSource.node&&imgSource.leaf"
+                width="18"
+                height="18"
+                class="label-icon"
+                :src="children&&children.length?imgSource.node:imgSource.leaf"
+                alt
+              >
+              <icon
+                v-else
+                :type="`${children&&children.length?'file-b-':'file'}`"
+              />
+              {{ nodeData[labelKey] }}
+            </k-tip>
+          </slot>
+        </template>
       </tree-node>
     </div>
   </div>
 </template>
 
 <style lang="scss">
-  .tree-container {
+.tree-container {
   $paddingLeft: 20px;
   $lineLeft: 30px;
   position: relative;
@@ -130,7 +138,7 @@
   .tree-checkbox {
     vertical-align: middle;
     display: inline-block;
-    padding-left:6px;
+    padding-left: 6px;
   }
 
   .arrow-icon {
@@ -188,87 +196,89 @@
 </style>
 
 <script>
-import TreeNode from "./TreeNode.vue"
-import Emitter from "../../../utils/emitter"
-import getType from "./util/type"
+import TreeNode from "./TreeNode.vue";
+import Emitter from "../../../utils/emitter";
+import getType from "./util/type";
+import Tip from "../../tip";
+import Icon from "../../icon";
 
 export default {
   name: "KTree",
 
-  components: { TreeNode },
+  components: { TreeNode, KTip:Tip, Icon},
 
   mixins: [Emitter],
 
   props: {
-    defaultExpandAll:{
-      type:Boolean,
-      default(){
+    defaultExpandAll: {
+      type: Boolean,
+      default() {
         return true;
-      }
+      },
     },
-    width:{
-      type:Number,
-      default(){
+    width: {
+      type: Number,
+      default() {
         return 260;
       },
     },
-     position:{
-      type:String,
-      default(){
-        return "right"
-      }
+    position: {
+      type: String,
+      default() {
+        return "right";
+      },
     },
     value: {
-      type:String,
-      default(){
-        return ``
-      }
+      type: String,
+      default() {
+        return ``;
+      },
     },
     dataSource: {
       type: Array,
       default() {
         return [];
-      }
+      },
     },
-    showTip:{
-      type:Boolean,
-      default:true,
+    showTip: {
+      type: Boolean,
+      default: true,
     },
-    imgSource:{
-      type:Object,
-      default(){
-        return {}
+    imgSource: {
+      type: Object,
+      default() {
+        return {};
       },
     },
     onlyLeaf: {
       //是否只保留叶子节点数据
       type: Boolean,
-      default: false
+      default: false,
     },
     multiple: {
       type: Boolean,
-      default: false
+      default: false,
     },
     type: {
       type: String,
-      default: "select"
+      default: "select",
     },
     showCheckbox: {
       type: Boolean,
-      default: false
+      default: false,
     },
     labelKey: {
       type: String,
-      default: "label"
+      default: "label",
     },
     valueKey: {
       type: String,
-      default: "value"
+      default: "value",
     },
     childrenKey: {
       type: String,
-      default: "children"
-    }
+      default: "children",
+    },
   },
 
   data() {
@@ -281,12 +291,12 @@ export default {
   },
 
   watch: {
-    value:'setNodesPoperty',
+    value: "setNodesPoperty",
 
     dataSource: {
       handler() {
         this.initDataSource();
-      }
+      },
     },
   },
 
@@ -299,9 +309,9 @@ export default {
 
   methods: {
     /**
-    * @description 数据初始化
-    */
-    initDataSource(){
+     * @description 数据初始化
+     */
+    initDataSource() {
       if (getType(this.dataSource, "Array") && this.dataSource.length) {
         this.stateTree = this.dataSource;
         this.setFlatState();
@@ -314,22 +324,24 @@ export default {
     setFlatState() {
       let flatState = [],
         markKey = 0,
-        { childrenKey,showCheckbox,multiple,defaultExpandAll } = this;
+        { childrenKey, showCheckbox, multiple, defaultExpandAll } = this;
 
       const toFlateJson = (node, parentNode) => {
-
         node.nodeKey = markKey++;
 
         // if(getType(node.expand,'undefined')){
         //   }
-          this.$set(node,'expand',defaultExpandAll?defaultExpandAll:Boolean(node.expand));
+        this.$set(
+          node,
+          "expand",
+          defaultExpandAll ? defaultExpandAll : Boolean(node.expand)
+        );
 
         flatState[node.nodeKey] = { node: node, nodeKey: node.nodeKey }; //nodeKey与索引对应
 
-        node.hasParent = !getType(parentNode,'Undefined');
+        node.hasParent = !getType(parentNode, "Undefined");
 
         if (parentNode) {
-
           flatState[node.nodeKey].parentKey = parentNode.nodeKey; //设置当前节点父节点标识
           flatState[parentNode.nodeKey][childrenKey].push(node.nodeKey); //父节点填充子节点
         }
@@ -337,97 +349,92 @@ export default {
         if (node[childrenKey] && node[childrenKey].length) {
           //当前节点子集操作
           flatState[node.nodeKey][childrenKey] = [];
-          node[childrenKey].forEach(child => toFlateJson(child, node));
+          node[childrenKey].forEach((child) => toFlateJson(child, node));
         } else {
           node[`isLeafNode`] = true; //叶子节点标记
         }
       };
 
-      this.dataSource.forEach(rootNode => toFlateJson(rootNode));
+      this.dataSource.forEach((rootNode) => toFlateJson(rootNode));
       this.flatState = flatState;
 
       this.setNodesPoperty();
-
     },
 
     /**
-    * @description 双向绑定设置节点对应属性状态
-    */
-    setNodesPoperty(){
+     * @description 双向绑定设置节点对应属性状态
+     */
+    setNodesPoperty() {
+      const { _value, _label } = this.getCurrentNodes();
 
+      if (this.value === _value) return false;
 
-      const {_value,_label} = this.getCurrentNodes();
-
-      if(this.value===_value) return false;
-
-      if(this.value&&this.value.length){
-
+      if (this.value && this.value.length) {
         this.clearAllNodes();
 
-        if(!this.showCheckbox){
-
-          this.value.split(',').forEach(valItem=>{
+        if (!this.showCheckbox) {
+          this.value.split(",").forEach((valItem) => {
             this.setNodeBySearchValue(valItem, "selected", true);
-          })
+          });
           this.selectedNodes = this.getSelectedNodes();
-
-        }else{
-
-          this.value.split(',').forEach(valItem=>{
-            const findNode = this.setNodeBySearchValue(valItem, "checked", true);
-            if(findNode){
+        } else {
+          this.value.split(",").forEach((valItem) => {
+            const findNode = this.setNodeBySearchValue(
+              valItem,
+              "checked",
+              true
+            );
+            if (findNode) {
               const checkChange = {
-                checked:true,
-                nodeKey:findNode.nodeKey
+                checked: true,
+                nodeKey: findNode.nodeKey,
               };
               this.updateCheckedNodesPoperty(checkChange);
             }
-          })
+          });
 
           this.checkedNodes = this.getCheckedNodes();
-
         }
         this.setModelValue();
       }
-
     },
 
     /**
-    * @description 清除当前选中的所有数据
-    */
-    clearAllNodes(){
-     const curStateKey = this.showCheckbox?'checked':'selected';
-     this.setAllNodesState(curStateKey,false);
-     this[`${curStateKey}Nodes`]=[];
+     * @description 清除当前选中的所有数据
+     */
+    clearAllNodes() {
+      const curStateKey = this.showCheckbox ? "checked" : "selected";
+      this.setAllNodesState(curStateKey, false);
+      this[`${curStateKey}Nodes`] = [];
     },
 
     /**
-    * @description 清空所有选中状态
-    */
-    rebootTree(){
+     * @description 清空所有选中状态
+     */
+    rebootTree() {
       this.clearAllNodes();
       this.setModelValue();
     },
 
     /**
-    * @description 查找节点
-    */
-    findNodeByKeyValue(key,value){
+     * @description 查找节点
+     */
+    findNodeByKeyValue(key, value) {
       const { flatState } = this;
-      if(flatState){
-        const findNode = flatState.find(flatNode => {
-          return flatNode.node[key]===value
+      if (flatState) {
+        const findNode = flatState.find((flatNode) => {
+          return flatNode.node[key] === value;
         });
         return findNode;
       }
     },
 
     /**
-    * @description 设置节点属性值
-    */
+     * @description 设置节点属性值
+     */
     setNodeBySearchValue(searchValue, setKey, setVal) {
-      const findNode = this.findNodeByKeyValue(this.valueKey,searchValue);
-      if (findNode){
+      const findNode = this.findNodeByKeyValue(this.valueKey, searchValue);
+      if (findNode) {
         this.$set(findNode.node, setKey, setVal);
         return findNode;
       }
@@ -445,23 +452,21 @@ export default {
           valueKey,
           labelKey,
           value,
-          flatState
+          flatState,
         } = this,
-        leafNodes = checkedNodes.filter(item => item.isLeafNode),
+        leafNodes = checkedNodes.filter((item) => item.isLeafNode),
         _curNodes = showCheckbox
           ? onlyLeaf
             ? leafNodes
             : checkedNodes
           : selectedNodes,
-        _label = _curNodes.map(node => node[labelKey]).join(","),
+        _label = _curNodes.map((node) => node[labelKey]).join(","),
         _value = valueKey
-          ? _curNodes.map(node => node[valueKey]).join(",")
+          ? _curNodes.map((node) => node[valueKey]).join(",")
           : _curNodes;
 
-
-      return { _value, _label , _curNodes };
+      return { _value, _label, _curNodes };
     },
-
 
     /**
      * @description 当前点击的节点
@@ -475,17 +480,15 @@ export default {
      * @description 复选框事件
      */
     handleCheck(checkItem) {
-
       this.updateCheckedNodesPoperty(checkItem);
 
       this.setModelValue();
-
     },
 
     /**
-    * @description 更新选中后的节点状态
-    */
-    updateCheckedNodesPoperty({ checked, nodeKey }){
+     * @description 更新选中后的节点状态
+     */
+    updateCheckedNodesPoperty({ checked, nodeKey }) {
       const { node } = this.flatState[nodeKey];
 
       this.$set(node, "checked", checked);
@@ -495,9 +498,7 @@ export default {
       this.updateChildrenNodes(node, this.childrenKey, checked);
 
       this.checkedNodes = this.getCheckedNodes();
-
     },
-
 
     /**
      * @description 更新父节点
@@ -510,7 +511,7 @@ export default {
           { childrenKey } = this;
 
         const allAdjacentNodesChecked = parentNode[childrenKey].every(
-          item => item.checked
+          (item) => item.checked
         );
 
         this.$set(parentNode, "checked", allAdjacentNodesChecked);
@@ -524,7 +525,7 @@ export default {
      */
     updateChildrenNodes(node, childrenKey, checked) {
       if (node[childrenKey] && node[childrenKey].length)
-        node[childrenKey].forEach(child => {
+        node[childrenKey].forEach((child) => {
           this.$set(child, "checked", checked);
           this.updateChildrenNodes(child, childrenKey, checked);
         });
@@ -534,12 +535,11 @@ export default {
      * @description 节点选择
      */
     handleSelect({ nodeKey }) {
-
-      const { node,parentKey } = this.flatState[nodeKey];
+      const { node, parentKey } = this.flatState[nodeKey];
 
       //如果是单选
       if (!this.multiple) {
-        this.setAllNodesState('selected',false);
+        this.setAllNodesState("selected", false);
       }
 
       this.$set(node, "selected", !node["selected"]);
@@ -547,31 +547,33 @@ export default {
       this.selectedNodes = this.getSelectedNodes();
 
       this.setModelValue();
-
     },
 
-
     /**
-    * @description 触发v-model绑定值变化
-    */
-    setModelValue(){
+     * @description 触发v-model绑定值变化
+     */
+    setModelValue() {
+      const { _value, _label, _curNodes } = this.getCurrentNodes(),
+        { showCheckbox } = this;
 
-      const {_value,_label,_curNodes} =this.getCurrentNodes(),
-       {showCheckbox} = this;
-
-      if(this.flatState){
-        this.$emit("input", _value);       //当前选择触发双向绑定数据变化
+      if (this.flatState) {
+        this.$emit("input", _value); //当前选择触发双向绑定数据变化
         // this.$emit("input", _curNodes);       //当前选择触发双向绑定数据变化
-        showCheckbox ? this.$emit("on-check-change",this.getCheckedNodes()) : this.$emit("on-select-change", this.getSelectedNodes());
+        showCheckbox
+          ? this.$emit("on-check-change", this.getCheckedNodes())
+          : this.$emit("on-select-change", this.getSelectedNodes());
       }
     },
 
     /**
      * @description 更新节点属性
-    */
-    setAllNodesState(key,value){
-        this.flatState.filter(item => item.node[key]).map(item => item.node).forEach(leaf => {
-            this.$set(leaf, key, value);
+     */
+    setAllNodesState(key, value) {
+      this.flatState
+        .filter((item) => item.node[key])
+        .map((item) => item.node)
+        .forEach((leaf) => {
+          this.$set(leaf, key, value);
         });
     },
 
@@ -579,16 +581,19 @@ export default {
      * @description 获取当前选中的所有节点
      */
     getSelectedNodes() {
-      return this.flatState.filter(item => item.node.selected).map(item => item.node);
+      return this.flatState
+        .filter((item) => item.node.selected)
+        .map((item) => item.node);
     },
 
     /**
      * @description 获取当前选中的节点
      */
     getCheckedNodes() {
-      return this.flatState.filter(item => item.node.checked).map(item => item.node);
+      return this.flatState
+        .filter((item) => item.node.checked)
+        .map((item) => item.node);
     },
-
-  }
+  },
 };
 </script>

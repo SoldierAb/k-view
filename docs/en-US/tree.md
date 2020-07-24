@@ -205,7 +205,7 @@
 
 </div>
 
-###  methods
+### Methods
 
 <div class="markdown-table">
 
@@ -215,4 +215,16 @@
 |getCheckedNodes|(`show-checkbox is true`)If the node can be checked , it returns the currently checked array of nodes|-|
 
 </div>
+
+
+### Slot
+<div class="markdown-table">
+
+| Name | Description | Paramter|
+| ------ |----- | ---- |
+|custom-node|Custom content for tree nodes|{ nodeData,children }|
+
+</div>
+
+
 

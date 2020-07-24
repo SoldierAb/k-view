@@ -20,6 +20,7 @@
         @on-select-change="selectChange" 
         @on-check-change="checkChange" 
     />
+      
     <div class="attrs-box">
         <button class="btn" @click="onlyLeaf=!onlyLeaf">是否只绑定叶子节点数据-> onlyLeaf : {{onlyLeaf}}</button>
         <button class="btn" @click="showCheckbox = !showCheckbox">是否展示多选-> showCheckbox : {{showCheckbox}}</button>
@@ -206,7 +207,7 @@
 
 </div>
 
-###  methods
+### Methods
 
 <div class="markdown-table">
 
@@ -214,6 +215,17 @@
 | ------ |----- | ---- |
 |getSelectedNodes|获取当前单击选中的所有节点|-|
 |getCheckedNodes|获取当前多选选中的所有节点|-|
+
+</div>
+
+
+### Slot
+
+<div class="markdown-table">
+
+|  插槽名 | 描述 | 接收参数 |
+| ------ |----- | ---- |
+|custom-node|自定义树节点的内容|{ nodeData,children }|
 
 </div>
 
