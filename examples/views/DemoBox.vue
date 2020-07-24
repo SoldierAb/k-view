@@ -10,8 +10,35 @@
 </template>
 
 <style lang='scss'>
+@mixin demo-box-hover {
+  &:hover {
+    box-shadow: 0 0 10px #ccc;
+  }
+}
+
+@mixin demo-box {
+  @include demo-box-hover;
+  padding: 14px 20px;
+  border: 1px solid #ebedf0;
+  border-radius: 2px;
+  width: 100%;
+  position: relative;
+  margin: 0 0 16px;
+  transition: all 0.2s;
+}
 .demo-box-container {
   height: auto;
+  .clipboard-btn {
+    font-size: 20px;
+    position: absolute;
+    right: 20px;
+    @include hover-pointer;
+  }
+  .demo-box-hover {
+    &:hover {
+      box-shadow: 0 0 10px #ccc;
+    }
+  }
   .demo-instance {
     @include demo-box;
   }
@@ -33,6 +60,6 @@ export default {
   watch: {},
   created() {},
   mounted() {},
-  methods: {}
+  methods: {},
 };
 </script>

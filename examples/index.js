@@ -8,6 +8,10 @@ import { Select,Option } from 'element-ui'
 Vue.use(Select)
 Vue.use(Option)
 
+import {Icon} from 'ant-design-vue'
+
+Vue.use(Icon)
+
 Vue.component(DemoBox.name, DemoBox)
 Vue.use(KView);
 Vue.use(Router);

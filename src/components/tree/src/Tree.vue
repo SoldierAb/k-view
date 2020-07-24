@@ -46,153 +46,6 @@
   </div>
 </template>
 
-<style lang="scss">
-.tree-container {
-  $paddingLeft: 20px;
-  $lineLeft: 30px;
-  position: relative;
-  color: $font-color;
-  font-family: $font-family;
-  position: relative;
-  display: inline-block;
-  background: $bg-base;
-  text-align: left;
-  height: 100%;
-
-  .tip-box {
-    vertical-align: bottom;
-  }
-
-  .tree-body {
-    overflow-x: hidden;
-    overflow-y: auto;
-    position: relative;
-    height: 100%;
-    padding: 6px $paddingLeft 10px 0;
-    min-width: 180px;
-  }
-
-  .tree-node-container {
-    position: relative;
-
-    .node-label {
-      border-radius: 4px;
-      letter-spacing: 1px;
-      padding: 2px;
-      margin: 2px 0px 2px 4px;
-    }
-
-    .node-label-active {
-      color: $border-color;
-      background: $hover-bg;
-    }
-
-    .node-hover {
-      &:hover {
-        background: $hover-bg;
-      }
-    }
-
-    .label-icon {
-      vertical-align: text-bottom;
-    }
-
-    li,
-    ul {
-      list-style: none;
-    }
-
-    ul {
-      padding-left: $paddingLeft;
-      width: 100%;
-      height: auto;
-
-      li {
-        line-height: 24px;
-        font-size: 14px;
-
-        span {
-          display: inline-block;
-          vertical-align: middle;
-        }
-      }
-    }
-  }
-
-  .tree-arrow {
-    width: 16px;
-    overflow: hidden;
-    text-align: center;
-
-    &:hover {
-      transform: scale(1.2);
-      -webkit-transform: scale(1.2);
-    }
-
-    img {
-      vertical-align: text-bottom;
-    }
-  }
-
-  .tree-checkbox {
-    display: inline-block;
-    padding-left: 6px;
-  }
-
-  .arrow-icon {
-    display: inline-block;
-    font-family: Ionicons;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    font-variant: normal;
-    text-transform: none;
-    text-rendering: auto;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    vertical-align: text-top;
-    transition: all 0.2s ease-in-out;
-    content: "\F11F";
-  }
-
-  .arrow-down {
-    transform: rotate(90deg);
-    -webkit-transform: rotate(90deg);
-  }
-
-  .point-cursor {
-    cursor: pointer;
-  }
-
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  ::-webkit-scrollbar-corner {
-    background-color: $bg-grey;
-  }
-
-  ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px $scroll-track;
-    background: $scroll-track;
-    border-radius: 4px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    box-shadow: inset 0 0 6px $bg-grey;
-    background: $bg-grey !important;
-  }
-}
-</style>
-
 <script>
 import TreeNode from "./TreeNode.vue";
 import Emitter from "../../../utils/emitter";
@@ -595,3 +448,151 @@ export default {
   },
 };
 </script>
+
+
+<style lang="scss">
+.tree-container {
+  $paddingLeft: 20px;
+  $lineLeft: 30px;
+  position: relative;
+  color: $font-color;
+  font-family: $font-family;
+  position: relative;
+  display: inline-block;
+  background: $bg-base;
+  text-align: left;
+  height: 100%;
+
+  .tip-box {
+    vertical-align: bottom;
+  }
+
+  .tree-body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    height: 100%;
+    padding: 6px $paddingLeft 10px 0;
+    min-width: 180px;
+  }
+
+  .tree-node-container {
+    position: relative;
+
+    .node-label {
+      border-radius: 4px;
+      letter-spacing: 1px;
+      padding: 2px;
+      margin: 2px 0px 2px 4px;
+    }
+
+    .node-label-active {
+      color: $border-color;
+      background: $hover-bg;
+    }
+
+    .node-hover {
+      &:hover {
+        background: $hover-bg;
+      }
+    }
+
+    .label-icon {
+      vertical-align: text-bottom;
+    }
+
+    li,
+    ul {
+      list-style: none;
+    }
+
+    ul {
+      padding-left: $paddingLeft;
+      width: 100%;
+      height: auto;
+
+      li {
+        line-height: 24px;
+        font-size: 14px;
+
+        span {
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+  .tree-arrow {
+    width: 16px;
+    overflow: hidden;
+    text-align: center;
+
+    &:hover {
+      transform: scale(1.2);
+      -webkit-transform: scale(1.2);
+    }
+
+    img {
+      vertical-align: text-bottom;
+    }
+  }
+
+  .tree-checkbox {
+    display: inline-block;
+    padding-left: 6px;
+  }
+
+  .arrow-icon {
+    display: inline-block;
+    font-family: Ionicons;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    text-rendering: auto;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: text-top;
+    transition: all 0.2s ease-in-out;
+    content: "\F11F";
+  }
+
+  .arrow-down {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+  }
+
+  .point-cursor {
+    cursor: pointer;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background-color: $bg-grey;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px $scroll-track;
+    background: $scroll-track;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    box-shadow: inset 0 0 6px $bg-grey;
+    background: $bg-grey !important;
+  }
+}
+</style>

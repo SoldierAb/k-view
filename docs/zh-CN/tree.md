@@ -171,7 +171,7 @@
 |-------|---------|---|---|---|---|
 |dataSource|数据源| Array | - |-  |是|
 |width|占用宽度(溢出文本将展示tip)|Number| -|260|-|
-|position|文本溢出tip展示位置|string|top、left、right、bottom|top|-|
+|position|文本溢出tip展示位置|string|top、left、right、bottom|right|-|
 |labelKey|数据显示key|String| -|label|是
 |valueKey|取值key (不传默认传递节点完整数据)|String|-|value|-|
 |childrenKey|子集key|String|-|children|-|

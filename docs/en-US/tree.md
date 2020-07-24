@@ -169,7 +169,7 @@
 |-------|---------|---|---|---|---|
 |dataSource|tree data| Array | - |-  |true|
 |width|node content width  (unit: px)|Number| -|260|-|
-|position|position of node's Tip|string|top、left、right、bottom|top|-|
+|position|position of node's Tip|string|top、left、right、bottom|right|-|
 |labelKey|specify which key of node object is used as the node's label|String| -|label|true
 |valueKey|specify which key of node object is used as the node's value (return node object when it's empty)|String|-|value|-|
 |childrenKey|specify which node object is used as the node's subtree|String|-|children|-|

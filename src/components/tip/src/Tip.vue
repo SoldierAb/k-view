@@ -1,6 +1,7 @@
 <template>
   <span
     class="k-tip-box"
+    :style="`width:${textWidth}px`"
     @mouseover="showTip($event)"
     @mousemove="showTip($event)"
     @mouseout="hideTip"
@@ -12,7 +13,6 @@
       :popper-class="popperClass"
     >
       <p
-        :style="`max-width:${textWidth}px`"
         class="k-tip-text-box"
       >
         <slot>{{ text }}</slot>
@@ -22,7 +22,7 @@
 </template>
 <style lang="scss">
 .k-tip-box {
-  height: 100%;
+  display: inline-block;
   width: 100%;
   &:hover{
     cursor: pointer;
@@ -33,8 +33,8 @@
 }
 </style>
 <script>
-import Tooltip from 'element-ui/lib/tooltip'
-require('element-ui/lib/theme-chalk/tooltip.css')
+import Tooltip from 'element-ui/lib/tooltip';
+require('element-ui/lib/theme-chalk/tooltip.css');
 
 export default {
   name: "KTip",
@@ -69,25 +69,39 @@ export default {
     textWidth: {
       type: Number,
       default() {
-        return 110;
+        return 120;
       },
     },
+    trigger:{
+      type:String,
+      default(){
+        return "overflow";  // "hover"
+      },
+    },
+
   },
   data() {
     return {
-      textOverFlow: false,
+      textOverFlow: this.trigger==='always',
     };
   },
   methods: {
     showTip(_e) {
-      let { scrollHeight, scrollWidth, clientHeight, clientWidth } = _e.target;
-      //如果文本溢出
-      if (scrollHeight > clientHeight || scrollWidth > clientWidth) {
-
-        this.textOverFlow = true;
-      } else {
-        this.textOverFlow = false;
-      }
+      const showMap  = new Map()
+        .set("overflow",()=>{
+          let { scrollHeight, scrollWidth, clientHeight, clientWidth } = _e.target;
+          //如果文本溢出
+          if (scrollHeight > clientHeight || scrollWidth > clientWidth) {
+    
+            this.textOverFlow = true;
+          } else {
+            this.textOverFlow = false;
+          }
+        })
+        .set("hover",()=>{
+          this.textOverFlow = true;
+        });
+      showMap.get(this.trigger)();
     },
     hideTip() {
       this.textOverFlow = false;

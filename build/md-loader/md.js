@@ -14,7 +14,23 @@ const fenceWrite = md => {
         const prevToken = tokens[idx - 1];
         const isInDemoBox = prevToken && prevToken.nesting === 1 && prevToken.info.trim().match(/^kview\s*(.*)$/);
         if (token.info === 'html' && isInDemoBox) {
-            return `<template slot="code-box"><pre class="hljs"><code class="pre-code html">${md.utils.escapeHtml(token.content)}</code></pre></template>`;
+            return `<template slot="code-box">
+                <k-tip 
+                    trigger="hover"
+                    content="copy code"
+                    :text-width="20"
+                    class="clipboard-btn" 
+                    data-clipboard-text="${encodeURIComponent(token.content)}"
+                >
+                    <a-icon 
+                        type="copy" 
+                    />
+                </k-tip>
+                <pre class="hljs">
+                    <code class="pre-code html">${md.utils.escapeHtml(token.content)}</code>
+                </pre>
+            </template>`;
+
         }
         return defaultRender(tokens, idx, options, env, self);
     };

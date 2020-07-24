@@ -38,22 +38,8 @@ $bug-type-4:#00cc00;
     color: $font-color-light;
 }
 
-
-@mixin demo-box-hover{
-    &:hover{
-        box-shadow:  0 0 10px #ccc;
-    }
-}
-
-@mixin demo-box {
-    @include demo-box-hover;
-    padding: 14px 20px;
-    border: 1px solid #ebedf0;
-    border-radius: 2px;
-    width: 100%;
-    position: relative;
-    margin: 0 0 16px;
-    transition: all 0.2s;
+@mixin hover-pointer {
+    cursor: pointer;
 }
 
 
