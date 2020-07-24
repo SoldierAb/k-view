@@ -135,7 +135,6 @@
   }
 
   .tree-checkbox {
-    vertical-align: middle;
     display: inline-block;
     padding-left: 6px;
   }
