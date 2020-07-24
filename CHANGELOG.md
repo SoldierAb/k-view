@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.21.0](https://github.com/SoldierAb/k-view/compare/v1.20.2...v1.21.0) (2020-07-24)
+
+
+### Features
+
+* ✨ add unit snapshot ([b03e917](https://github.com/SoldierAb/k-view/commit/b03e917e59fd9e16b4944b716df969b76d688962))
+* ✨ modify tree checkbox and update md ([4c2417c](https://github.com/SoldierAb/k-view/commit/4c2417c2b1fb59d04150e90789a1906debacc69b))
+
 ### [1.20.2](https://github.com/SoldierAb/k-view/compare/v1.20.1...v1.20.2) (2020-07-21)
 
 ### [1.20.1](https://github.com/SoldierAb/k-view/compare/v1.20.0...v1.20.1) (2020-07-15)
