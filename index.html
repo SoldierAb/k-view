@@ -5,17 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>K-View</title>
-    <script src="./externals/vue.min.js"></script>
-    <script src="./externals/vue-router.min.js"></script>
-    <script src="./externals/highlight.min.js"></script>
-    <link href="./externals/default.min.css" rel="stylesheet">
-    <script src="./externals/element-ui.js"></script>
+    <title>k-view</title>
+    <link rel="icon" href="./favicon.ico">
     <link href="./externals/element.css" rel="stylesheet">
+    <link href="./externals/default.min.css" rel="stylesheet">
 </head>
 
 <body>
     <div id="root"></div>
-<script type="text/javascript" src="./elementBase/index.js?671c14150b996a477da7"></script><script type="text/javascript" src="./vendors~kview/index.js?671c14150b996a477da7"></script><script type="text/javascript" src="./kview/index.js?671c14150b996a477da7"></script></body>
+    <script src="./externals/vue.min.js"></script>
+    <script src="./externals/vue-router.min.js"></script>
+    <script src="./externals/highlight.min.js"></script>
+    <script src="./externals/element-ui.js"></script>
+    <script src="./externals/clipboard.min.js"></script>
+    <script>
+        new ClipboardJS('.clipboard-btn',{
+            text: function(trigger) {
+                return decodeURIComponent(trigger.getAttribute('data-clipboard-text'));
+            } 
+        });
+    </script>
+<script type="text/javascript" src="./elementBase/index.js?252b6f9648f7a08f2d52"></script><script type="text/javascript" src="./vendors~kview/index.js?252b6f9648f7a08f2d52"></script><script type="text/javascript" src="./kview/index.js?252b6f9648f7a08f2d52"></script></body>
 
 </html>
+
