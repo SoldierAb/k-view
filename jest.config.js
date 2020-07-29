@@ -8,18 +8,26 @@ module.exports = {
     'vue',
   ],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1', // 类似 webpack.resolve.alias
+    '^vue$': 'vue/dist/vue.common.js',
+    '\\.(css|less)$': '<rootDir>/__mocks__/styleMock.js',
+    '\\.(gif|ttf|eot|svg)$': '<rootDir>/__mocks__/fileMock.js',
   },
-  testPathIgnorePatterns: ['/node_modules/', 'node'],
+  // moduleDirectories: ['node_modules', 'bower_components', 'shared'],
+  testPathIgnorePatterns: [
+    'node_modules',
+  ],
+  transformIgnorePatterns:[
+    'node_modules/(?!(ant-design-vue|element-ui))',
+  ],
+  testMatch: [
+    '**/__tests__/**/*.spec.(js|jsx|ts|tsx)',
+  ],
+  testURL: 'http://localhost/',
   transform: { // 类似 webpack.module.rules
-    '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest',
+    '.*\\.(vue|md)$': '<rootDir>/node_modules/vue-jest',
     '^.+\\.[t|j]sx?$': '<rootDir>/node_modules/babel-jest',
   },
-  snapshotSerializers: ["<rootDir>/node_modules/jest-serializer-vue"],
-  moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/$1',
-    '^vue$': 'vue/dist/vue.common.js',
-  },
+  snapshotSerializers: ['<rootDir>/node_modules/jest-serializer-vue'],
   setupFiles: ['<rootDir>/test/unit/setup'], // 类似 webpack.entry
   coverageDirectory: '<rootDir>/coverage', // 类似 webpack.output
   collectCoverageFrom: [ // 类似 webpack 的 rule.include
@@ -31,7 +39,7 @@ module.exports = {
   globals: {
     "vue-jest": {
       "hideStyleWarn": true,
-      "experimentalCSSCompile": true
-    }
-  }
+      "experimentalCSSCompile": true,
+    },
+  },
 };
